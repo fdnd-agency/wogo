@@ -21,6 +21,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"contentful": "^10.8.4"
+		"contentful": "^10.8.4",
+		"graphql-request": "^6.1.0"
 	}
 }
