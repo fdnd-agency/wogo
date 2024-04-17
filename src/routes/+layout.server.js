@@ -25,9 +25,7 @@ const query = ` {
   }
   }
   ` 
-  type GraphQLQuery<T> = {
-    query: T; //
-};
+
 
   export async function load() {
     const response = await contentfulFetch(query)
