@@ -1,5 +1,5 @@
-<script lang="ts">
-  import { Navigation } from '$lib/index'
+<script>
+  import { Navigation } from '$lib'
   export let data
   console.log(data)
 </script>

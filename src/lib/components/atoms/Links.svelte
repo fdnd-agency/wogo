@@ -1,6 +1,6 @@
-<script lang="ts">
-  export let href: string = ''
-  export let title: string = ''
+<script>
+  export let href = ''
+  export let title = ''
 </script>
 
 <a {href}>{title}</a>

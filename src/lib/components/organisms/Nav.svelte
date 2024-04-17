@@ -1,6 +1,6 @@
-<script lang="ts">
+<script>
   import { Link, WogoLogo } from '$lib/index'
-  export let items: any
+  export let items
 </script>
 
 <a class="skip-link" href="#main">Skip to content</a>
