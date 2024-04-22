@@ -1,10 +1,7 @@
 import { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } from '$env/static/private'
 
-type GraphQLQuery<T> = {
-    query: T; //
-};
   
-const contentfulFetch = async <T>(query: GraphQLQuery<T>) => {
+const contentfulFetch = async query => {
     const url = 'https://graphql.contentful.com/content/v1/spaces/' + CONTENTFUL_SPACE_ID
 
   const response = await fetch(url, {
