@@ -18,13 +18,13 @@
 
 <style>
   a {
-    position: relative;
-    top: -9px;
-    display: inline-flex;
+    display: inline;
+    vertical-align: middle;
     align-items: center;
     justify-content: center;
     background-color: var(--accent2-primary);
     color: var(--page-bg-color);
+    margin-left: 8px;
     padding: 0.625rem 1.25rem;
     font-size: 1rem;
     font-weight: 700;
@@ -50,14 +50,5 @@
   a:focus svg {
     transform: translateX(4px);
     transition: transform 0.3s ease-out;
-  }
-
-  /* media querie for hero section */
-  @media (min-width: 30em) {
-    /* Overeenkomt met ongeveer 480px */
-    a {
-      top: -10px;
-      right: -10px;
-    }
   }
 </style>
