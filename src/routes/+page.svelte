@@ -1,2 +1,6 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  import { Hero } from '$lib/index'
+  export let data
+</script>
+
+<Hero items={data?.landingPage?.[0]?.sectionCollection?.items?.[1] || {}} />

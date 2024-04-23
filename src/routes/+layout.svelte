@@ -1,7 +1,6 @@
 <script>
   import { Navigation } from '$lib'
   export let data
-  console.log(data)
 </script>
 
 <header>

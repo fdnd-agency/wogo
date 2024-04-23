@@ -36,7 +36,6 @@ const query = ` {
       })
     }
     const { data } = await response.json()
-    console.log(data.navigationCollection.items, 'hello')
     const { items } = data.navigationCollection
 
     return {
