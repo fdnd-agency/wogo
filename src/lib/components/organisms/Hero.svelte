@@ -8,8 +8,7 @@
     <source src={items.backgroundAsset.url} type="video/mp4" />
   </video>
   <div class="hero-content">
-    <h1>{items.headline}</h1>
-    <ButtonLink href="/" title="Book a Walk" />
+    <h1>{items.headline}<ButtonLink href="/" title={items.buttonText} /></h1>
     <p>{items.bodyText}</p>
   </div>
 </section>
@@ -24,8 +23,7 @@
     left: 0;
     right: 0;
     padding: 1rem;
-    width: 100vw;
-    height: 50vh;
+    height: 55vh;
   }
 
   video {
@@ -41,24 +39,37 @@
   .hero-content {
     position: absolute;
     padding: 1rem;
-    width: clamp(15rem, 100vw, 40rem);
+    margin-top: 3rem;
     color: #fff;
     font-weight: 700;
   }
 
   h1 {
     display: inline;
-    align-items: center;
-    font-size: clamp(2.3rem, 5vw, 4rem);
     font-weight: 700;
+    font-size: clamp(2.648rem, 6vw, 4.241rem);
+    letter-spacing: -1px;
     filter: drop-shadow(0 0 0.4rem #000);
   }
 
   p {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.2rem;
-    /* font-size: clamp(1rem, 100vw, 1.5rem); */
     filter: drop-shadow(0 0 0.4rem #000);
+  }
+
+  @media (min-width: 30em) {
+    section {
+      height: 70vh;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    h1 {
+      font-size: 70px;
+    }
   }
 </style>

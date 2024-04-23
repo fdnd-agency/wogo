@@ -11,6 +11,7 @@ const query = `
             ... on HeroBanner {
               headline
               bodyText
+              buttonText
               backgroundAsset {
                 url
                 title
