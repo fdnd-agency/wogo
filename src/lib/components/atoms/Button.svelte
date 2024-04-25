@@ -1,18 +1,11 @@
 <script>
+  import { SvgArrowRight } from '$lib/index.js'
   export let title = ''
 </script>
 
 <button type="button"
   >{title}
-  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-    <path
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M1 5h12m0 0L9 1m4 4L9 9"
-    />
-  </svg>
+  <SvgArrowRight width="24px" height="24px" />
 </button>
 
 <style>
@@ -36,14 +29,8 @@
     background-color: var(--accent2-tertiary);
   }
 
-  button svg {
-    margin-left: 8px;
-    width: 14px;
-    height: 14px;
-  }
-
-  button:hover svg,
-  button:focus svg {
+  button:hover :global(.svg-arrow-right),
+  button:focus :global(.svg-arrow-right) {
     transform: translateX(4px);
     transition: transform 0.3s ease-out;
   }
