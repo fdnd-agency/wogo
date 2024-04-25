@@ -1,27 +1,19 @@
 <script>
+  import { SvgArrowRight } from '$lib/index.js'
   export let href = ''
   export let title = ''
 </script>
 
-<a {href}
+<a {href} style="margin-right: 8px;"
   >{title}
-  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-    <path
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M1 5h12m0 0L9 1m4 4L9 9"
-    />
-  </svg></a
->
+  <SvgArrowRight width="20px" height="20px" />
+</a>
 
 <style>
   a {
-    display: inline;
+    display: inline-flex;
     vertical-align: middle;
     align-items: center;
-    justify-content: center;
     background-color: var(--accent2-primary);
     color: var(--page-bg-color);
     margin-left: 8px;
@@ -40,14 +32,8 @@
     background-color: var(--accent2-tertiary);
   }
 
-  a svg {
-    margin-left: 8px;
-    width: 14px;
-    height: 14px;
-  }
-
-  a:hover svg,
-  a:focus svg {
+  a:hover :global(.svg-arrow-right),
+  a:focus :global(.svg-arrow-right) {
     transform: translateX(4px);
     transition: transform 0.3s ease-out;
   }

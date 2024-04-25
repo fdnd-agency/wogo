@@ -1,18 +1,16 @@
 <script>
+  export let ariaLabel
   export let href = ''
+  export let target = '_blank'
   export let title = ''
 </script>
 
-<a {href}>{title}</a>
+<a class="link" aria-label={ariaLabel} {href} {target}>{title}</a>
 
 <style>
   a {
     line-height: 1.3;
     text-decoration: none;
     color: var(--accent2-primary);
-  }
-  a:focus,
-  a:hover {
-    transform: scale(1.2);
   }
 </style>

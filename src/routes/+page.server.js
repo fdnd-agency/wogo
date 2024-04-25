@@ -4,25 +4,40 @@ import contentfulFetch from '../api/contentful-fetch'
 
 const query = `
   {
-    landingPageCollection {
-      items {
-        sectionCollection(limit: 5) {
-          items {
-            ... on HeroBanner {
-              headline
-              bodyText
-              buttonText
-              backgroundAsset {
-                url
-                title
-                description
+      landingPageCollection(limit: 5) {
+        items {
+          sectionCollection {
+            items {
+              ... on HeroBanner {
+                headline
+                bodyText
+                buttonText
+                backgroundAsset {
+                  url
+                  title
+                }
+              }
+              ... on Carrousel {
+                carrouselCollection(limit: 5) {
+                  items {
+                    ... on CardComponent {
+                      title
+                      price
+                      locationDescription
+                      buttonText
+                      icon {
+                        title
+                        url
+                      }
+                    }
+                  }
+                }
               }
             }
           }
         }
       }
-    }
-  }
+    }  
 `;
 
   export async function load() {

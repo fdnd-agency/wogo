@@ -1,30 +1,42 @@
 :root {
-    --page-bg-color: #3F2B21;
+  --page-bg-color: hsl(20, 31%, 10%);
 
-    --accent1-primary: #643E2B;
-    --accent1-secondary: #7E5541;
-    --accent1-tertiary:#4D3327;
-    --accent1-quaternary:#B3998D;
-
-    --accent2-primary: #ffaa81;
-    --accent2-secondary: #ffbb9a;
-    --accent2-tertiary:#FFD5BE;
-    --accent2-quaternary:#FFE5D9; 
+  --accent1-primary: hsl(20, 39.86%, 28.04%);
+  --accent1-secondary: hsl(19.67, 31.94%, 37.45%);
+  --accent1-tertiary: hsl(18.95, 32.76%, 22.75%);
+  --accent1-quaternary: hsl(18.95, 20.00%, 62.75%);
+  
+  --accent2-primary: hsl(19.52, 100.00%, 75.29%);
+  --accent2-secondary: hsl(19.60, 100.00%, 80.20%);
+  --accent2-tertiary: hsl(21.23, 100.00%, 87.25%);
+  --accent2-quaternary: hsl(18.95, 100.00%, 92.55%);
 }
 
-:global(*) {
+* {
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
+  }
+
+  @font-face {
+    font-family: 'BemboItalic';
+    font-style: normal;
+    font-style: italic;
+    src: url('/fonts/bembo-italic.woff2') format('woff2'),
+         url('/fonts/bembo-italic.woff') format('woff'); 
+  }
+  
+  body {
+    font-family: 'BemboItalic', Arial, Helvetica,sans-serif;
+    background-color: var(--page-bg-color);
   }
 
   header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    position: absolute;
-    left: 0;
-    right: 0;
-    padding: 1rem 1.5rem;
+    align-items: center; 
+    position: fixed;
+    width: 100%;
     z-index: 1;
+    padding: .8rem 1.5rem;
   }
