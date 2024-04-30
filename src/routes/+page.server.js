@@ -22,7 +22,9 @@ const query = `
                   items {
                     ... on CardComponent {
                       title
+                      cardNumber
                       price
+                      description
                       locationDescription
                       buttonText
                       icon {
@@ -50,7 +52,6 @@ const query = `
     }
     const { data } = await response.json()
     const { items } = data.landingPageCollection
-    
 
     return {
        landingPage: items 

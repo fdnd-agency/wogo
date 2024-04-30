@@ -5,6 +5,6 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	plugins: [sveltekit()],
 	server: {
-	  host: true  // Voeg deze regel toe
+	  host: true
 	}
   });
