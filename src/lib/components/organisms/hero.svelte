@@ -15,48 +15,73 @@
 
 <style>
   section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
+    display: grid;
+    place-items: center;
+    position: relative;
     height: 55vh;
+    overflow: hidden;
   }
 
   video {
     position: absolute;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    width: auto;
     height: 100%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
     opacity: 0.8;
   }
 
   .hero-content {
-    position: absolute;
     padding: 1rem;
     margin-top: 3rem;
-    color: #fff;
     font-weight: 700;
+    color: #fff;
   }
 
   h1 {
+    position: relative;
     display: inline;
     font-weight: 700;
     font-size: clamp(2.648rem, 6vw, 4.241rem);
     letter-spacing: -1px;
     filter: drop-shadow(0 0 0.4rem #000);
+    animation: heading;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes heading {
+    0% {
+      top: -200px;
+    }
+    100% {
+      top: -2px;
+    }
   }
 
   p {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.2rem;
+    padding: 0.5rem;
     filter: drop-shadow(0 0 0.4rem #000);
+    position: relative;
+    animation-name: content;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes content {
+    0% {
+      left: -1000px;
+    }
+    100% {
+      left: 0px;
+    }
   }
 
   @media (min-width: 30em) {
@@ -65,7 +90,7 @@
     }
 
     .hero-content {
-      max-width: 700px;
+      max-width: 45rem;
     }
 
     h1 {
