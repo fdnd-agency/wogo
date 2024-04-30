@@ -2,11 +2,9 @@
   import { Card, SvgArrowRight } from '$lib'
   import { onMount } from 'svelte'
   export let items
-  console.log(items)
 
   let carousel
   let activeIndex = 0
-  // const numCards = 5
 
   function scroll(direction) {
     const scrollAmount = 200
@@ -130,7 +128,7 @@
     transition: 0.2s ease-out opacity;
   }
 
-  nav li.is-active {
+  /* nav li.is-active {
     opacity: 1;
-  }
+  } */
 </style>
