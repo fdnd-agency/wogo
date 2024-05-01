@@ -8,7 +8,10 @@
     <source src={items.backgroundAsset.url} type="video/mp4" />
   </video>
   <div class="hero-content">
-    <h1>{items.headline}<ButtonLink href="/" title={items.buttonText} /></h1>
+    <h1>
+      {items.headline}
+      <ButtonLink style="display: flex gap: 1rem;" href="/" title={items.buttonText} />
+    </h1>
     <p>{items.bodyText}</p>
   </div>
 </section>
@@ -44,7 +47,7 @@
 
   h1 {
     position: relative;
-    display: inline;
+    display: inline-block;
     font-weight: 700;
     font-size: clamp(2.648rem, 6vw, 4.241rem);
     letter-spacing: -1px;

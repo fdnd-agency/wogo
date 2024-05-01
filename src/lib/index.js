@@ -14,6 +14,7 @@ export { default as Card} from '$lib/components/molecules/Card.svelte'
 export { default as Navigation } from '$lib/components/organisms/Nav.svelte'
 export { default as Hero } from '$lib/components/organisms/Hero.svelte'
 export { default as Carrousel } from '$lib/components/organisms/Carrousel.svelte'
+export { default as WhatWeDo } from '$lib/components/organisms/WhatWeDo.svelte'
 export { default as AnimationCard } from '$lib/components/organisms/AnimationCard.svelte'
 
 
