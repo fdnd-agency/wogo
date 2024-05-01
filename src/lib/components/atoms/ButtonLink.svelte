@@ -10,18 +10,37 @@
 </a>
 
 <style>
+  /* a {
+    width: fit-content;
+    height: 48px;
+    padding: 12px 20px;
+    gap: 12px;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 24px;
+  } */
   a {
     display: inline-flex;
     vertical-align: middle;
     align-items: center;
+    width: fit-content;
+    white-space: nowrap;
+    height: 48px;
+    gap: 0.5rem;
     background-color: var(--accent2-primary);
     color: var(--page-bg-color);
-    margin-left: 8px;
     padding: 0.625rem 1.25rem;
     font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 24px;
     border: none;
     cursor: pointer;
   }

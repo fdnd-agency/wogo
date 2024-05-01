@@ -1,5 +1,5 @@
 <script>
-  import { Hero, Carrousel, Link, AnimationCard } from '$lib/index'
+  import { Hero, Carrousel, Link, AnimationCard, WhatWeDo } from '$lib/index'
   export let data
   const newData = data?.landingPage?.[0].sectionCollection.items
 </script>
@@ -16,6 +16,9 @@
 <h2>How it Works</h2>
 <AnimationCard items={newData?.[4].carrouselCollection?.items} />
 
+<h2>What We DO</h2>
+<WhatWeDo items={newData?.[5].carrouselCollection?.items} />
+
 <style>
   h2 {
     display: flex;
@@ -29,6 +32,11 @@
   h2:nth-child(4) {
     position: sticky;
     top: 50px;
+    justify-content: center;
+  }
+
+  h2:nth-child(6) {
+    display: flex;
     justify-content: center;
   }
 </style>
