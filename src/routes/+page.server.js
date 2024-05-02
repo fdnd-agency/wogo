@@ -35,6 +35,14 @@ const query = `
                   }
                 }
               }
+              ... on CardComponent {
+                title
+                buttonText
+                icon {
+                  title
+                  url
+                }
+              }
             }
           }
         }
