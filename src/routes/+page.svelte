@@ -11,15 +11,15 @@
   <Link title="see all walks" />
 </h2>
 
-<Carrousel items={newData?.[3].carrouselCollection?.items} />
+<Carrousel items={newData?.[2].carrouselCollection?.items} />
 
 <h2>How it Works</h2>
-<AnimationCard items={newData?.[4].carrouselCollection?.items} />
+<AnimationCard items={newData?.[3].carrouselCollection?.items} />
 
 <h2>What We DO</h2>
-<WhatWeDo items={newData?.[5].carrouselCollection?.items} />
+<WhatWeDo items={newData?.[4].carrouselCollection?.items} />
 
-<GiftCard items={newData?.[6]} />
+<GiftCard items={newData?.[5]} />
 
 <style>
   h2 {

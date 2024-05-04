@@ -1,31 +1,72 @@
-import { error } from '@sveltejs/kit'
+ import { error } from '@sveltejs/kit'
 import contentfulFetch from '../api/contentful-fetch'
 
 
-const query = ` {
-  navigationCollection {
+const query = `
+{
+  navigationCollection(limit: 5) {
     items {
-     logo {
-      url
-      description
+      logo {
+        url
       }
-      navigationLinksCollection(limit: 5) { # Beperkt het aantal navigatielinks
+      navigationLinksCollection(limit: 3) {
         items {
-          internalName
-          url
-          subLinksCollection(limit: 5) { # Beperkt het aantal sublinks
-            items {
-              internalName
-              url
+          ... on TypeLink {
+            internalName
+            url
+            subLinksCollection(limit: 2) {
+              items {
+                ... on TypeLink {
+                  internalName
+                  url
+                }
+              }
             }
           }
         }
       }
     }
   }
-  }
-  ` 
 
+  footerCollection(limit: 5) {
+    items {
+      formNewsletterTitle
+      formLabel
+      formPlaceholderText
+      formButtonText
+      logo {
+        title
+        description
+        url
+      }
+      footerLinksCollection(limit: 20) {
+        items {
+          ... on TypeLink {
+            internalName
+            title
+            url
+          }
+        }
+      }
+      socialMediaLinksCollection(limit: 3) {
+        items {
+          ... on TypeImage {
+            mediaUrl
+            mediaCollection {
+              items {
+                title
+                description
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+`;
 
   export async function load() {
     const response = await contentfulFetch(query)
@@ -36,9 +77,11 @@ const query = ` {
       })
     }
     const { data } = await response.json()
-    const { items } = data.navigationCollection
-
+    const { items: navigationItems } = data.navigationCollection
+    const { items: footerItems } = data.footerCollection
+    
     return {
-      navigation: items,
+      navigation: navigationItems,
+      footer: footerItems,
     }
   }

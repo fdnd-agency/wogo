@@ -10,22 +10,6 @@
 </a>
 
 <style>
-  /* a {
-    width: fit-content;
-    height: 48px;
-    padding: 12px 20px;
-    gap: 12px;
-    color: rgb(255, 255, 255);
-    background-color: transparent;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
-    border-radius: 24px;
-  } */
   a {
     display: inline-flex;
     vertical-align: middle;
