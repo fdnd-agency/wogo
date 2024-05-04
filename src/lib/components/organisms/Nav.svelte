@@ -1,21 +1,22 @@
 <script>
-  import { Link, WogoLogo } from '$lib/index'
-  export let items
+  import { Link, Image } from '$lib/index'
+  export let navigationItems
 </script>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<WogoLogo />
+<Image src={navigationItems[0].logo.url} alt="/" width="60" height="60" />
 
 <button type="button" id="mainMenuOpen" tabindex="-1" hidden><span></span></button>
+
 <nav>
   <ul>
-    {#each items as item}
+    {#each navigationItems[0].navigationLinksCollection.items as link}
       <li>
-        <Link href={item.url} title={item.internalName} />
-        {#if item.subLinksCollection.items.length > 0}
+        <Link href={link.url} title={link.internalName} />
+        {#if link.subLinksCollection.items.length > 0}
           <ul class="sub-menu">
-            {#each item.subLinksCollection.items as subItem}
+            {#each link.subLinksCollection.items as subItem}
               <li><Link href={subItem.url} title={subItem.internalName} /></li>
             {/each}
           </ul>

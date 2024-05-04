@@ -45,7 +45,7 @@
         title={item.title}
         price={item.price}
         buttonText={item.buttonText}
-        icon={item.icon}
+        url={item.icon.url}
         locationDescription={item.locationDescription}
       />
     {/each}
