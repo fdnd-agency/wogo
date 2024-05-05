@@ -1,5 +1,5 @@
 <script>
-  import { Navigation, Footer } from '$lib/index'
+  import { Navigation, Footer, TabBar } from '$lib/index'
   export let data
 </script>
 
@@ -10,6 +10,8 @@
   <slot />
 </main>
 <Footer footerItems={data.footer} />
+
+<TabBar tabBarItems={data.tabBar} />
 
 <style global>
   @import './global.css';

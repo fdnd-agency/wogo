@@ -34,10 +34,4 @@
     transform: scale(1.1);
     background-color: var(--accent2-tertiary);
   }
-
-  a:hover :global(.svg-arrow-right),
-  a:focus :global(.svg-arrow-right) {
-    transform: translateX(4px);
-    transition: transform 0.3s ease-out;
-  }
 </style>

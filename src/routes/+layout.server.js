@@ -4,17 +4,17 @@ import contentfulFetch from '../api/contentful-fetch'
 
 const query = `
 {
-  navigationCollection(limit: 5) {
+  navigationCollection(limit: 1) {
     items {
       logo {
         url
       }
-      navigationLinksCollection(limit: 3) {
+      navigationLinksCollection(limit: 5) {
         items {
           ... on TypeLink {
             internalName
             url
-            subLinksCollection(limit: 2) {
+            subLinksCollection(limit: 5) {
               items {
                 ... on TypeLink {
                   internalName
@@ -28,7 +28,31 @@ const query = `
     }
   }
 
-  footerCollection(limit: 5) {
+  tabBarCollection(limit: 1) {
+    items {
+      tabBarItemsCollection(limit: 4) {
+        items {
+          ... on IsButtonLink {
+            title
+            url
+            icon {
+              ... on TypeImage {
+                mediaCollection {
+                  items {
+                    title
+                    description
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footerCollection(limit: 1) {
     items {
       formNewsletterTitle
       formLabel
@@ -65,8 +89,8 @@ const query = `
     }
   }
 }
-
 `;
+
 
   export async function load() {
     const response = await contentfulFetch(query)
@@ -79,9 +103,11 @@ const query = `
     const { data } = await response.json()
     const { items: navigationItems } = data.navigationCollection
     const { items: footerItems } = data.footerCollection
+    const { items: tabBarItems } = data.tabBarCollection
     
     return {
       navigation: navigationItems,
       footer: footerItems,
+      tabBar: tabBarItems,
     }
   }

@@ -1,5 +1,4 @@
 <script>
-  import { VSCODE_GIT_ASKPASS_EXTRA_ARGS } from './../../../../.svelte-kit/ambient.d.ts'
   export let ariaLabel
   export let href = ''
   export let target = '_blank'
