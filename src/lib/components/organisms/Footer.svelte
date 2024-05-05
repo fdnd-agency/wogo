@@ -62,7 +62,7 @@
 <style>
   footer {
     width: 100%;
-    padding: var(--size-700);
+    padding: var(--size-500);
   }
   .footer-wrapper {
     display: grid;
