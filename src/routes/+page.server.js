@@ -1,7 +1,6 @@
 import { error } from '@sveltejs/kit'
 import contentfulFetch from '../api/contentful-fetch'
 
-
 const query = `
   {
       landingPageCollection(limit: 5) {
@@ -48,20 +47,20 @@ const query = `
         }
       }
     }  
-`;
+`
 
-  export async function load() {
-    const response = await contentfulFetch(query)
-  
-    if (!response.ok) {
-      throw error(response.status, {
-        message: response.statusText,
-      })
-    }
-    const { data } = await response.json()
-    const { items } = data.landingPageCollection
+export async function load() {
+  const response = await contentfulFetch(query)
 
-    return {
-       landingPage: items 
-    };
+  if (!response.ok) {
+    throw error(response.status, {
+      message: response.statusText,
+    })
   }
+  const { data } = await response.json()
+  const { items } = data.landingPageCollection
+
+  return {
+    landingPage: items,
+  }
+}

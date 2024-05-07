@@ -8,7 +8,7 @@
 
 <h2>
   <span>Explore the cocktail walks</span>
-  <Link title="see all walks" />
+  <Link title="see all walks" href="ticketoverview" />
 </h2>
 
 <Carrousel items={newData?.[2].carrouselCollection?.items} />
