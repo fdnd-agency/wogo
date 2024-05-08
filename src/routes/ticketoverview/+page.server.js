@@ -1,66 +1,66 @@
-// import { error } from '@sveltejs/kit'
-// import contentfulFetch from '../api/contentful-fetch'
+import { error } from '@sveltejs/kit'
+import contentfulFetch from './src/api/contentful-fetch'
 
-// const query = `
-//   {
-//       landingPageCollection(limit: 5) {
-//         items {
-//           sectionCollection {
-//             items {
-//               ... on HeroBanner {
-//                 headline
-//                 bodyText
-//                 buttonText
-//                 backgroundAsset {
-//                   url
-//                   title
-//                 }
-//               }
-//               ... on Carrousel {
-//                 carrouselCollection(limit: 5) {
-//                   items {
-//                     ... on CardComponent {
-//                       title
-//                       cardNumber
-//                       price
-//                       description
-//                       locationDescription
-//                       buttonText
-//                       icon {
-//                         title
-//                         url
-//                       }
-//                     }
-//                   }
-//                 }
-//               }
-//               ... on CardComponent {
-//                 title
-//                 buttonText
-//                 icon {
-//                   title
-//                   url
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-// `
+const query = `
+  {
+      landingPageCollection(limit: 5) {
+        items {
+          sectionCollection {
+            items {
+              ... on HeroBanner {
+                headline
+                bodyText
+                buttonText
+                backgroundAsset {
+                  url
+                  title
+                }
+              }
+              ... on Carrousel {
+                carrouselCollection(limit: 5) {
+                  items {
+                    ... on CardComponent {
+                      title
+                      cardNumber
+                      price
+                      description
+                      locationDescription
+                      buttonText
+                      icon {
+                        title
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+              ... on CardComponent {
+                title
+                buttonText
+                icon {
+                  title
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+`
 
-// export async function load() {
-//   const response = await contentfulFetch(query)
+export async function load() {
+  const response = await contentfulFetch(query)
 
-//   if (!response.ok) {
-//     throw error(response.status, {
-//       message: response.statusText,
-//     })
-//   }
-//   const { data } = await response.json()
-//   const { items } = data.landingPageCollection
+  if (!response.ok) {
+    throw error(response.status, {
+      message: response.statusText,
+    })
+  }
+  const { data } = await response.json()
+  const { items } = data.landingPageCollection
 
-//   return {
-//     landingPage: items,
-//   }
-// }
+  return {
+    landingPage: items,
+  }
+}

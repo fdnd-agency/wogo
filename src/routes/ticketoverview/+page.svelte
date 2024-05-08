@@ -1,18 +1,20 @@
 <script>
-  import { Card } from '$lib/index'
+  import { Card, Dropdown } from '$lib/index'
+  let listItemsGiftcards = ['Redeem', 'Buy a giftcard']
+  let listItemsVenues = ['Amsterdam', 'Utrecht', 'London']
+  export let data
+  console.log(data)
 </script>
 
 <section class="top-title">
   <h1>Tickets</h1>
   <section class="top-title-giftcard-dropdown">
-    <h2>Giftcards</h2>
-    <li>
-      <ul>Redeem a giftcard</ul>
-      <ul>Buy a giftcard</ul>
-    </li>
+    <Dropdown title="Giftcards" items={listItemsGiftcards} />
   </section>
 </section>
-<section class="top-filter"></section>
+<section class="top-filter">
+  <Dropdown title="venues" items={listItemsVenues} />
+</section>
 <section class="tickets">
   <Card
     price="25,95"
@@ -57,22 +59,9 @@
 
 <style>
   .top-title {
-    padding-top: 10vh;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 1.5rem;
-  }
-
-  .top-title-giftcard-dropdown li {
-    display: none;
-    background-color: var(--accent2-primary);
-    margin-right: 1.5rem;
-    position: absolute;
-    z-index: 1;
-  }
-
-  .top-title-giftcard-dropdown:hover li {
-    display: block;
+    padding: 10vh 1.5rem 1rem 1.5rem;
   }
 
   .top-title h1 {
@@ -80,9 +69,8 @@
     font-size: 3.375rem;
   }
 
-  .top-title h2 {
-    color: var(--accent2-primary);
-    text-decoration: underline;
+  .top-filter {
+    padding: 1rem 1.5rem;
   }
 
   .tickets {
