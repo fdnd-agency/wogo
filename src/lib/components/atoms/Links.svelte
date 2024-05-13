@@ -5,12 +5,15 @@
   export let title = ''
 </script>
 
-<a class="link" aria-label={ariaLabel} {href} {target}>{title}</a>
+<a aria-label={ariaLabel} {href} {target}
+  >{title}
+  <slot></slot>
+</a>
 
 <style>
   a {
-    line-height: 1.3;
+    line-height: 1.4;
     text-decoration: none;
-    color: var(--accent2-primary);
+    color: var(--accent2-tertiary);
   }
 </style>

@@ -14,14 +14,17 @@
     display: inline-flex;
     vertical-align: middle;
     align-items: center;
+    width: fit-content;
+    white-space: nowrap;
+    height: 48px;
+    gap: 0.5rem;
     background-color: var(--accent2-primary);
     color: var(--page-bg-color);
-    margin-left: 8px;
     padding: 0.625rem 1.25rem;
     font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 24px;
     border: none;
     cursor: pointer;
   }
@@ -30,11 +33,5 @@
   a:focus {
     transform: scale(1.1);
     background-color: var(--accent2-tertiary);
-  }
-
-  a:hover :global(.svg-arrow-right),
-  a:focus :global(.svg-arrow-right) {
-    transform: translateX(4px);
-    transition: transform 0.3s ease-out;
   }
 </style>

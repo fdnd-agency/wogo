@@ -1,9 +1,9 @@
 <script>
-  import { ButtonLink, Icon } from '$lib/index'
+  import { ButtonLink, Image } from '$lib/index'
   export let title
   export let price
   export let buttonText
-  export let icon
+  export let url
   export let locationDescription
 </script>
 
@@ -12,8 +12,8 @@
     <price class="price">€ {price}</price>
     <h3>{title}</h3>
     <p>
-      <Icon fill="#fff" src={icon.url} alt="location icon" width="24" height="24">{icon}</Icon
-      >{locationDescription}
+      <Image fill="#fff" src={url} alt="location icon" width="24" height="24"
+      ></Image>{locationDescription}
     </p>
     <div class="button-container">
       <ButtonLink title={buttonText}></ButtonLink>

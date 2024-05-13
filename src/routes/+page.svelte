@@ -1,7 +1,6 @@
 <script>
-  import { Hero, Carrousel, Link } from '$lib/index'
+  import { Hero, Carrousel, Link, AnimationCard, WhatWeDo, GiftCard } from '$lib/index'
   export let data
-  console.log(data)
   const newData = data?.landingPage?.[0].sectionCollection.items
 </script>
 
@@ -12,14 +11,34 @@
   <Link title="see all walks" />
 </h2>
 
-<Carrousel items={newData?.[3].carrouselCollection?.items} />
+<Carrousel items={newData?.[2].carrouselCollection?.items} />
+
+<h2>How it Works</h2>
+<AnimationCard items={newData?.[3].carrouselCollection?.items} />
+
+<h2>What We DO</h2>
+<WhatWeDo items={newData?.[4].carrouselCollection?.items} />
+
+<GiftCard items={newData?.[5]} />
 
 <style>
   h2 {
     display: flex;
-    justify-content: space-between;
-    padding: 2rem 1rem;
-    font-size: 16px;
+    font-size: 40px;
+    padding: 2rem 0;
     color: var(--accent2-tertiary);
+  }
+  h2:nth-child(2) {
+    justify-content: space-between;
+  }
+  h2:nth-child(4) {
+    position: sticky;
+    top: 50px;
+    justify-content: center;
+  }
+
+  h2:nth-child(6) {
+    display: flex;
+    justify-content: center;
   }
 </style>

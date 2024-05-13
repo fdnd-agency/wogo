@@ -1,30 +1,95 @@
-import { error } from '@sveltejs/kit'
+ import { error } from '@sveltejs/kit'
 import contentfulFetch from '../api/contentful-fetch'
 
 
-const query = ` {
-  navigationCollection {
+const query = `
+{
+  navigationCollection(limit: 1) {
     items {
-     logo {
-      url
-      description
+      logo {
+        url
       }
-      navigationLinksCollection(limit: 5) { # Beperkt het aantal navigatielinks
+      navigationLinksCollection(limit: 5) {
         items {
-          internalName
-          url
-          subLinksCollection(limit: 5) { # Beperkt het aantal sublinks
-            items {
-              internalName
-              url
+          ... on TypeLink {
+            internalName
+            url
+            subLinksCollection(limit: 5) {
+              items {
+                ... on TypeLink {
+                  internalName
+                  url
+                }
+              }
             }
           }
         }
       }
     }
   }
+
+  tabBarCollection(limit: 1) {
+    items {
+      tabBarItemsCollection(limit: 4) {
+        items {
+          ... on IsButtonLink {
+            title
+            url
+            icon {
+              ... on TypeImage {
+                mediaCollection {
+                  items {
+                    title
+                    description
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
-  ` 
+
+  footerCollection(limit: 1) {
+    items {
+      formNewsletterTitle
+      formLabel
+      formPlaceholderText
+      formButtonText
+      logo {
+        title
+        description
+        url
+      }
+      footerLinksCollection(limit: 20) {
+        items {
+          ... on TypeLink {
+            internalName
+            title
+            url
+          }
+        }
+      }
+      socialMediaLinksCollection(limit: 3) {
+        items {
+          ... on TypeImage {
+            mediaUrl
+            mediaCollection {
+              items {
+                title
+                description
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`;
 
 
   export async function load() {
@@ -36,9 +101,13 @@ const query = ` {
       })
     }
     const { data } = await response.json()
-    const { items } = data.navigationCollection
-
+    const { items: navigationItems } = data.navigationCollection
+    const { items: footerItems } = data.footerCollection
+    const { items: tabBarItems } = data.tabBarCollection
+    
     return {
-      navigation: items,
+      navigation: navigationItems,
+      footer: footerItems,
+      tabBar: tabBarItems,
     }
   }
