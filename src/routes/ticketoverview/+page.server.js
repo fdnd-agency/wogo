@@ -3,44 +3,19 @@ import contentfulFetch from './src/api/contentful-fetch'
 
 const query = `
   {
-      landingPageCollection(limit: 5) {
-        items {
-          sectionCollection {
-            items {
-              ... on HeroBanner {
-                headline
-                bodyText
-                buttonText
-                backgroundAsset {
-                  url
-                  title
-                }
-              }
-              ... on Carrousel {
-                carrouselCollection(limit: 5) {
-                  items {
-                    ... on CardComponent {
-                      title
-                      cardNumber
-                      price
-                      description
-                      locationDescription
-                      buttonText
-                      icon {
-                        title
-                        url
-                      }
-                    }
-                  }
-                }
-              }
-              ... on CardComponent {
+      carrousel(id: "1Xke6DTJ4mzPAwsF6xfybv") {
+        carrouselCollection {
+          items {
+            ... on CardComponent {
+              title
+              cardNumber
+              price
+              description
+              locationDescription
+              buttonText
+              icon {
                 title
-                buttonText
-                icon {
-                  title
-                  url
-                }
+                url
               }
             }
           }
@@ -58,9 +33,9 @@ export async function load() {
     })
   }
   const { data } = await response.json()
-  const { items } = data.landingPageCollection
+  const { items } = data.carrousel.carrouselCollection
 
   return {
-    landingPage: items,
+    cardsItems: items,
   }
 }

@@ -3,7 +3,7 @@
   let listItemsGiftcards = ['Redeem', 'Buy a giftcard']
   let listItemsVenues = ['Amsterdam', 'Utrecht', 'London']
   export let data
-  console.log(data)
+  console.log(data.cards)
 </script>
 
 <section class="top-title">
@@ -16,45 +16,15 @@
   <Dropdown title="venues" items={listItemsVenues} />
 </section>
 <section class="tickets">
-  <Card
-    price="25,95"
-    title="COCKTAIL WALK KINGSDAY"
-    url="/ticketoverview"
-    locationDescription="Amsterdam"
-    buttonText="Info"
-  />
-
-  <Card
-    price="25,95"
-    title="COCKTAIL WALK KINGSNIGHT"
-    url="/ticketoverview"
-    locationDescription="Amsterdam"
-    buttonText="Info"
-  />
-
-  <Card
-    price="25,95"
-    title="REGULIERE COCKTAILWANDELING"
-    url="/ticketoverview"
-    locationDescription="Amsterdam"
-    buttonText="Info"
-  />
-
-  <Card
-    price="25,95"
-    title="PREMIUM COCKTAILWANDELING"
-    url="/ticketoverview"
-    locationDescription="Amsterdam"
-    buttonText="Info"
-  />
-
-  <Card
-    price="25,95"
-    title="BOLSEXPERIENCE COCKTAILWANDELING"
-    url="/ticketoverview"
-    locationDescription="Amsterdam"
-    buttonText="Info"
-  />
+  {#each data.cardsItems as card}
+    <Card
+      price={card.price}
+      title={card.title}
+      url={card.icon.url}
+      locationDescription={card.locationDescription}
+      buttonText={card.buttonText}
+    />
+  {/each}
 </section>
 
 <style>
