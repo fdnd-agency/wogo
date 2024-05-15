@@ -6,13 +6,12 @@
 <header>
   <Navigation navigationItems={data.navigation} />
 </header>
+
 <main id="main">
+  
   <slot />
+
 </main>
+
 <Footer footerItems={data.footer} />
-
 <TabBar tabBarItems={data.tabBar} />
-
-<style global>
-  @import './global.css';
-</style>
