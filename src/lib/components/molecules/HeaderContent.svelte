@@ -27,7 +27,7 @@
 <div class="content-container">
   <div class="title-label">
     <h1>{mockData[0].title}</h1>
-    <span class="label">{mockData[0].label}</span>
+    <span class="label" aria-hidden="true">{mockData[0].label}</span>
   </div>
 
   <h1 class="subtitle">{mockData[0].subtitle}</h1>
@@ -47,7 +47,7 @@
   .content-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.6rem;
     margin: 5rem 2rem;
   }
 
