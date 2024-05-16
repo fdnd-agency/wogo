@@ -100,4 +100,31 @@
     font-size: 2rem;
     color: white;
   }
+
+  @media screen and (min-width: 768px) {
+    .content-container {
+      margin: 8rem 8rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    .subtitle {
+      font-size: 3rem;
+    }
+
+    .location {
+      font-size: 1.3rem;
+    }
+
+    .price {
+      font-size: 1.3rem;
+    }
+
+    .label {
+      font-size: 1.3rem;
+      padding: 0.5rem 0.8rem;
+    }
+  }
 </style>
