@@ -9,7 +9,7 @@
   <kruimelpad parentSlug />
 } -->
 
-<div>
+<!-- <div>
 Dit is een slug!!!!
 </div>
 
@@ -17,4 +17,4 @@ Dit is een slug!!!!
   div {
     color: red;
   }
-</style>
+</style> -->
