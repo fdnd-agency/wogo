@@ -48,7 +48,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin: 4rem 2rem;
+    margin: 5rem 2rem;
   }
 
   .title-label {
