@@ -1,5 +1,5 @@
 <script>
-  import { Navigation, Footer, TabBar } from '$lib/index'
+  import { Navigation, Footer, TabBar, TicketInfoPage } from '$lib/index'
   export let data
 </script>
 
@@ -7,10 +7,10 @@
   <Navigation navigationItems={data.navigation} />
 </header>
 
-<main id="main">
-  
-  <slot />
+<TicketInfoPage />
 
+<main id="main">
+  <slot />
 </main>
 
 <Footer footerItems={data.footer} />
