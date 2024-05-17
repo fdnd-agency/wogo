@@ -2,14 +2,12 @@
   import HeaderContent from '../molecules/HeaderContent.svelte'
 </script>
 
-<section>
-  <div class="header-container">
-    <img class="header-image" src="Test-image.jpg" alt="cocktail" />
-    <div class="header-text">
-      <HeaderContent />
-    </div>
+<div class="header-container">
+  <img class="header-image" src="Test-image.jpg" alt="cocktail" />
+  <div class="header-text">
+    <HeaderContent />
   </div>
-</section>
+</div>
 
 <style>
   .header-container {
@@ -19,8 +17,8 @@
   }
 
   .header-image {
-    width: 100%;
     object-fit: cover;
+    width: 100%;
     height: 100%;
     opacity: 0.2;
   }
@@ -31,7 +29,8 @@
     left: 0;
   }
 
-  @media screen and (min-width: 768px) {
+  /* Large screens */
+  @media screen and (min-width: 48em) {
     .header-text {
       top: 0;
     }
