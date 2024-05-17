@@ -22,4 +22,4 @@ export { default as TabBar } from '$lib/components/organisms/TabBar.svelte'
 // Templates
 
 // Pages
-export { default as DetailPage } from '$lib/components/pages/DetailPage.svelte'
+export { default as TicketInfoPage } from '$lib/components/pages/TicketInfoPage.svelte'

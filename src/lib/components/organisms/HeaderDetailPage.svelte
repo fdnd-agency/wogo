@@ -1,9 +1,10 @@
 <script>
   import HeaderContent from '../molecules/HeaderContent.svelte'
+  import HeaderImage from '../atoms/HeaderImage.svelte'
 </script>
 
 <div class="header-container">
-  <img class="header-image" src="Test-image.jpg" alt="cocktail" />
+  <HeaderImage src={'header-image-large.webp'} opacity="0.2" alt="cocktail" />
   <div class="header-text">
     <HeaderContent />
   </div>
@@ -14,13 +15,6 @@
     position: relative;
     width: 100vw;
     height: calc(100vh - 3rem);
-  }
-
-  .header-image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    opacity: 0.2;
   }
 
   .header-text {
