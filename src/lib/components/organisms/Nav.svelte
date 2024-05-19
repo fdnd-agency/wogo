@@ -1,6 +1,8 @@
 <script>
   import { Link, Image } from '$lib/index'
   export let navigationItems
+  export let pageItems
+  console.log(pageItems)
 </script>
 
 <a class="skip-link" href="#main">Skip to content</a>
@@ -11,23 +13,18 @@
 
 <nav>
   <ul>
-    {#each navigationItems[0].navigationLinksCollection.items as link}
-      <li>
-        <Link href={link.url} title={link.internalName} />
-        {#if link.subLinksCollection.items.length > 0}
-          <ul class="sub-menu">
-            {#each link.subLinksCollection.items as subItem}
-              <li><Link href={subItem.url} title={subItem.internalName} /></li>
-            {/each}
-          </ul>
-        {/if}
-      </li>
+    {#each pageItems as item}
+      {#if item.slug}
+        <li>
+          <a href={item.slug}>test</a>
+        </li>
+      {/if}
     {/each}
   </ul>
 </nav>
 
 <style>
-  .sub-menu {
+  /* .sub-menu {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -45,7 +42,7 @@
   nav li:hover .sub-menu {
     display: flex;
     opacity: 1;
-  }
+  } */
 
   nav li {
     position: relative; /* Nodig voor de positionering van het submenu */
