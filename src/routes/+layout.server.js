@@ -28,6 +28,12 @@ const query = `
     }
   }
 
+  pageCollection {
+    items {
+      slug 
+    }
+  }
+
   tabBarCollection(limit: 1) {
     items {
       tabBarItemsCollection(limit: 4) {
@@ -104,9 +110,12 @@ const query = `
     const { items: navigationItems } = data.navigationCollection
     const { items: footerItems } = data.footerCollection
     const { items: tabBarItems } = data.tabBarCollection
+    const { items: pageItems } = data.pageCollection
+    
     
     return {
       navigation: navigationItems,
+      page: pageItems,
       footer: footerItems,
       tabBar: tabBarItems,
     }

@@ -4,13 +4,11 @@
 </script>
 
 <header>
-  <Navigation navigationItems={data.navigation} />
+  <Navigation navigationItems={data.navigation} pageItems={data.page} />
 </header>
 
 <main id="main">
-  
   <slot />
-
 </main>
 
 <Footer footerItems={data.footer} />
