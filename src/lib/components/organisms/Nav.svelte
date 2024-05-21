@@ -5,7 +5,7 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<Image src={navigationItems[0].logo.url} alt="/" width="60" height="60" />
+<Image src="" alt="/" width="60" height="60" />
 
 <button type="button" id="mainMenuOpen" tabindex="-1" hidden><span></span></button>
 
@@ -13,11 +13,11 @@
   <ul>
     {#each navigationItems[0].navigationLinksCollection.items as link}
       <li>
-        <Link href={link.url} title={link.internalName} />
+        <Link onclick={handleClick} href={link.slug} title={link.title} />
         {#if link.subLinksCollection.items.length > 0}
           <ul class="sub-menu">
             {#each link.subLinksCollection.items as subItem}
-              <li><Link href={subItem.url} title={subItem.internalName} /></li>
+              <li><Link href={subItem.slug} title={subItem.title} /></li>
             {/each}
           </ul>
         {/if}

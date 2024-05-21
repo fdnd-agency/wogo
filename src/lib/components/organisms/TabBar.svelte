@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { Image } from '$lib/index'
   export let tabBarItems
 </script>
@@ -63,4 +63,4 @@
       display: none;
     }
   }
-</style>
+</style> -->

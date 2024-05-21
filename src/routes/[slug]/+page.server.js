@@ -1,7 +1,65 @@
-export function load({ params }) {
-  console.log(params.slug)
-  let data = { slug: params.slug }
-  // Laad aan de hand hiervan de juiste pagina in en return de data
+import { error } from '@sveltejs/kit'
+import contentfulFetch from './src/api/contentful-fetch'
 
-  return data
+export async function load({ params }) {
+  const query = `
+  {
+    pageCollection(where: {slug:"${params.slug}"}) {
+      items {
+        slug
+        title
+        componentsCollection(limit: 10) {
+          items {
+            ... on Hero {
+              title
+              asset {
+                url
+                title
+              }   
+            }
+          ... on ItemCollection {
+            itemsCollection(limit: 3) {
+              items {
+                ... on Card{
+                  title
+                  textParagraph
+                  price
+                  itemCollectionCollection(limit: 1) {
+                    items {
+                      ... on TypeAssets {
+                        url
+                        
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          }
+        }
+      }
+    }
+  }
+  `;
+  
+  const response = await contentfulFetch(query);
+
+  const { data } = await response.json();
+  const { items } = data.pageCollection
+
+  if (!items || items.length === 0) {
+    throw error(404, {
+      message: 'Oops! This Page is Missing Like the Last Sip of a Great Cocktail!',
+      hint: 'It seems this page is under construction, just like a cocktail in the making. Don’t worry, we’re mixing things up and it will be ready soon!'
+    });
 }
+
+  return {
+      pageData: items,
+      slug: params.slug
+  };
+}
+
+
+

@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { ButtonLink } from '$lib/index'
   export let items
 </script>
@@ -100,4 +100,4 @@
       font-size: 70px;
     }
   }
-</style>
+</style> -->

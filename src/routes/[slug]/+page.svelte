@@ -1,20 +1,21 @@
 <script>
-  // import kruimelpad
+  import { WorkWithUs, HomePage, GroupOutings } from '$lib/index'
   export let data
+  // console.log(data)
 
-  console.log('vanuit page ' + data.slug)
+  const componentMap = {
+    home: HomePage,
+    'work-with-us': WorkWithUs,
+    'group-outings': GroupOutings,
+  }
+  const items = data.pageData.find((pageDataItem) => pageDataItem.slug === data.slug)
+    .componentsCollection.items
+
+  const Component = componentMap[data.slug] || HomePage
 </script>
 
-<!-- if(parentSlug) {
-  <kruimelpad parentSlug />
-} -->
 
-<!-- <div>
-Dit is een slug!!!!
-</div>
+<svelte:component this={Component} {items} />
 
 <style>
-  div {
-    color: red;
-  }
-</style> -->
+</style>
