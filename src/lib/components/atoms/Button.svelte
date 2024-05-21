@@ -1,7 +1,6 @@
 <script>
   import { SvgArrowRight } from '$lib/index.js'
   export let title = ''
-  export let type = ''
 </script>
 
 <button type=""

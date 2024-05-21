@@ -9,7 +9,7 @@
   </summary>
   <ul class="ul-dropdown">
     {#each items as item}
-      <li><a href="#">{item}</a></li>
+      <li><a href="/">{item}</a></li>
     {/each}
   </ul>
 </details>

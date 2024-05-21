@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   export let alt = ''
   export let src = ''
   export let opacity = ''
@@ -10,13 +10,13 @@
 </script>
 
 <picture>
-  <!-- Source for small screens -->
-  <source media="(max-width: 375px)" srcset={Small} />
+   Source for small screens -->
+<!-- <source media="(max-width: 375px)" srcset={Small} />
 
-  <!-- Source for medium screens -->
+  Source for medium screens 
   <source media="(max-width: 768px)" srcset={Medium} />
 
-  <!-- Source for large screens -->
+  Source for large screens
   <source media="(max-width: 1024px)" srcset={Large} />
 
   <img {src} {alt} style={`opacity: ${opacity}`} />
@@ -28,4 +28,4 @@
     width: 100%;
     height: 100%;
   }
-</style>
+</style>  -->

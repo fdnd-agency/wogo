@@ -13,7 +13,7 @@
   <ul>
     {#each navigationItems[0].navigationLinksCollection.items as link}
       <li>
-        <Link onclick={handleClick} href={link.slug} title={link.title} />
+        <Link href={link.slug} title={link.title} />
         {#if link.subLinksCollection.items.length > 0}
           <ul class="sub-menu">
             {#each link.subLinksCollection.items as subItem}
