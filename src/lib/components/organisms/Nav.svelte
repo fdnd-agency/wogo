@@ -1,30 +1,33 @@
 <script>
   import { Link, Image } from '$lib/index'
   export let navigationItems
-  export let pageItems
-  console.log(pageItems)
 </script>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<Image src={navigationItems[0].logo.url} alt="/" width="60" height="60" />
+<Image src="" alt="/" width="60" height="60" />
 
 <button type="button" id="mainMenuOpen" tabindex="-1" hidden><span></span></button>
 
 <nav>
   <ul>
-    {#each pageItems as item}
-      {#if item.slug}
-        <li>
-          <a href={item.slug}>test</a>
-        </li>
-      {/if}
+    {#each navigationItems[0].navigationLinksCollection.items as link}
+      <li>
+        <Link onclick={handleClick} href={link.slug} title={link.title} />
+        {#if link.subLinksCollection.items.length > 0}
+          <ul class="sub-menu">
+            {#each link.subLinksCollection.items as subItem}
+              <li><Link href={subItem.slug} title={subItem.title} /></li>
+            {/each}
+          </ul>
+        {/if}
+      </li>
     {/each}
   </ul>
 </nav>
 
 <style>
-  /* .sub-menu {
+  .sub-menu {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -42,7 +45,7 @@
   nav li:hover .sub-menu {
     display: flex;
     opacity: 1;
-  } */
+  }
 
   nav li {
     position: relative; /* Nodig voor de positionering van het submenu */
