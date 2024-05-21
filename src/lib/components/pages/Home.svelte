@@ -1,4 +1,5 @@
 <script>
+  // export let items
 </script>
 
 <h1>Homepage</h1>
