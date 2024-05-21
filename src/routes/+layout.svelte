@@ -4,7 +4,7 @@
 </script>
 
 <header>
-  <Navigation navigationItems={data.navigation} pageItems={data.page} />
+  <Navigation navigationItems={data.navigation} />
 </header>
 
 <main id="main">
@@ -12,4 +12,4 @@
 </main>
 
 <Footer footerItems={data.footer} />
-<TabBar tabBarItems={data.tabBar} />
+<!-- <TabBar tabBarItems={data.tabBar} /> -->
