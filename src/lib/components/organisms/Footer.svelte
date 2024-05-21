@@ -1,39 +1,48 @@
 <script>
   import { Link, Image, Button } from '$lib/index'
-  import Logo from '/WogoLogo.svg'
-
   export let footerItems
 </script>
 
 <footer>
   <div class="footer-wrapper">
     <div class="footer-logo-social">
-      <Link href="/" ariaLabel=""><enhanced:img src={Logo} alt="Some alt text" /></Link>
+      <Link href="/" ariaLabel={footerItems[0].logo.title}
+        ><Image
+          src={footerItems[0].logo.url}
+          alt={footerItems[0].logo.description}
+          width="100"
+          height="100"
+        /></Link
+      >
+
       <ul class="social-list" role="list" aria-label="Social links">
-        {#each footerItems[0].socialMediaIconsCollection.items as item}
+        {#each footerItems[0].socialMediaLinksCollection.items as item}
           <li>
-            <Link href={item.url}>
-              <Image src={item.assetCollection.items[0].url} alt="" width="40" height="40" />
-            </Link>
+            <Link href={item.mediaUrl} ariaLabel={item.mediaCollection.items[0].title}
+              ><Image
+                src={item.mediaCollection.items[0].url}
+                alt={item.mediaCollection.items[0].description}
+                width="40"
+                height="40"
+              /></Link
+            >
           </li>
         {/each}
       </ul>
     </div>
 
     <nav>
-      {#each footerItems[0].footerLinksCollection.items as item}
-        <ul aria-label="Footer" role="list">
-          <li>
-            <Link href={item.slug} aria-label="" title={item.title}></Link>
-          </li>
-        </ul>
-      {/each}
+      <ul aria-label="Footer" role="list">
+        {#each footerItems[0].footerLinksCollection.items as link}
+          <li><Link href={link.url} ariaLabel={link.title} title={link.internalName} /></li>
+        {/each}
+      </ul>
     </nav>
 
     <div class="container-footer-form">
-      <h2>{footerItems[0].newsletterTitle}</h2>
+      <h2>{footerItems[0].formNewsletterTitle}</h2>
       <form action="/" method="POST">
-        <label for="email">{footerItems[0].newsLetterDescription}</label>
+        <label for="email">{footerItems[0].formLabel}</label>
         <div class="input-button-wrapper">
           <input
             type="email"
@@ -41,9 +50,9 @@
             name="email"
             required
             aria-required="true"
-            placeholder={footerItems[0].placeholderText}
+            placeholder="Enter your email"
           />
-          <Button type="submit" title="Subscribe" />
+          <Button type="submit" title={footerItems[0].formButtonText} />
         </div>
       </form>
     </div>
