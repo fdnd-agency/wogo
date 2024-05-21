@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { Card, SvgArrowRight } from '$lib'
   import { onMount } from 'svelte'
   export let items
@@ -131,4 +131,4 @@
   /* nav li.is-active {
     opacity: 1;
   } */
-</style>
+</style> -->

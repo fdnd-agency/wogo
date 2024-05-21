@@ -14,4 +14,4 @@
 </main>
 
 <Footer footerItems={data.footer} />
-<TabBar tabBarItems={data.tabBar} />
+<!-- <TabBar tabBarItems={data.tabBar} /> -->
