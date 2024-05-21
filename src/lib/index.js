@@ -25,5 +25,3 @@ export { default as TabBar } from '$lib/components/organisms/TabBar.svelte'
 export { default as WorkWithUs } from '$lib/components/pages/WorkWithUs.svelte'
 export { default as HomePage } from '$lib/components/pages/Home.svelte'
 export { default as GroupOutings } from '$lib/components/pages/GroupOutings.svelte'
-
-

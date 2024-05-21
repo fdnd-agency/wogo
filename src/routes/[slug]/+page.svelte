@@ -14,6 +14,7 @@
   const Component = componentMap[data.slug] || HomePage
 </script>
 
+
 <svelte:component this={Component} {items} />
 
 <style>
