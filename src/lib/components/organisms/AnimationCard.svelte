@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { Image } from '$lib/index.js'
   export let items
 </script>
@@ -77,4 +77,4 @@
       font-size: 24px;
     }
   }
-</style>
+</style> -->

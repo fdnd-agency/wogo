@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
   import { Image, ButtonLink } from '$lib/index'
   export let items
 </script>
@@ -38,4 +38,4 @@
       width: 30%;
     }
   }
-</style>
+</style> -->
