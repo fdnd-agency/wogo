@@ -1,9 +1,10 @@
 <script>
-  import { WorkWithUs, HomePage, GroupOutings } from '$lib/index'
+  import { WorkWithUs, HomePage, GroupOutings, OverviewPage } from '$lib/index'
   export let data
 
   const componentMap = {
     home: HomePage,
+    walks: OverviewPage,
     'work-with-us': WorkWithUs,
     'group-outings': GroupOutings,
   }
