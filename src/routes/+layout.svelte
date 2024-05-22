@@ -1,12 +1,9 @@
 <script>
-  import { Navigation, Footer, TabBar, TicketInfoPage } from '$lib/index'
+  import { Header, Footer } from '$lib/index'
   export let data
 </script>
 
-<header>
-  <Navigation navigationItems={data.navigation} />
-</header>
-<TicketInfoPage />
+<Header navigationItems={data.navigation} />
 
 <main id="main">
   <slot />
