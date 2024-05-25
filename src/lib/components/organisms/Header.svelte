@@ -41,6 +41,7 @@
 <style>
   header {
     display: flex;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -48,6 +49,7 @@
     align-items: center;
     padding: 0.5rem 1rem;
     gap: 1.5rem;
+    z-index: 900;
   }
 
   .skip-link {
@@ -96,6 +98,7 @@
     right: 1rem;
     padding: 1rem 0;
     opacity: 0;
+    background-color: var(--page-bg-color);
   }
 
   .sub-menu .sub-menu li {
@@ -112,6 +115,9 @@
   }
 
   @media (max-width: 60em) {
+    header {
+      justify-content: 0;
+    }
     #mainMenuOpen {
       order: 4;
     }
@@ -122,8 +128,6 @@
       gap: 1rem;
       position: relative;
       top: 5px;
-      right: -17px;
-      order: 2;
     }
 
     #mainMenuOpen {

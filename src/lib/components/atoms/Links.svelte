@@ -4,17 +4,9 @@
   export let target = ''
   export let title = ''
   export let noHover = false
-  export let scaleOnHover = false
 </script>
 
-<a
-  data-sveltekit-reload
-  aria-label={ariaLabel}
-  {href}
-  {target}
-  class:no-hover={noHover}
-  class:scale-on-hover={scaleOnHover}
->
+<a data-sveltekit-reload aria-label={ariaLabel} {href} {target} class:no-hover={noHover}>
   {title}
   <slot></slot>
 </a>
@@ -26,15 +18,11 @@
     line-height: 1.4;
     text-decoration: none;
     color: var(--link-color);
+    filter: drop-shadow(0 0 0.4rem #000);
   }
   .no-hover:hover,
   .no-hover:focus {
     color: var(--accent2-secondary);
     text-decoration: none;
-  }
-
-  .scale-on-hover:hover,
-  .scale-on-hover:focus {
-    transform: scale(2);
   }
 </style>
