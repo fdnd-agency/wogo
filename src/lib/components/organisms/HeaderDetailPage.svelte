@@ -8,7 +8,7 @@
 <div class="header-container">
   <HeaderImage src="" opacity="0.2" alt="cocktail" />
   <div class="header-text">
-    <HeaderContent {items} />
+    <HeaderContent items={items[0].componentsCollection.items[0]} />
   </div>
 </div>
 

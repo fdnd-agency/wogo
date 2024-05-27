@@ -1,30 +1,25 @@
 <script>
   import IconLocation from '../atoms/IconLocation.svelte'
   export let items
-  console.log(items[0].componentsCollection)
 </script>
 
-{#each items as item}
-  <section class="content-container">
-    <!-- First content row -->
-    <div class="title-label">
-      <h1>{item.title}</h1>
-      <span class="label" aria-hidden="true">{item.label}</span>
-    </div>
+<section class="content-container">
+  <!-- First content row -->
+  <div class="title-label">
+    <h1>{items.title}</h1>
+    <span class="label" aria-hidden="true">{items.label}</span>
+  </div>
 
-    <!-- Second content row -->
-    <h2 class="subtitle">
-      {item.subtitle}
-    </h2>
+  <!-- Second content row -->
+  <h2 class="subtitle">{items.subtitle}</h2>
 
-    <!-- Last content row -->
-    <div class="location-price">
-      <IconLocation width="15" height="15" color="hsl(21.23, 100%, 87.25%)" />
-      <p class="location">{item.location}</p>
-      <p class="price">{item.price}</p>
-    </div>
-  </section>
-{/each}
+  <!-- Last content row -->
+  <div class="location-price">
+    <IconLocation width="15" height="15" color="hsl(21.23, 100%, 87.25%)" />
+    <p class="location">{items.location}</p>
+    <p class="price">€{items.price}</p>
+  </div>
+</section>
 
 <style>
   .content-container {
@@ -38,7 +33,7 @@
   h1 {
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.9rem;
     text-transform: uppercase;
     color: white;
   }
@@ -61,7 +56,7 @@
 
   /* Second content row */
   .subtitle {
-    font-size: 2rem;
+    font-size: 1.9rem;
     text-transform: uppercase;
     color: white;
   }
