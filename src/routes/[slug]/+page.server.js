@@ -12,26 +12,23 @@ export async function load({ params }) {
           items {
             ... on Hero {
               title
+              subtitle
+              label
+              price
+              location
               asset {
                 url
                 title
               }   
             }
           ... on ItemCollection {
-            itemsCollection(limit: 3) {
+            itemsCollection(limit: 4) {
               items {
                 ... on Card{
                   title
                   textParagraph
                   price
-                  itemCollectionCollection(limit: 1) {
-                    items {
-                      ... on TypeAssets {
-                        url
-                        
-                      }
-                    }
-                  }
+                  slug
                 }
               }
             }
@@ -41,25 +38,22 @@ export async function load({ params }) {
       }
     }
   }
-  `;
-  
-  const response = await contentfulFetch(query);
+  `
 
-  const { data } = await response.json();
+  const response = await contentfulFetch(query)
+
+  const { data } = await response.json()
   const { items } = data.pageCollection
 
   if (!items || items.length === 0) {
     throw error(404, {
       message: 'Oops! This Page is Missing Like the Last Sip of a Great Cocktail!',
-      hint: 'It seems this page is under construction, just like a cocktail in the making. Don’t worry, we’re mixing things up and it will be ready soon!'
-    });
-}
+      hint: 'It seems this page is under construction, just like a cocktail in the making. Don’t worry, we’re mixing things up and it will be ready soon!',
+    })
+  }
 
   return {
-      pageData: items,
-      slug: params.slug
-  };
+    pageData: items,
+    slug: params.slug,
+  }
 }
-
-
-
