@@ -2,17 +2,12 @@
   import { TicketInfoPage } from '$lib/index'
   export let data
 
-  const componentMap = {
-    home: HomePage,
-    'ticket-information': TicketInfoPage,
-  }
-  const items = data.pageData.find((pageDataItem) => pageDataItem.slug === data.slug)
-    .componentsCollection.items
-
-  const Component = componentMap[data.slug] || TicketInfoPage
+  // const currentPageData = data.pageData?.[0] || {}
+  // const { componentsCollection: { items = [] } = {}, slug = '' } = currentPageData
+  // ;('')
 </script>
 
-<svelte:component this={Component} {items} />
+<TicketInfoPage {data} />
 
 <style>
 </style>

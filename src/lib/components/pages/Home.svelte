@@ -6,7 +6,7 @@
 {#each items[1].itemsCollection.items as item}
   <div class="container-card">
     <h2>{item.title}</h2>
-    <a href="/tickets/{item.slug}">Koop een ticket!</a>
+    <a href="/home/{item.slug}">Koop een ticket!</a>
   </div>
 {/each}
 

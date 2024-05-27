@@ -1,7 +1,11 @@
 <script>
   import HeaderDetailPage from '../organisms/HeaderDetailPage.svelte'
-  export let items
-  console.log(items, 'test ticket info page')
+  export let data
+  console.log(data)
 </script>
 
-<HeaderDetailPage />
+<svelte:head>
+  <title></title>
+</svelte:head>
+
+<HeaderDetailPage items={data.pageData} />
