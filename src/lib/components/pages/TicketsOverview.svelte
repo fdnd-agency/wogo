@@ -1,9 +1,9 @@
 <script>
   export let items
-  console.log(items)
+  console.log(items[0].title)
 </script>
 
-<h1>Work with us page bars</h1>
+<h1>{items[0].title}</h1>
 
 <!-- {#each items[1].itemsCollection.items as item}
   <div class="container-card">
