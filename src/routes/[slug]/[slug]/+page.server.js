@@ -21,18 +21,6 @@ export async function load({ params }) {
                 title
               }   
             }
-          ... on ItemCollection {
-            itemsCollection(limit: 4) {
-              items {
-                ... on Card{
-                  title
-                  textParagraph
-                  price
-                  slug
-                }
-              }
-            }
-          }
           }
         }
       }
@@ -41,7 +29,6 @@ export async function load({ params }) {
   `
 
   const response = await contentfulFetch(query)
-
   const { data } = await response.json()
   const { items } = data.pageCollection
 

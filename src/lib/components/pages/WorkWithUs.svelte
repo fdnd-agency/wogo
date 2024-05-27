@@ -1,6 +1,5 @@
 <script>
   // export let items
-  // console.log(items)
 </script>
 
 <h1>Work with us page bars</h1>
