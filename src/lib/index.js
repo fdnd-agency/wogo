@@ -1,24 +1,29 @@
 // Atoms
 export { default as Link } from '$lib/components/atoms/Links.svelte'
-export { default as Button } from '$lib/components/atoms/Button.svelte'
-export { default as ButtonLink } from '$lib/components/atoms/ButtonLink.svelte'
+export { default as BaseButton } from '$lib/components/atoms/BaseButton.svelte'
+export { default as PrimaryButton } from '$lib/components/atoms/PrimaryButton.svelte'
+export { default as SecondaryButton } from '$lib/components/atoms/SecondaryButton.svelte'
 export { default as Image } from '$lib/components/atoms/Image.svelte'
-export { default as SvgArrowRight } from '$lib/components/atoms/SvgArrowRight.svelte'
 
 
 //Atoms / Icons
+export { default as ArrowLeft } from '$lib/components/atoms/icons/ArrowLeft.svelte'
+export { default as ArrowRight } from '$lib/components/atoms/icons/ArrowRight.svelte'
 export { default as CartIcon } from '$lib/components/atoms/icons/CartIcon.svelte'
+export { default as RouteIcon } from '$lib/components/atoms/icons/RouteIcon.svelte'
+export { default as CocktailIcon} from '$lib/components/atoms/icons/CocktailIcon.svelte'
+
 
 
 // Molecules
-export { default as Card } from '$lib/components/molecules/Card.svelte'
+export { default as TicketCard } from '$lib/components/molecules/TicketCard.svelte'
 export { default as Dropdown } from '$lib/components/molecules/Dropdown.svelte'
 export { default as Translation } from '$lib/components/molecules/Translation.svelte'
 
 
 // Organisms
 export { default as Hero } from '$lib/components/organisms/Hero.svelte'
-export { default as Carrousel } from '$lib/components/organisms/Carrousel.svelte'
+export { default as TicketCarrousel } from '$lib/components/organisms/TicketCarrousel.svelte'
 export { default as WhatWeDo } from '$lib/components/organisms/WhatWeDo.svelte'
 export { default as AnimationCard } from '$lib/components/organisms/AnimationCard.svelte'
 export { default as GiftCard } from '$lib/components/organisms/GiftCard.svelte'

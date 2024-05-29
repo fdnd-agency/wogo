@@ -1,62 +1,55 @@
 <script>
-  export let className = ''
-  export let styles = ''
-  export let size = 'default'
+  // HTML props
   export let type = 'button'
-  export let href = undefined
-  export let disabled = false
-  export let backgroundColor = ''
-  export let color = ''
+  export let href = ''
   export let icon = ''
   export let title = ''
-  export let variant = ''
-  export let onHover = 'false'
   export let ariaLabel = ''
+  export let btnDisabled = 'false'
 
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-  }
-
-  $: className = classNames(
-    styles,
-    'btn',
-    `btn-${size}`,
-    `btn-${variant}`,
-    disabled ? 'disabled' : ''
-  )
+  // Styling props
+  export let backgroundColor = ''
+  export let color = ''
+  export let border = ''
+  export let boxShadow = ''
+  export let hoverBorder = ''
+  export let focusBorder = ''
+  export let hoverBoxShadow = ''
+  export let focusBoxShadow = ''
+  export let btnSize = 'default'
 </script>
 
 {#if href}
   <a
-    style="--bgc: {backgroundColor}; --clr: {color}"
+    class="btn"
+    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow}; --hover-border: {hoverBorder}; --focus-border: {focusBorder}; --hover-box-shadow: {hoverBoxShadow}; --focus-box-shadow: {focusBoxShadow}; --btn-size: {btnSize}; --btn-disabled: {btnDisabled};"
     {href}
-    class={className}
-    {disabled}
-    {onHover}
-    {ariaLabel}
+    aria-disabled={btnDisabled === 'true'}
+    aria-label={ariaLabel}
+    disabled={btnDisabled === 'true'}
   >
     {title}
     {#if icon}
-      <span class="btn-icon"
-        ><svelte:component this={icon} class="btn-icon" width="24px" height="24px" /></span
-      >
+      <span class="btn-icon">
+        <svelte:component this={icon} class="btn-icon" width="24px" height="24px" />
+      </span>
     {/if}
   </a>
 {:else}
   <button
-    style="--bgc: {backgroundColor}; --clr: {color};"
+    class="btn"
+    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow}; --hover-border: {hoverBorder}; --focus-border: {focusBorder}; --hover-box-shadow: {hoverBoxShadow}; --focus-box-shadow: {focusBoxShadow}; --btn-size: {btnSize}; --btn-disabled: {btnDisabled};"
     {type}
-    class={className}
-    {disabled}
-    {onHover}
-    {ariaLabel}
+    aria-disabled={btnDisabled === 'true'}
+    aria-label={ariaLabel}
+    disabled={btnDisabled === 'true'}
     on:click
   >
     {title}
     {#if icon}
-      <span class="btn-icon"
-        ><svelte:component this={icon} class="btn-icon" width="24px" height="24px" /></span
-      >
+      <span class="btn-icon">
+        <svelte:component this={icon} class="btn-icon" width="24px" height="24px" />
+      </span>
     {/if}
   </button>
 {/if}
@@ -73,13 +66,18 @@
     text-align: center;
     text-decoration: none;
     letter-spacing: 1px;
+    line-height: 1;
     outline: none;
     border: 0;
-    transition: box-shadow 0.2s;
+    transition:
+      box-shadow 0.2s,
+      transform 0.3s;
     background-color: var(--bgc);
     color: var(--clr);
+    border: var(--border);
     font-size: calc(var(--scale, 1) * 1rem);
-    padding: 0.5em 1.25em;
+    padding: var(--btn-padding, 0.5em 1.25em);
+    box-shadow: var(--box-shadow, 0px 2px 3px 0px rgba(0, 0, 0, 0.25));
   }
 
   .btn-icon {
@@ -92,52 +90,40 @@
     transform: translateX(5px);
   }
 
-  .btn:disabled {
+  .btn:disabled,
+  .btn[aria-disabled='true'] {
     cursor: not-allowed;
     opacity: 0.5;
   }
 
+  .btn:hover {
+    border: var(--hover-border);
+    box-shadow: var(--hover-box-shadow);
+  }
+
   .btn:focus {
+    border: var(--focus-border);
+    box-shadow: var(--focus-box-shadow);
     transform: scale(1.1);
   }
 
-  .btn-xs {
-    --scale: var(--btn-scale-xs);
-  }
-  .btn-sm {
-    --scale: var(--btn-scale-sm);
-  }
-  .btn-lg {
-    --scale: var(--btn-scale-lg);
-  }
-  .btn-xl {
-    --scale: var(--btn-scale-xl);
-  }
-  /*button variants*/
-  .btn-primary {
-    background-color: var(--btn-primary-bg);
-    --primary-text-clr: hsl(20, 31%, 10%);
-    color: var(--btn-primary-text-clr);
-    font-weight: 600;
-    line-height: 1;
-    transition: 0.3s;
-    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  .btn[style*='--btn-size: xs;'] {
+    --scale: 0.75;
+    --btn-padding: 0.25em 0.75em;
   }
 
-  .btn-primary:is(:hover, :focus) {
-    border: 1.5px solid var(--btn-primary-bg);
-    box-shadow: 0 0 rgba(0, 0, 0, 0);
+  .btn[style*='--btn-size: sm;'] {
+    --scale: 0.875;
+    --btn-padding: 0.375em 1em;
   }
 
-  .btn-secondary {
-    background: transparent;
-    border: 1.5px solid var(--btn-primary-bg);
+  .btn[style*='--btn-size: lg;'] {
+    --scale: 1.25;
+    --btn-padding: 0.75em 1.5em;
   }
 
-  .btn-secondary:is(:hover, :focus) {
-    background: var(--btn-secondary-bg);
-    color: hsl(20, 31%, 10%);
-    border-color: var(--btn-secondary-border);
-    box-shadow: 0 0 rgba(0, 0, 0, 0);
+  .btn[style*='--btn-size: xl;'] {
+    --scale: 1.5;
+    --btn-padding: 1em 2em;
   }
 </style>
