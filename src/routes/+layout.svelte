@@ -6,7 +6,7 @@
 <header>
   <Navigation navigationItems={data.navigation} />
 </header>
-<TicketInfoPage />
+<!-- <TicketInfoPage /> -->
 
 <main id="main">
   <slot />
