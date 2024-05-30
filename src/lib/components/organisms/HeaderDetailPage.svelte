@@ -1,12 +1,13 @@
 <script>
   import HeaderContent from '../molecules/HeaderContent.svelte'
-  import HeaderImage from '../atoms/HeaderImage.svelte'
+  import Image from '../atoms/Image.svelte'
   export let items
-  console.log(items)
 </script>
 
 <div class="header-container">
-  <HeaderImage src="" opacity="0.2" alt="cocktail" />
+  <picture>
+    <Image src={items[0].componentsCollection.items[0].asset.url} opacity="0.2" />
+  </picture>
   <div class="header-text">
     <HeaderContent items={items[0].componentsCollection.items[0]} />
   </div>
@@ -25,7 +26,7 @@
     left: 0;
   }
 
-  /* Large screens */
+  /* Grote schermen */
   @media screen and (min-width: 48em) {
     .header-text {
       top: 0;

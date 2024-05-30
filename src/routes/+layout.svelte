@@ -12,5 +12,5 @@
   <slot />
 </main>
 
-<Footer footerItems={data.footer} />
+<!-- <Footer footerItems={data.footer} /> -->
 <!-- <TabBar tabBarItems={data.tabBar} /> -->
