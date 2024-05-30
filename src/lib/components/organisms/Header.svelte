@@ -1,7 +1,6 @@
 <script>
-  import { Link, Image, CartIcon, Translation } from '$lib/index'
+  import { Link, Image, CartIcon, BaseButton, ArrowDown } from '$lib/index'
   import logo from '$lib/components/atoms/icons/logo.png'
-
   export let navigationItems
 </script>
 
@@ -12,46 +11,52 @@
   <nav>
     <ul>
       {#each navigationItems[0].navigationLinksCollection.items as link}
-        <li>
-          <Link href={link.slug} title={link.title} aria-label={link.label} noHover={true} />
-          {#if link.subLinksCollection.items.length > 0}
-            <ul class="sub-menu" aria-label="Submenu">
-              {#each link.subLinksCollection.items as subItem}
-                <li>
-                  <Link
-                    href={subItem.slug}
-                    aria-label={link.label}
-                    title={subItem.title}
-                    noHover={true}
-                  />
-                </li>
+        {#if link.title === 'More'}
+          <li class="more-button">
+            <BaseButton
+              btnSize="sm"
+              icon={ArrowDown}
+              iconWidth="16"
+              iconHeight="16"
+              title="More"
+              backgroundColor="var(--btn-primary-bg)"
+              color="var(--btn-primary-text-clr)"
+            />
+
+            <ul class="more-dropdown">
+              {#each link.subLinksCollection.items as sublink}
+                <li><Link href={sublink.slug}  aria-label={sublink.label}   color="var(--text-dark-color)" >{sublink.title}</Link></li>
               {/each}
             </ul>
-          {/if}
-        </li>
+          </li>
+        {:else}
+          <li>
+            <Link href={link.slug} title={link.title} aria-label={link.label} color="hsl(19.6, 100%, 80.2%)" filter="drop-shadow(0 0 0.4rem #000)" />
+            {#if link.subLinksCollection.items.length > 0}
+              <ul class="sub-menu" aria-label="Submenu">
+                {#each link.subLinksCollection.items as sublink}
+                  <li>
+                    <Link
+                      href={sublink.slug}
+                      aria-label={sublink.label}
+                      title={sublink.title}
+                      color="var(--text-dark-color)"
+                    />
+                  </li>
+                {/each}
+              </ul>
+            {/if}
+          </li>
+        {/if}
       {/each}
     </ul>
   </nav>
   <div>
-    <Translation />
     <CartIcon />
   </div>
 </header>
 
 <style>
-  header {
-    display: flex;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    gap: 1.5rem;
-    z-index: 900;
-  }
-
   .skip-link {
     position: absolute;
     left: -9999px;
@@ -61,11 +66,26 @@
     color: white;
     opacity: 0;
   }
-
+  
   .skip-link:focus {
     left: 50%;
     transform: translateX(-50%);
     opacity: 1;
+  }
+
+  header {
+    display: flex;
+    position: fixed;
+    font-weight: 500;
+    top: 0;
+    right: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 1.5rem;
+    z-index: 900;
+    font-size: var(--fs-md);
   }
 
   #mainMenuOpen {
@@ -84,11 +104,43 @@
 
   nav ul > li {
     display: inline-block;
-    font-size: var(--fs-md);
-    font-weight: 500;
     list-style: none;
     padding: 0 1rem;
   }
+
+  .more-button {
+    position: relative;
+  }
+
+  .more-dropdown {
+    display: none;
+    position: absolute;
+    top: 150%;
+    left: 0;
+    background-color: var(--accent2-tertiary);
+    border-radius: 4px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .more-button:focus-within .more-dropdown,
+  .more-button:hover .more-dropdown {
+    display: block;
+    opacity: 1;
+  }
+
+
+  .more-dropdown li  {
+    display: block;
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--text-color);
+    }
 
   .sub-menu {
     display: flex;
@@ -99,6 +151,10 @@
     padding: 1rem 0;
     opacity: 0;
     background-color: var(--page-bg-color);
+  }
+
+  li:focus-within > .sub-menu {
+    display: block;
   }
 
   .sub-menu .sub-menu li {
@@ -118,18 +174,7 @@
     header {
       justify-content: 0;
     }
-    #mainMenuOpen {
-      order: 4;
-    }
-
-    div {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      position: relative;
-      top: 5px;
-    }
-
+    
     #mainMenuOpen {
       display: block;
       width: 40px;
@@ -139,6 +184,7 @@
       background: transparent;
       color: var(--accent2-primary);
       cursor: pointer;
+      order: 4;
     }
 
     #mainMenuOpen span,
@@ -199,7 +245,6 @@
       display: flex;
       flex-direction: column;
       padding: 1rem;
-      font-size: 3rem;
       font-weight: 500;
     }
 
@@ -210,9 +255,16 @@
       position: absolute;
       top: 1.8rem;
       right: 1.2rem;
-      font-size: 2.8rem;
       line-height: 1;
       cursor: pointer;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      top: 5px;
     }
   }
 </style>

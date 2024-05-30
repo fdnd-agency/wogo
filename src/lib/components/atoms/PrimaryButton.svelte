@@ -7,6 +7,8 @@
   export let icon = ''
   export let size = ''
   export let ariaLabel = ''
+  export let iconWidth = ''
+  export let iconHeight = ''
 </script>
 
 <BaseButton
@@ -16,6 +18,8 @@
   {disabled}
   {ariaLabel}
   {icon}
+  {iconWidth}
+  {iconHeight}
   btnSize={size}
   backgroundColor="var(--btn-primary-bg)"
   color="var(--btn-primary-text-clr)"

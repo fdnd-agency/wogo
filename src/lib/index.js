@@ -9,6 +9,7 @@ export { default as Image } from '$lib/components/atoms/Image.svelte'
 //Atoms / Icons
 export { default as ArrowLeft } from '$lib/components/atoms/icons/ArrowLeft.svelte'
 export { default as ArrowRight } from '$lib/components/atoms/icons/ArrowRight.svelte'
+export { default as ArrowDown } from '$lib/components/atoms/icons/ArrowDown.svelte'
 export { default as CartIcon } from '$lib/components/atoms/icons/CartIcon.svelte'
 export { default as RouteIcon } from '$lib/components/atoms/icons/RouteIcon.svelte'
 export { default as CocktailIcon} from '$lib/components/atoms/icons/CocktailIcon.svelte'

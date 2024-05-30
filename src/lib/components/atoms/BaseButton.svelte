@@ -17,6 +17,8 @@
   export let hoverBoxShadow = ''
   export let focusBoxShadow = ''
   export let btnSize = 'default'
+  export let iconWidth = ''
+  export let IconHeight = ''
 </script>
 
 {#if href}
@@ -26,12 +28,11 @@
     {href}
     aria-disabled={btnDisabled === 'true'}
     aria-label={ariaLabel}
-    disabled={btnDisabled === 'true'}
   >
     {title}
     {#if icon}
       <span class="btn-icon">
-        <svelte:component this={icon} class="btn-icon" width="24px" height="24px" />
+        <svelte:component this={icon} class="btn-icon" width={iconWidth} height={IconHeight} />
       </span>
     {/if}
   </a>
@@ -48,7 +49,7 @@
     {title}
     {#if icon}
       <span class="btn-icon">
-        <svelte:component this={icon} class="btn-icon" width="24px" height="24px" />
+        <svelte:component this={icon} class="btn-icon" width={iconWidth} height={IconHeight} />
       </span>
     {/if}
   </button>
@@ -78,6 +79,7 @@
     font-size: calc(var(--scale, 1) * 1rem);
     padding: var(--btn-padding, 0.5em 1.25em);
     box-shadow: var(--box-shadow, 0px 2px 3px 0px rgba(0, 0, 0, 0.25));
+    font-weight: 700;
   }
 
   .btn-icon {
@@ -104,7 +106,6 @@
   .btn:focus {
     border: var(--focus-border);
     box-shadow: var(--focus-box-shadow);
-    transform: scale(1.1);
   }
 
   .btn[style*='--btn-size: xs;'] {
