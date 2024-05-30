@@ -22,7 +22,7 @@ export async function load({ params }) {
               }   
             }
           ... on ItemCollection {
-            itemsCollection(limit: 4) {
+            componentsCollection(limit: 4) {
               items {
                 ... on Card{
                   title
