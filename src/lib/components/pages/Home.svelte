@@ -1,15 +1,24 @@
 <script>
-  // export let items
+  import { Card } from '$lib/index'
+  export let items
 </script>
 
-<h1>Homepage</h1>
+{#each items[1].itemsCollection.items as item}
+  <div class="container-card">
+    <h2>{item.title}</h2>
+    <a href="/home/{item.slug}">Koop een ticket!</a>
+  </div>
+{/each}
+
+<!-- <Card />
+<a href="/tickets/regulair">Regulair ticket</a> -->
 
 <svelte:head>
   <title></title>
 </svelte:head>
 
 <style>
-  h1 {
+  h2 {
     color: red;
   }
 </style>
