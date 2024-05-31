@@ -1,3 +1,4 @@
+@ -0,0 +1,127 @@
 * {
   box-sizing: border-box;
   margin: 0;
@@ -28,13 +29,14 @@ body {
     --accent2-tertiary: hsl(21.23, 100%, 87.25%);
     --accent2-quaternary: hsl(18.95, 100%, 92.55%);
   
+    --text-primary-color: hsl(19.52, 100%, 75.29%);
+    --text-secondary-color: hsl(20, 31%, 10%);
+    --text-tert-color: hsl(18.95, 100%, 92.55%);
+
     /* button colors */
     --btn-primary-bg: hsl(19.52, 100%, 75.29%);
     --btn-secondary-bg: hsl(18.95, 100%, 92.55%);
     --btn-primary-text-clr: hsl(20, 31%, 10%);
-    --tex-mid-color: hsl(19.52, 100%, 75.29%);
-    --text-dark-color: hsl(20, 31%, 10%);
-    --text-light-color: hsl(18.95, 100%, 92.55%);
     --btn-secondary-hover-bg: var(--btn-primary-bg);
     --btn-secondary-border: var(--btn-primary-bg);
 

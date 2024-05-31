@@ -1,9 +1,8 @@
 <script>
-  import { BaseButton, ArrowRight } from '$lib/index'
+  import { BaseButton } from '$lib/index'
   export let disabled = ''
   export let type = ''
   export let title = 'button'
-  export let href = ''
   export let icon = ''
   export let size = ''
   export let ariaLabel = ''
@@ -13,7 +12,6 @@
 
 <BaseButton
   {type}
-  {href}
   {title}
   {disabled}
   {ariaLabel}

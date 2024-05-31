@@ -9,8 +9,12 @@
 
 <style>
   img {
+    fill: var(--color, var(--accent2-primary));
     width: 100%;
-    height: 100%;
+    height: au;
     display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
   }
 </style>

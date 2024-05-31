@@ -14,6 +14,7 @@ export { default as CartIcon } from '$lib/components/atoms/icons/CartIcon.svelte
 export { default as RouteIcon } from '$lib/components/atoms/icons/RouteIcon.svelte'
 export { default as CocktailIcon} from '$lib/components/atoms/icons/CocktailIcon.svelte'
 
+//Atoms / Assets 
 
 
 // Molecules
@@ -40,4 +41,3 @@ export { default as HomePage } from '$lib/components/pages/Home.svelte'
 export { default as GroupOutings } from '$lib/components/pages/GroupOutings.svelte'
 export { default as TicketInfoPage} from '$lib/components/pages/TicketInfoPage.svelte'
 export { default as OverviewPage} from '$lib/components/pages/OverviewPage.svelte'
-

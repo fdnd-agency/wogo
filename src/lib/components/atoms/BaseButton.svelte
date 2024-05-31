@@ -19,6 +19,8 @@
   export let btnSize = 'default'
   export let iconWidth = ''
   export let IconHeight = ''
+  export let focusBtnColor = ''
+  export let hoverBtnColor = ''
 </script>
 
 {#if href}
@@ -39,7 +41,7 @@
 {:else}
   <button
     class="btn"
-    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow}; --hover-border: {hoverBorder}; --focus-border: {focusBorder}; --hover-box-shadow: {hoverBoxShadow}; --focus-box-shadow: {focusBoxShadow}; --btn-size: {btnSize}; --btn-disabled: {btnDisabled};"
+    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow}; --hover-border: {hoverBorder}; --focus-border: {focusBorder}; --hover-box-shadow: {hoverBoxShadow}; --focus-box-shadow: {focusBoxShadow}; --btn-size: {btnSize}; --btn-disabled: {btnDisabled}; --focus-btn-color: {focusBtnColor}; --hover-btn-color: {hoverBtnColor}; "
     {type}
     aria-disabled={btnDisabled === 'true'}
     aria-label={ariaLabel}
@@ -101,11 +103,13 @@
   .btn:hover {
     border: var(--hover-border);
     box-shadow: var(--hover-box-shadow);
+    background-color: var(--hover-btn-color);
   }
 
   .btn:focus {
     border: var(--focus-border);
     box-shadow: var(--focus-box-shadow);
+    background-color: var(--focus-btn-color);
   }
 
   .btn[style*='--btn-size: xs;'] {

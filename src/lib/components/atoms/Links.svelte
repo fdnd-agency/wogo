@@ -1,12 +1,12 @@
 <script>
-    // HTML props
+  // HTML props
   export let ariaLabel = ''
   export let href = ''
   export let target = ''
   export let title = ''
 
-    // Styling props
-  export let filter
+  // Styling props
+  export let filter = ''
   export let fontSize = ''
   export let backgroundColor = ''
   export let color = ''
@@ -21,19 +21,20 @@
   export let IconHeight = ''
 </script>
 
-  <a
-    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow}; --hover-border: {hoverBorder}; --focus-border: {focusBorder}; --hover-box-shadow: {hoverBoxShadow}; --focus-box-shadow: {focusBoxShadow}; --font-size: {fontSize}; --filter: {filter};"
-    {href}
-    aria-label={ariaLabel}
-  >
-    {title}
-    {#if icon}
-      <span class="btn-icon">
-        <svelte:component this={icon} class="btn-icon" width={iconWidth} height={IconHeight} />
-      </span>
-    {/if}
-   <slot></slot>
-  </a>
+<a
+  class="btn"
+  style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow}; --hover-border: {hoverBorder}; --focus-border: {focusBorder}; --hover-box-shadow: {hoverBoxShadow}; --focus-box-shadow: {focusBoxShadow}; --font-size: {fontSize}; --filter{filter}"
+  {href}
+  {target}
+  aria-label={ariaLabel}
+>
+  {title}
+  {#if icon}
+    <span class="btn-icon">
+      <svelte:component this={icon} class="btn-icon" width={iconWidth} height={IconHeight} />
+    </span>
+  {/if}
+</a>
 
 <style>
   a {
@@ -44,7 +45,7 @@
     border: var(--border);
     font-size: var(--font-size);
     box-shadow: var(--box-shadow);
-    filter: var(--filter);
+    filter: (--filter);
   }
 
   a:hover {
@@ -62,5 +63,4 @@
     align-items: center;
     transition: transform 0.3s ease;
   }
-
 </style>

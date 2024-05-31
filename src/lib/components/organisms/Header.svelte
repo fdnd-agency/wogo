@@ -6,7 +6,7 @@
 
 <header>
   <a class="skip-link" href="#main">Skip to content</a>
-  <Image src={logo} height="70px" width="70px" alt="The Wogo Logo" />
+  <Image src={logo} height="80" width="80" alt="The Wogo Logo" />
   <button type="button" id="mainMenuOpen" tabindex="-1"><span></span></button>
   <nav>
     <ul>
@@ -14,7 +14,7 @@
         {#if link.title === 'More'}
           <li class="more-button">
             <BaseButton
-              btnSize="sm"
+              btnSizesi="lg"
               icon={ArrowDown}
               iconWidth="16"
               iconHeight="16"
