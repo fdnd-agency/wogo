@@ -3,7 +3,9 @@
   export let data
 </script>
 
+
 <Header navigationItems={data.navigation} />
+
 
 <main id="main">
   <slot />
