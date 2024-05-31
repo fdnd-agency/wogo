@@ -1,18 +1,18 @@
-<!-- <script>
-  import { ButtonLink } from '$lib/index'
+<script>
+  import { PrimaryButton, ArrowRight } from '$lib/index'
   export let items
 </script>
 
 <section>
-  <video autoplay muted loop aria-label={items.backgroundAsset.title}>
-    <source src={items.backgroundAsset.url} type="video/mp4" />
+  <video autoplay muted loop aria-label="">
+    <source src={items[0].asset.url} type="video/mp4" />
   </video>
   <div class="hero-content">
     <h1>
-      {items.headline}
-      <ButtonLink style="display: flex gap: 1rem;" href="/" title={items.buttonText} />
+      {items[0].title}
+      <PrimaryButton title="Book a Walk" icon={ArrowRight} size="lg" type="button" on:click />
     </h1>
-    <p>{items.bodyText}</p>
+    <p></p>
   </div>
 </section>
 
@@ -100,4 +100,4 @@
       font-size: 70px;
     }
   }
-</style> -->
+</style>

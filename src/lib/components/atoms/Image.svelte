@@ -3,15 +3,18 @@
   export let height = ''
   export let alt = ''
   export let src = ''
-  export let color = ''
 </script>
 
-<img {src} {alt} fill={color} style={`width: ${width}px; height: ${height}px;`} />
+<img {src} {alt} style={`width: ${width}px; height: ${height}px;`} />
 
 <style>
   img {
+    fill: var(--color, var(--accent2-primary));
     width: 100%;
-    height: 100%;
+    height: au;
     display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
   }
 </style>
