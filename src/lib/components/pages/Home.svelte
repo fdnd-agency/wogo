@@ -1,24 +1,15 @@
 <script>
-  import { Card } from '$lib/index'
+  import { Hero, TicketCarrousel, AnimationCard, TicketCard } from '$lib/index'
   export let items
+  export let itemCollection
 </script>
 
-{#each items[1].itemsCollection.items as item}
-  <div class="container-card">
-    <h2>{item.title}</h2>
-    <a href="/home/{item.slug}">Koop een ticket!</a>
-  </div>
-{/each}
-
-<!-- <Card />
-<a href="/tickets/regulair">Regulair ticket</a> -->
-
 <svelte:head>
-  <title></title>
+  <title>{items[0].title}</title>
 </svelte:head>
 
-<style>
-  h2 {
-    color: red;
-  }
-</style>
+<Hero {items} />
+
+<TicketCarrousel {itemCollection} />
+
+<AnimationCard {items} />

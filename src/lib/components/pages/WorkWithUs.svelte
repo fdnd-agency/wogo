@@ -1,5 +1,4 @@
 <script>
-  // export let items
 </script>
 
 <h1>Work with us page bars</h1>

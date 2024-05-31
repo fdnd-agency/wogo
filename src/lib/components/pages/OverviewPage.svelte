@@ -1,6 +1,4 @@
 <script>
-  export let items
-  // console.log('WALKS', items)
 </script>
 
 <h1>Walks</h1>

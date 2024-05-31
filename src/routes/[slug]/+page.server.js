@@ -22,17 +22,39 @@ export async function load({ params }) {
               }   
             }
           ... on ItemCollection {
-            itemsCollection(limit: 4) {
+            componentsCollection(limit: 4) {
               items {
                 ... on Card{
                   title
                   textParagraph
                   price
-                  slug
+                  image {
+                    ... on Asset {
+                      url
+                      title
+                    }
+                  }
                 }
               }
             }
           }
+          }
+        }
+      }
+    }
+    itemCollection(id: "6mW82qJLx8D57GMLFIOLmw") {
+      componentsCollection {
+        items {
+          ... on Card {
+            title
+            textParagraph
+            price
+            image {
+              ... on Asset {
+                url
+                title
+              }
+            }
           }
         }
       }
@@ -45,6 +67,11 @@ export async function load({ params }) {
   const { data } = await response.json()
   const { items } = data.pageCollection
 
+  const itemCollection = data.itemCollection;
+  // console.log(itemCollection, items, 'test server data')
+   
+
+
   if (!items || items.length === 0) {
     throw error(404, {
       message: 'Oops! This Page is Missing Like the Last Sip of a Great Cocktail!',
@@ -53,7 +80,8 @@ export async function load({ params }) {
   }
 
   return {
-    pageData: items,
-    slug: params.slug,
-  }
+      itemCollection: itemCollection,
+      pageData: items,
+      slug: params.slug
+  };
 }
