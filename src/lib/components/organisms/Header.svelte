@@ -6,7 +6,7 @@
 
 <header>
   <a class="skip-link" href="#main">Skip to content</a>
-  <Image src={logo} height="80" width="80" alt="The Wogo Logo" />
+  <Image src={logo} height="70px" width="70px" alt="The Wogo Logo" />
   <button type="button" id="mainMenuOpen" tabindex="-1"><span></span></button>
   <nav>
     <ul>
@@ -25,13 +25,25 @@
 
             <ul class="more-dropdown">
               {#each link.subLinksCollection.items as sublink}
-                <li><Link href={sublink.slug}  aria-label={sublink.label}   color="var(--text-dark-color)" >{sublink.title}</Link></li>
+                <li>
+                  <Link
+                    href={sublink.slug}
+                    aria-label={sublink.label}
+                    color="var(--text-dark-color)">{sublink.title}</Link
+                  >
+                </li>
               {/each}
             </ul>
           </li>
         {:else}
           <li>
-            <Link href={link.slug} title={link.title} aria-label={link.label} color="hsl(19.6, 100%, 80.2%)" filter="drop-shadow(0 0 0.4rem #000)" />
+            <Link
+              href={link.slug}
+              title={link.title}
+              aria-label={link.label}
+              color="hsl(19.6, 100%, 80.2%)"
+              filter="drop-shadow(0 0 0.4rem #000)"
+            />
             {#if link.subLinksCollection.items.length > 0}
               <ul class="sub-menu" aria-label="Submenu">
                 {#each link.subLinksCollection.items as sublink}
@@ -66,7 +78,7 @@
     color: white;
     opacity: 0;
   }
-  
+
   .skip-link:focus {
     left: 50%;
     transform: translateX(-50%);
@@ -133,14 +145,13 @@
     opacity: 1;
   }
 
-
-  .more-dropdown li  {
+  .more-dropdown li {
     display: block;
     padding: 0.75rem 1rem;
     white-space: nowrap;
     text-decoration: none;
     color: var(--text-color);
-    }
+  }
 
   .sub-menu {
     display: flex;
@@ -174,7 +185,7 @@
     header {
       justify-content: 0;
     }
-    
+
     #mainMenuOpen {
       display: block;
       width: 40px;
