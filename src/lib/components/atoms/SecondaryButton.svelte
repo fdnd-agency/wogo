@@ -10,18 +10,13 @@
 
 <BaseButton
   {type}
-  {size}
   {disabled}
   {href}
   {title}
   {ariaLabel}
-  backgroundColor="var(--btn-secondary-bg)"
-  color="var(--tex-mid-color)"
+  {size}
+  border-radius="var(--btn-radius)"
+  color="var(--txt-primary-clr)"
   border="1.5px solid var(--btn-primary-bg)"
-  hoverBorder="1.5px solid var(--btn-secondary-border)"
-  focusBorder="1.5px solid var(--btn-secondary-border)"
-  focusBtnColor
-  boxShadow="none"
-  hoverBoxShadow="0 0 rgba(0, 0, 0, 0)"
-  focusBoxShadow="0 0 rgba(0, 0, 0, 0)"
+  boxShadow="var(--btn-shadow)"
 />
