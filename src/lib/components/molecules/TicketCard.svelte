@@ -82,6 +82,7 @@
 
   p {
     display: flex;
+    align-items: center;
     gap: 1rem;
     padding: 0.5em;
     color: var(--txt-dark-clr);
@@ -95,5 +96,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 1rem;
   }
 </style>
