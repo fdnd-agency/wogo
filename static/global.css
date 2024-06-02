@@ -15,13 +15,15 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: 0.5em;
-  letter-spacing: calc(0.275em + 4px);
+  letter-spacing: .2em;
 }
 
 p {
-  letter-spacing: 0.02em; 
+  letter-spacing: .1em;
+
 }
+
+
 
   /* CSS variables inspired by https://open-props.style/ */
   :root {
