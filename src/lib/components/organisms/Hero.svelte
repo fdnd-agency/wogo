@@ -4,7 +4,7 @@
 </script>
 
 <section>
-  <video autoplay muted loop aria-label="" aria-hidden="true" poster="/hero-image-background.webp">
+  <video autoplay muted loop aria-label="">
     <source src={items[0].asset.url} type="video/mp4" />
   </video>
   <div class="hero-content">
@@ -12,7 +12,7 @@
       {items[0].title}
       <PrimaryButton title="Book a Walk" icon={ArrowRight} size="lg" type="button" on:click />
     </h1>
-    <p>{items[0].subtitle}</p>
+    <p></p>
   </div>
 </section>
 
