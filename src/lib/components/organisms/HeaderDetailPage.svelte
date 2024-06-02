@@ -24,7 +24,7 @@
     left: 0;
   }
 
-  /* Grote schermen */
+  /* Large screens */
   @media screen and (min-width: 48em) {
     .header-text {
       top: 0;

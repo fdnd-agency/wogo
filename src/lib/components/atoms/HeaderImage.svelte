@@ -3,27 +3,27 @@
   export let src = ''
   export let opacity = ''
 
-  // Definieer verschillende bronnen voor verschillende resoluties of viewport breedtes
+  // Webp images
   export let smallWebp = '../header-image-small.webp'
   export let mediumWebp = '../header-image-medium.webp'
   export let largeWebp = '../header-image-large.webp'
 
-  // Fallback bronnen in het geval WebP niet wordt ondersteund
+  // Fallback images for support
   export let smallFallback = '../header-image-small.jpg'
   export let mediumFallback = '../header-image-medium.jpg'
   export let largeFallback = '../header-image-large.jpg'
 </script>
 
 <picture>
-  <!-- Image voor kleine schermen -->
+  <!-- Image small screens -->
   <source type="image/webp" media="(max-width: 375px)" srcset={smallWebp} />
   <source media="(max-width: 375px)" srcset={smallFallback} />
 
-  <!-- Image voor middelgrote schermen -->
+  <!-- Image medium screens -->
   <source type="image/webp" media="(max-width: 768px)" srcset={mediumWebp} />
   <source media="(max-width: 768px)" srcset={mediumFallback} />
 
-  <!-- Image voor grote schermen -->
+  <!-- Image large screens -->
   <source type="image/webp" media="(max-width: 1024px)" srcset={largeWebp} />
   <source media="(max-width: 1024px)" srcset={largeFallback} />
 

@@ -64,6 +64,7 @@
     display: none;
   }
 
+  /* Typography */
   h1 {
     color: white;
     font-size: 2rem;
@@ -82,7 +83,7 @@
     text-align: left;
   }
 
-  /* large screens */
+  /* Large screens */
   @media (min-width: 55em) {
     .information {
       display: grid;
