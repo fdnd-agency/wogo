@@ -30,6 +30,7 @@
     margin-bottom: 2rem;
   }
 
+  /* large screens */
   @media (min-width: 55em) {
     section {
       margin: 0 auto;

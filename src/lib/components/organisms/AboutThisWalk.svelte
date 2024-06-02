@@ -9,7 +9,7 @@
         icon: 'url',
         subtitle: 'Visit 3 bars',
         textParagraph:
-          'For the Cocktail Walk, we have selected three of our favorite bars, all within walking distance of each other. After you have completed your booking, we will send you the cocktail guide with the directions and the menu.',
+          'For the Cocktail Walk, we have selected three of our favorite bars, all within walking distance of each other. After you have completed your booking, we will send you the cocktail guide with the directions and the menu.For the Cocktail Walk, we have selected three of our favorite bars, all within walking distance of each other.',
       },
       {
         icon: 'url',
@@ -60,11 +60,6 @@
     margin-bottom: 3rem;
   }
 
-  .information {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
   .information-image {
     display: none;
   }
@@ -87,6 +82,7 @@
     text-align: left;
   }
 
+  /* large screens */
   @media (min-width: 55em) {
     .information {
       display: grid;
@@ -124,11 +120,11 @@
     }
 
     h2 {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
   }
 </style>

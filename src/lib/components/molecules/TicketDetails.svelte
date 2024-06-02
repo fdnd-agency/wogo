@@ -13,6 +13,7 @@
   }
 </script>
 
+<!-- Ticket details -->
 <ul>
   {#each mockData.details as detail}
     {#each Object.entries(detail) as [key, value]}
@@ -37,6 +38,7 @@
     border-radius: 50px;
   }
 
+  /* large screens */
   @media (min-width: 55em) {
     ul {
       justify-content: center;
