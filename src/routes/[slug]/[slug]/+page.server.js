@@ -30,7 +30,7 @@ export async function load({ params }) {
 
   const response = await contentfulFetch(query)
   const { data } = await response.json()
-  console.log(data.pageCollection,'test data')
+  console.log(data.pageCollection, 'test data')
   const { items } = data.pageCollection
 
   if (!items || items.length === 0) {
