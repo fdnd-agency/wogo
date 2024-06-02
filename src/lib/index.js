@@ -4,6 +4,8 @@ export { default as BaseButton } from '$lib/components/atoms/BaseButton.svelte'
 export { default as PrimaryButton } from '$lib/components/atoms/PrimaryButton.svelte'
 export { default as SecondaryButton } from '$lib/components/atoms/SecondaryButton.svelte'
 export { default as Image } from '$lib/components/atoms/Image.svelte'
+export { default as HeadLine } from '$lib/components/atoms/HeadLine.svelte'
+
 
 
 //Atoms / Icons
