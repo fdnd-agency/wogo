@@ -2,6 +2,7 @@
   import HeaderContent from '../molecules/HeaderContent.svelte'
   import HeaderImage from '../atoms/HeaderImage.svelte'
   export let items
+  console.log(items)
 </script>
 
 <div class="header-container">

@@ -1,4 +1,4 @@
-
+@ -0,0 +1,127 @@
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,17 +13,6 @@ body {
   font-family: 'BemboItalic', Arial, Helvetica, sans-serif;
   background-color: var(--page-bg-color);
 }
-
-h1, h2, h3, h4, h5, h6 {
-  letter-spacing: .2em;
-}
-
-p {
-  letter-spacing: .1em;
-
-}
-
-
 
   /* CSS variables inspired by https://open-props.style/ */
   :root {
@@ -40,11 +29,9 @@ p {
     --accent2-tertiary: hsl(21.23, 100%, 87.25%);
     --accent2-quaternary: hsl(18.95, 100%, 92.55%);
   
-    --txt-dark-clr: hsl(20, 31%, 10%);
-    --txt-primary-clr: hsl(19.52, 100%, 75.29%);
-    --txt-secondary-clr: hsl(19.6, 100%, 80.2%);
-    --txt-tertiary-clr: hsl(21.23, 100%, 87.25%);
-    --txt-quaternary-clr: hsl(18.95, 100%, 92.55%);
+    --text-primary-color: hsl(19.52, 100%, 75.29%);
+    --text-secondary-color: hsl(20, 31%, 10%);
+    --text-tert-color: hsl(18.95, 100%, 92.55%);
 
     /* button colors */
     --btn-primary-bg: hsl(19.52, 100%, 75.29%);
@@ -64,7 +51,6 @@ p {
     --txt--light: var(--_hue) 40% 5%;
     --accent--light: var(--_hue) 55% 50%;
     --muted--light: var(--_hue) 30% 99%;
-
     /* Dark Mode */
     --bkg--dark: var(--_hue) 15% 10%;
     --txt--dark: var(--_hue) 20% 85%;
@@ -138,6 +124,5 @@ p {
     --radius-sm: 0.2em;
     --radius-md: 0.4em;
     --radius-lg: 0.8em;
-    --btn-radius: 50em;
     --radius-full: 100vmax;
 }
