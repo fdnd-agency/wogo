@@ -1,13 +1,11 @@
 <script>
   import HeaderContent from '../molecules/HeaderContent.svelte'
-  import Image from '../atoms/Image.svelte'
+  import HeaderImage from '../atoms/HeaderImage.svelte'
   export let items
 </script>
 
 <div class="header-container">
-  <picture>
-    <Image src={items[0].componentsCollection.items[0].asset.url} opacity="0.2" />
-  </picture>
+  <HeaderImage src={'../header-image-large.webp'} opacity="0.2" alt="cocktail" />
   <div class="header-text">
     <HeaderContent items={items[0].componentsCollection.items[0]} />
   </div>

@@ -9,5 +9,4 @@
 </svelte:head>
 
 <HeaderDetailPage items={data.pageData} />
-<!-- <AboutThisWalk items={data.pageData} /> -->
 <AboutThisWalk />
