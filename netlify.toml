@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# Standaard build instellingen
+[context.production]
+  command = "npm run build"
+  publish = "build"
+
+# Specifieke instellingen voor de `release-candidate` branch
+[context.release-candidate]
+  base = "release-candidate"
+  command = "npm run build"
+  publish = "release-candidate/build"
+
