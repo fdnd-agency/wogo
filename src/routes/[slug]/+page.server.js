@@ -28,8 +28,6 @@ export async function load({ params }) {
                   title
                   textParagraph
                   price
-                  location
-                  cocktailDescription
                   image {
                     ... on Asset {
                       url
@@ -50,8 +48,6 @@ export async function load({ params }) {
           ... on Card {
             title
             textParagraph
-            location
-            cocktailDescription
             price
             image {
               ... on Asset {

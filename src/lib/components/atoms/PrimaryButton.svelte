@@ -6,8 +6,8 @@
   export let icon = ''
   export let size = ''
   export let ariaLabel = ''
-  export let iconWidth = '24px'
-  export let iconHeight = '24px'
+  export let iconWidth = ''
+  export let iconHeight = ''
 </script>
 
 <BaseButton
@@ -18,10 +18,13 @@
   {icon}
   {iconWidth}
   {iconHeight}
-  {size}
-  border-radius="var(--btn-radius)"
+  btnSize={size}
   backgroundColor="var(--btn-primary-bg)"
   color="var(--btn-primary-text-clr)"
-  boxShadow="var(--btn-shadow)"
+  hoverBorder="1.5px solid var(--btn-primary-bg)"
+  focusBorder="1.5px solid var(--btn-primary-bg)"
+  boxShadow="0px 2px 3px 0px rgba(0, 0, 0, 0.25)"
+  hoverBoxShadow="0 0 rgba(0, 0, 0, 0)"
+  focusBoxShadow="0 0 rgba(0, 0, 0, 0)"
   on:click
 />
