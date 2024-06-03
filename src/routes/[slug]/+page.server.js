@@ -1,43 +1,44 @@
 import { error } from '@sveltejs/kit'
 import contentfulFetch from './src/api/contentful-fetch'
+import { mockdata } from '$lib/index.js'
 
 export async function load({ params }) {
   const query = `
-  {
-    pageCollection(where: {slug:"${params.slug}"}) {
-      items {
-        slug
-        title
-        componentsCollection(limit: 10) {
-          items {
-            ... on Hero {
-              title
-              subtitle
-              label
-              price
-              location
-              asset {
-                url
+    {
+      pageCollection(where: {slug:"${params.slug}"}) {
+        items {
+          slug
+          title
+          componentsCollection(limit: 10) {
+            items {
+              ... on Hero {
                 title
-              }   
-            }
-          ... on ItemCollection {
-            componentsCollection(limit: 4) {
-              items {
-                ... on Card{
+                subtitle
+                label
+                price
+                location
+                asset {
+                  url
                   title
-                  textParagraph
-                  price
-                  slug
+                }   
+              }
+              ... on ItemCollection {
+                componentsCollection(limit: 4) {
+                  items {
+                    ... on Card{
+                      title
+                      textParagraph
+                      price
+                      slug
+                    }
+                  }
                 }
               }
             }
           }
-          }
         }
       }
     }
-  }
   `
 
   const response = await contentfulFetch(query)

@@ -1,9 +1,13 @@
 <script>
+  import { Filter } from '$lib/index'
   export let items
-  console.log(items[0].title)
+  export let mockdata
+  console.log(mockdata)
 </script>
 
 <h1>{items[0].title}</h1>
+
+<Filter />
 
 <!-- {#each items[1].componentsCollection.items as item}
   <div class="container-card">
