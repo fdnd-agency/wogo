@@ -1,24 +1,33 @@
-<!-- <script>
+<script>
   export let alt = ''
   export let src = ''
   export let opacity = ''
 
-  // Define different image sources for different resolutions or viewport widths
-  export let Small = 'header-image-small.webp'
-  export let Medium = 'header-image-medium.webp'
-  export let Large = 'header-image-large.webp'
+  // Webp images
+  export let smallWebp = '../header-image-small.webp'
+  export let mediumWebp = '../header-image-medium.webp'
+  export let largeWebp = '../header-image-large.webp'
+
+  // Fallback images for support
+  export let smallFallback = '../header-image-small.jpg'
+  export let mediumFallback = '../header-image-medium.jpg'
+  export let largeFallback = '../header-image-large.jpg'
 </script>
 
 <picture>
-   Source for small screens -->
-<!-- <source media="(max-width: 375px)" srcset={Small} />
+  <!-- Image small screens -->
+  <source type="image/webp" media="(max-width: 375px)" srcset={smallWebp} />
+  <source media="(max-width: 375px)" srcset={smallFallback} />
 
-  Source for medium screens 
-  <source media="(max-width: 768px)" srcset={Medium} />
+  <!-- Image medium screens -->
+  <source type="image/webp" media="(max-width: 768px)" srcset={mediumWebp} />
+  <source media="(max-width: 768px)" srcset={mediumFallback} />
 
-  Source for large screens
-  <source media="(max-width: 1024px)" srcset={Large} />
+  <!-- Image large screens -->
+  <source type="image/webp" media="(max-width: 1024px)" srcset={largeWebp} />
+  <source media="(max-width: 1024px)" srcset={largeFallback} />
 
+  <!-- Standaard afbeelding voor andere gevallen -->
   <img {src} {alt} style={`opacity: ${opacity}`} />
 </picture>
 
@@ -28,4 +37,4 @@
     width: 100%;
     height: 100%;
   }
-</style>  -->
+</style>

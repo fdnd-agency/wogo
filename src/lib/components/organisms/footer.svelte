@@ -1,6 +1,7 @@
 <script>
   import { Link, Image } from '$lib/index'
   export let footerItems
+  console.log(footerItems)
 </script>
 
 <footer>

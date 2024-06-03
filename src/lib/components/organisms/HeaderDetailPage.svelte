@@ -5,7 +5,7 @@
 </script>
 
 <div class="header-container">
-  <HeaderImage src="" opacity="0.2" alt="cocktail" />
+  <HeaderImage src={'../header-image-large.webp'} opacity="0.2" alt="cocktail" />
   <div class="header-text">
     <HeaderContent items={items[0].componentsCollection.items[0]} />
   </div>
