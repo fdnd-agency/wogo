@@ -30,7 +30,7 @@
         </p>
         <div class="btn-container">
           <PrimaryButton title="Book Now" type="button" size="lg" />
-          <SecondaryButton title="Read More" href={item.slug} size="lg" />
+          <SecondaryButton title="Read More" href="/home/{item.slug}" size="lg" />
         </div>
       </div>
     </article>
