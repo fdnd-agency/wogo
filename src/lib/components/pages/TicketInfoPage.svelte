@@ -1,7 +1,5 @@
 <script>
-  import AboutThisWalk from '../organisms/AboutThisWalk.svelte'
-  import HeaderDetailPage from '../organisms/HeaderDetailPage.svelte'
-  import LargeText from '../molecules/LargeText.svelte'
+  import { LargeText, AboutThisWalk, HeaderDetailPage } from '$lib/index'
   export let data
 </script>
 

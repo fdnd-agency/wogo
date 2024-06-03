@@ -19,7 +19,25 @@ export async function load({ params }) {
               asset {
                 url
                 title
-              }   
+              }
+            }
+          }
+        }
+      }
+    }
+    itemCollection(id: "6mW82qJLx8D57GMLFIOLmw") {
+      componentsCollection {
+        items {
+          ... on Card {
+            title
+            textParagraph
+            location
+            cocktailDescription
+            slug
+            price
+            image {
+              url
+              title
             }
           }
         }
@@ -31,6 +49,7 @@ export async function load({ params }) {
   const response = await contentfulFetch(query)
   const { data } = await response.json()
   const { items } = data.pageCollection
+  const itemCollection = data.itemCollection;
 
   if (!items || items.length === 0) {
     throw error(404, {

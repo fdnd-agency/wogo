@@ -1,5 +1,5 @@
 <script>
-  import ButtonLink from '../atoms/ButtonLink.svelte'
+  import { PrimaryButton, ArrowRight } from '$lib/index'
 
   const mockData = {
     largetext: [
@@ -13,7 +13,7 @@
 
 <section>
   <p>{mockData.largetext[0].title}</p>
-  <ButtonLink title="Book now" />
+  <PrimaryButton title="Book a Walk" icon={ArrowRight} size="lg" type="button" on:click />
 </section>
 
 <style>

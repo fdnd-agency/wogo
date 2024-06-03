@@ -1,6 +1,5 @@
 <script>
-  import HeaderContent from '../molecules/HeaderContent.svelte'
-  import HeaderImage from '../atoms/HeaderImage.svelte'
+  import { HeaderContent, HeaderImage } from '$lib/index'
   export let items
 </script>
 

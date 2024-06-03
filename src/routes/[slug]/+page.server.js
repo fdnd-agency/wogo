@@ -52,6 +52,7 @@ export async function load({ params }) {
             textParagraph
             location
             cocktailDescription
+            slug
             price
             image {
               ... on Asset {
@@ -70,9 +71,7 @@ export async function load({ params }) {
 
   const { data } = await response.json()
   const { items } = data.pageCollection
-
   const itemCollection = data.itemCollection;
-  // console.log(itemCollection, items, 'test server data')
    
 
 

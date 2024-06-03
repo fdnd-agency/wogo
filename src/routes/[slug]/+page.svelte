@@ -1,7 +1,6 @@
 <script>
   import { WorkWithUs, HomePage, GroupOutings, OverviewPage, TicketCard } from '$lib/index'
   export let data
-  // console.log(data, 'test page file')
 
   const componentMap = {
     home: HomePage,
@@ -13,7 +12,6 @@
   const items = data.pageData.find((pageDataItem) => pageDataItem.slug === data.slug)
     .componentsCollection.items
   const itemCollection = data.itemCollection
-  // console.log(itemCollection, 'test item')
 
   const Component = componentMap[data.slug] || HomePage
 </script>
