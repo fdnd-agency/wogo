@@ -18,9 +18,12 @@
 
 <style>
   img {
-    object-fit: cover;
+   object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: au;
     display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
   }
 </style>

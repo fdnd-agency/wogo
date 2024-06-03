@@ -1,5 +1,7 @@
 <script>
+  import { Hero, TicketCarrousel, AnimationCard, TicketCard } from '$lib/index'
   export let items
+  export let itemCollection
 </script>
 
 {#each items[1].componentsCollection.items as item}
@@ -10,11 +12,11 @@
 {/each}
 
 <svelte:head>
-  <title></title>
+  <title>{items[0].title}</title>
 </svelte:head>
 
-<style>
-  h2 {
-    color: red;
-  }
-</style>
+<Hero {items} />
+
+<TicketCarrousel {itemCollection} />
+
+<AnimationCard {items} />

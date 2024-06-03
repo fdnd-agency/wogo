@@ -1,7 +1,7 @@
-<!-- <script>
-  import { Card, SvgArrowRight } from '$lib'
+<script>
+  import { TicketCard, ArrowRight, ArrowLeft } from '$lib'
   import { onMount } from 'svelte'
-  export let items
+  export let itemCollection
 
   let carousel
   let activeIndex = 0
@@ -32,23 +32,15 @@
 <section>
   <div class="btn-container disable-js">
     <button on:click={() => scroll(1)}>
-      <SvgArrowRight width="20px" height="20px" />
+      <ArrowLeft width="30px" height="30px" />
     </button>
     <button on:click={() => scroll(-1)}>
-      <SvgArrowRight width="20px" height="20px" />
+      <ArrowRight width="30px" height="30px" />
     </button>
   </div>
 
   <div bind:this={carousel} class="carrousel-container">
-    {#each items as item}
-      <Card
-        title={item.title}
-        price={item.price}
-        buttonText={item.buttonText}
-        url={item.icon.url}
-        locationDescription={item.locationDescription}
-      />
-    {/each}
+    <TicketCard {itemCollection} />
   </div>
 
   <nav>
@@ -86,10 +78,8 @@
     --white-space: clamp(1rem, 5vw, 2rem);
     display: grid;
     grid-auto-flow: column;
-    gap: calc(var(--white-space) * 0.5);
+    gap: 1rem;
     overflow-x: auto;
-    /* padding: calc(var(--white-space) * 0.5) calc(var(--white-space) * 1)
-      calc(var(--white-space) * 1); */
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none; /* scrollbars onzichtbaar maken */
@@ -97,7 +87,7 @@
     /* .centerCarousel::-webkit-scrollbar { display: none; } */
   }
 
-  nav {
+  /* nav {
     --sc-dot-size: 0.5rem;
     --max-indicatos: 5;
     max-width: calc(
@@ -109,9 +99,9 @@
     overflow: hidden;
     overflow: clip;
     pointer-events: none;
-  }
+  } */
 
-  nav ul {
+  /* nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -126,9 +116,5 @@
     background: #0a0505;
     opacity: 0.5;
     transition: 0.2s ease-out opacity;
-  }
-
-  /* nav li.is-active {
-    opacity: 1;
   } */
-</style> -->
+</style>

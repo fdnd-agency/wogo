@@ -1,5 +1,5 @@
 <script>
-  import { Link, Image, Button } from '$lib/index'
+  import { Link, Image } from '$lib/index'
   export let footerItems
   console.log(footerItems)
 </script>
@@ -42,7 +42,7 @@
             aria-required="true"
             placeholder={footerItems[0].placeholderText}
           />
-          <Button type="submit" title="Subscribe" />
+          <!-- <Button type="submit" title="Subscribe" /> -->
         </div>
       </form>
     </div>

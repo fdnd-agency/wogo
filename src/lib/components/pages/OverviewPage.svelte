@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<h1>Work with us page bars</h1>
+<h1>Walks</h1>
 
 <svelte:head>
   <title></title>
