@@ -1,7 +1,8 @@
 <script>
+  import AboutThisWalk from '../organisms/AboutThisWalk.svelte'
   import HeaderDetailPage from '../organisms/HeaderDetailPage.svelte'
+  import LargeText from '../molecules/LargeText.svelte'
   export let data
-  console.log(data)
 </script>
 
 <svelte:head>
@@ -9,3 +10,5 @@
 </svelte:head>
 
 <HeaderDetailPage items={data.pageData} />
+<AboutThisWalk />
+<LargeText />

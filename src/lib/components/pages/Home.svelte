@@ -1,6 +1,7 @@
 <script>
-  import { Card, Filter } from '$lib/index'
+  import { Hero, TicketCarousel, AnimationCard, HeadLine } from '$lib/index'
   export let items
+  export let itemCollection
 </script>
 
 {#each items[1].componentsCollection.items as item}
@@ -10,15 +11,27 @@
   </div>
 {/each}
 
-<!-- <Card />
-<a href="/tickets/regulair">Regulair ticket</a> -->
-
 <svelte:head>
-  <title></title>
+  <title>{items[0].title}</title>
 </svelte:head>
 
+<Hero {items} />
+<div>
+  <h2>Cocktail Walk Tickets</h2>
+  <a href="/" aria-label="">see all walks</a>
+</div>
+<TicketCarousel {itemCollection} />
+<HeadLine title="How It Works" />
+<AnimationCard {items} />
+<HeadLine title="What We Do" />
+
 <style>
-  h2 {
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
     color: red;
   }
 </style>

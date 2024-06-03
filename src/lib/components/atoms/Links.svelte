@@ -1,19 +1,11 @@
 <script>
-  export let ariaLabel
-  export let href = ''
-  export let target = '_blank'
+  import { BaseButton } from '$lib/index'
+  export let disabled = ''
   export let title = ''
+  export let href = ''
+  export let ariaLabel = ''
+  export let color = ''
+  export let size = ''
 </script>
 
-<a aria-label={ariaLabel} {href} {target}
-  >{title}
-  <slot></slot>
-</a>
-
-<style>
-  a {
-    line-height: 1.4;
-    text-decoration: none;
-    color: var(--accent2-tertiary);
-  }
-</style>
+<BaseButton {disabled} {href} {title} {ariaLabel} {color} {size} />

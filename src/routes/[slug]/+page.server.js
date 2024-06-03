@@ -22,14 +22,19 @@ export async function load({ params }) {
                   title
                 }   
               }
-              ... on ItemCollection {
-                componentsCollection(limit: 4) {
-                  items {
-                    ... on Card{
+          ... on ItemCollection {
+            componentsCollection(limit: 4) {
+              items {
+                ... on Card{
+                  title
+                  textParagraph
+                  price
+                  location
+                  cocktailDescription
+                  image {
+                    ... on Asset {
+                      url
                       title
-                      textParagraph
-                      price
-                      slug
                     }
                   }
                 }
@@ -39,12 +44,35 @@ export async function load({ params }) {
         }
       }
     }
+    itemCollection(id: "6mW82qJLx8D57GMLFIOLmw") {
+      componentsCollection {
+        items {
+          ... on Card {
+            title
+            textParagraph
+            location
+            cocktailDescription
+            price
+            image {
+              ... on Asset {
+                url
+                title
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   `
 
   const response = await contentfulFetch(query)
 
   const { data } = await response.json()
   const { items } = data.pageCollection
+
+  const itemCollection = data.itemCollection
+  // console.log(itemCollection, items, 'test server data')
 
   if (!items || items.length === 0) {
     throw error(404, {
@@ -54,6 +82,7 @@ export async function load({ params }) {
   }
 
   return {
+    itemCollection: itemCollection,
     pageData: items,
     slug: params.slug,
   }

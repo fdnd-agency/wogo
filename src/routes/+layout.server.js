@@ -10,12 +10,15 @@ const query = `
         items {
           ... on TypeLink {
            title
+           label
           	slug
+            isMoreLink
             subLinksCollection(limit: 5) {
               items {
                 ... on TypeLink {
                   title
                   slug
+                  isMoreLink
                 }
               }
             }
