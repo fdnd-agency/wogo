@@ -12,21 +12,16 @@
   export let color = ''
   export let border = ''
   export let boxShadow = ''
-  export let hoverBorder = ''
-  export let focusBorder = ''
-  export let hoverBoxShadow = ''
-  export let focusBoxShadow = ''
-  export let btnSize = 'default'
+  export let size = 'default'
   export let iconWidth = ''
-  export let IconHeight = ''
-  export let focusBtnColor = ''
-  export let hoverBtnColor = ''
+  export let iconHeight = ''
 </script>
 
 {#if href}
   <a
+    data-sveltekit-preload-data
     class="btn"
-    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow}; --hover-border: {hoverBorder}; --focus-border: {focusBorder}; --hover-box-shadow: {hoverBoxShadow}; --focus-box-shadow: {focusBoxShadow}; --btn-size: {btnSize}; --btn-disabled: {btnDisabled};"
+    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow};  --btn-size: {size}; --btn-disabled: {btnDisabled};"
     {href}
     aria-disabled={btnDisabled === 'true'}
     aria-label={ariaLabel}
@@ -34,14 +29,15 @@
     {title}
     {#if icon}
       <span class="btn-icon">
-        <svelte:component this={icon} class="btn-icon" width={iconWidth} height={IconHeight} />
+        <svelte:component this={icon} class="btn-icon" width={iconWidth} height={iconHeight} />
       </span>
     {/if}
+    <slot></slot>
   </a>
 {:else}
   <button
     class="btn"
-    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow}; --hover-border: {hoverBorder}; --focus-border: {focusBorder}; --hover-box-shadow: {hoverBoxShadow}; --focus-box-shadow: {focusBoxShadow}; --btn-size: {btnSize}; --btn-disabled: {btnDisabled}; --focus-btn-color: {focusBtnColor}; --hover-btn-color: {hoverBtnColor}; "
+    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border};  --btn-size: {size}; --btn-disabled: {btnDisabled};   "
     {type}
     aria-disabled={btnDisabled === 'true'}
     aria-label={ariaLabel}
@@ -51,37 +47,39 @@
     {title}
     {#if icon}
       <span class="btn-icon">
-        <svelte:component this={icon} class="btn-icon" width={iconWidth} height={IconHeight} />
+        <svelte:component this={icon} class="btn-icon" width={iconWidth} height={iconHeight} />
       </span>
     {/if}
+    <slot></slot>
   </button>
 {/if}
 
 <style>
   .btn {
+    --btn-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
     justify-content: center;
     gap: 0.5rem;
-    cursor: pointer;
     border-radius: 50em;
     text-align: center;
-    text-decoration: none;
     letter-spacing: 1px;
-    line-height: 1;
-    outline: none;
+    line-height: var(--lh-1);
+    font-weight: 700;
+    text-decoration: none;
     border: 0;
-    transition:
-      box-shadow 0.2s,
-      transform 0.3s;
     background-color: var(--bgc);
     color: var(--clr);
     border: var(--border);
     font-size: calc(var(--scale, 1) * 1rem);
-    padding: var(--btn-padding, 0.5em 1.25em);
-    box-shadow: var(--box-shadow, 0px 2px 3px 0px rgba(0, 0, 0, 0.25));
-    font-weight: 700;
+    padding: var(--btn-padding);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition:
+      box-shadow 0.2s,
+      transform 0.3s;
   }
 
   .btn-icon {
@@ -98,18 +96,6 @@
   .btn[aria-disabled='true'] {
     cursor: not-allowed;
     opacity: 0.5;
-  }
-
-  .btn:hover {
-    border: var(--hover-border);
-    box-shadow: var(--hover-box-shadow);
-    background-color: var(--hover-btn-color);
-  }
-
-  .btn:focus {
-    border: var(--focus-border);
-    box-shadow: var(--focus-box-shadow);
-    background-color: var(--focus-btn-color);
   }
 
   .btn[style*='--btn-size: xs;'] {

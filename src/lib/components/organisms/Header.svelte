@@ -5,8 +5,17 @@
 </script>
 
 <header>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <Image src={logo} height="80" width="80" alt="The Wogo Logo" />
+  <span class="skip-link">
+    <BaseButton
+      href="#main"
+      title="Skip To Content"
+      color="var(--txt-primary-clr)"
+      backgroundColor="var(--btn-secondary-bg)"
+      border="1.5px solid var(--btn-primary-bg)"
+      size="lg"
+    />
+  </span>
+  <Image src={logo} height="70" width="70" alt="Wogo Logo" />
   <button type="button" id="mainMenuOpen" tabindex="-1"><span></span></button>
   <nav>
     <ul>
@@ -14,23 +23,24 @@
         {#if link.title === 'More'}
           <li class="more-button">
             <BaseButton
-              btnSizesi="lg"
               icon={ArrowDown}
-              iconWidth="16"
-              iconHeight="16"
+              iconWidth="15"
+              iconHeight="15"
               title="More"
               backgroundColor="var(--btn-primary-bg)"
-              color="var(--btn-primary-text-clr)"
+              color="var(--txt-dark-clr)"
+              size="lg"
             />
-
             <ul class="more-dropdown">
               {#each link.subLinksCollection.items as sublink}
                 <li>
                   <Link
                     href={sublink.slug}
+                    title={sublink.title}
                     aria-label={sublink.label}
-                    color="var(--text-dark-color)">{sublink.title}</Link
-                  >
+                    size="lg"
+                    color="var(--txt-dark-clr)"
+                  />
                 </li>
               {/each}
             </ul>
@@ -41,8 +51,8 @@
               href={link.slug}
               title={link.title}
               aria-label={link.label}
-              color="hsl(19.6, 100%, 80.2%)"
-              filter="drop-shadow(0 0 0.4rem #000)"
+              size="lg"
+              color="var(--txt-secondary-clr)"
             />
             {#if link.subLinksCollection.items.length > 0}
               <ul class="sub-menu" aria-label="Submenu">
@@ -50,9 +60,10 @@
                   <li>
                     <Link
                       href={sublink.slug}
-                      aria-label={sublink.label}
                       title={sublink.title}
-                      color="var(--text-dark-color)"
+                      aria-label={sublink.label}
+                      size="lg"
+                      color="var(--txt-dark-clr)"
                     />
                   </li>
                 {/each}
@@ -63,8 +74,8 @@
       {/each}
     </ul>
   </nav>
-  <div>
-    <CartIcon />
+  <div class="button-cart-container">
+    <CartIcon width="60px" height="60px" fill="var(--accent2-primary)" />
   </div>
 </header>
 
@@ -74,12 +85,10 @@
     left: -9999px;
     z-index: 999;
     padding: 1em;
-    background-color: var(--accent2-primary);
-    color: white;
     opacity: 0;
   }
 
-  .skip-link:focus {
+  .skip-link:focus-within {
     left: 50%;
     transform: translateX(-50%);
     opacity: 1;
@@ -97,7 +106,6 @@
     padding: 0.5rem 1rem;
     gap: 1.5rem;
     z-index: 900;
-    font-size: var(--fs-md);
   }
 
   #mainMenuOpen {
@@ -113,11 +121,12 @@
   nav li {
     position: relative;
   }
+  nav li:last-of-type {
+    margin-left: 5px;
+  }
 
   nav ul > li {
     display: inline-block;
-    list-style: none;
-    padding: 0 1rem;
   }
 
   .more-button {
@@ -130,7 +139,7 @@
     top: 150%;
     left: 0;
     background-color: var(--accent2-tertiary);
-    border-radius: 4px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     opacity: 0;
     transform: translateY(-10px);
@@ -147,10 +156,7 @@
 
   .more-dropdown li {
     display: block;
-    padding: 0.75rem 1rem;
     white-space: nowrap;
-    text-decoration: none;
-    color: var(--text-color);
   }
 
   .sub-menu {
@@ -172,7 +178,7 @@
     display: flex;
   }
 
-  div {
+  .button-cart-container {
     display: flex;
     align-items: center;
     position: relative;
@@ -181,7 +187,7 @@
     gap: 2rem;
   }
 
-  @media (max-width: 60em) {
+  @media (max-width: 65em) {
     header {
       justify-content: 0;
     }
@@ -193,7 +199,6 @@
       flex-grow: 0;
       border: 0;
       background: transparent;
-      color: var(--accent2-primary);
       cursor: pointer;
       order: 4;
     }
@@ -207,14 +212,8 @@
       width: 40px;
       height: 3px;
       background: var(--accent2-primary);
-      border-radius: 3px;
+      border-radius: var(--radius-lg);
     }
-
-    a:focus,
-    a:hover {
-      transform: scale(1.2);
-    }
-
     #mainMenuOpen span::before {
       margin-top: -12px;
     }
@@ -255,18 +254,19 @@
     #mainMenuOpen + nav li {
       display: flex;
       flex-direction: column;
-      padding: 1rem;
       font-weight: 500;
+      font-size: 4em;
+      padding: 1rem 0 1rem 0;
     }
 
     #mainMenuOpen + nav > ul:after {
       content: '\2715';
-      color: var(--accent2-primary);
+      color: var(--txt-primary-clr);
       display: block;
       position: absolute;
       top: 1.8rem;
       right: 1.2rem;
-      line-height: 1;
+      font-size: 1rem;
       cursor: pointer;
     }
 

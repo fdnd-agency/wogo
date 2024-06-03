@@ -20,10 +20,7 @@
   img {
    object-fit: cover;
     width: 100%;
-    height: au;
+    height: 100%;
     display: block;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 100%;
   }
 </style>
