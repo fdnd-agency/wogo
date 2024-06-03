@@ -1,5 +1,5 @@
 <script>
-  import IconLocation from '../atoms/IconLocation.svelte'
+  import { IconLocation } from '$lib/index'
   export let items
 </script>
 

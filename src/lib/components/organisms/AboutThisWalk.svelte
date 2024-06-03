@@ -1,6 +1,5 @@
 <script>
-  import IconRoute from '../atoms/IconRoute.svelte'
-  import TicketDetails from '../molecules/TicketDetails.svelte'
+  import { IconRoute, TicketDetails } from '$lib/index'
 
   const mockData = {
     title: 'About this walk',
