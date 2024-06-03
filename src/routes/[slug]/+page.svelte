@@ -17,5 +17,3 @@
 </script>
 
 <svelte:component this={Component} {items} {itemCollection} />
-
-<!-- <TicketCard {itemCollection} /> -->
