@@ -1,29 +1,7 @@
 <script>
   import { page } from '$app/stores'
   let filter = $page.url.searchParams.getAll('locatie') || []
-  const mockdata = {
-    pageData: [
-      {
-        title: 'Filter op locaties',
-        componentsCollection: {
-          items: [
-            {
-              title: 'Amsterdam',
-              slug: 'amsterdam',
-            },
-            {
-              title: 'Rotterdam',
-              slug: 'rotterdam',
-            },
-            {
-              title: 'Utrecht',
-              slug: 'utrecht',
-            },
-          ],
-        },
-      },
-    ],
-  }
+  export let cities
 
   function applyFilter() {
     return function (event) {
@@ -48,9 +26,9 @@
   <form on:submit={applyFilter()}>
     <select name="locatie" id="locatie-select" tabindex="0">
       <option value="" selected={!filter}>Alle locaties</option>
-      {#each mockdata.pageData[0].componentsCollection.items as item}
-        <option value={item.slug} selected={filter === item.slug}>
-          {item.title}
+      {#each cities as city}
+        <option value={city} selected={filter === city}>
+          {city}
         </option>
       {/each}
     </select>

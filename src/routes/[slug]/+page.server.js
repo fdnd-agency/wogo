@@ -86,10 +86,23 @@ export async function load({ params }) {
       hint: 'It seems this page is under construction, just like a cocktail in the making. Don’t worry, we’re mixing things up and it will be ready soon!',
     })
   }
+  // Extract cities from the citysCollection
+  const cities = []
+  itemCollection.componentsCollection.items.forEach((item) => {
+    if (item.citysCollection) {
+      item.citysCollection.items.forEach((city) => {
+        cities.push(city.location)
+      })
+    }
+  })
+
+  // Remove duplicates
+  const uniqueCities = [...new Set(cities)]
 
   return {
-    itemCollection: itemCollection,
+    itemCollection,
     pageData: items,
     slug: params.slug,
+    cities: uniqueCities,
   }
 }

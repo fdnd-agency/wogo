@@ -1,14 +1,12 @@
 <script>
   import { Filter, TicketCard } from '$lib/index'
-  export let items
   export let itemCollection
-  export let mockdata
-  console.log(mockdata)
+  export let cities
 </script>
 
 <h1>All walks</h1>
 
-<Filter />
+<Filter {cities} />
 
 <section>
   <TicketCard {itemCollection} />
