@@ -7,12 +7,15 @@
   <ul>
     {#each items[2].componentsCollection.items as item, index}
       <li class="card-list card-number">
-        <div class="card-body">
+        <div class="card-body" tabIndex="0">
           <div class="image-container">
-            <Image src={item.image.url} alt="iphone" width="" height=""></Image>
+            <Image src={item.image.url} alt={item.image.title} width="" height=""></Image>
           </div>
           <div class="text-content">
-            <h3><span>{index + 1}</span>{item.title}</h3>
+            <div class="span-cirkel">
+              <span aria-label="Step {index + 1}">{index + 1}</span>
+              <h3>{item.title}</h3>
+            </div>
             <p>{item.textParagraph}</p>
           </div>
         </div>
@@ -23,7 +26,6 @@
 
 <style>
   section {
-    background: green;
     --cards: 4;
     --cardHeight: 87vh;
     --cardTopPadding: 1.5em;
@@ -33,7 +35,6 @@
   }
 
   ul {
-    background-color: red;
     list-style: none;
     padding-left: 0;
     display: grid;
@@ -45,7 +46,6 @@
   }
 
   .card-list {
-    background-color: purple;
     position: sticky;
     top: 0;
     padding-top: calc(var(--index) * var(--cardTopPadding));
@@ -65,33 +65,26 @@
   }
 
   .card-number:nth-child(1) .card-body {
-    background-color: #ffe5d9;
+    background-color: #ffd6c5;
   }
   .card-number:nth-child(2) .card-body {
     background-color: #ffd6c5;
   }
   .card-number:nth-child(3) .card-body {
-    background-color: #cab2a6;
+    background-color: #ffd6c5;
   }
   .card-number:nth-child(4) .card-body {
-    background-color: #cba38f;
-  }
-
-  .card-number .card-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #ffd6c5;
   }
 
   .card-body {
-    background-color: orange;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
     height: var(--cardHeight);
-    padding: 30px;
+    padding: 2rem;
     border-radius: 50px;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
     transition: all 0.5s;
@@ -101,41 +94,71 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: auto;
+    width: 70%;
     min-width: 200px;
     max-width: 300px;
     overflow: hidden;
+  }
+
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .span-cirkel {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
   }
 
   h3 {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 0;
+    font-size: 1.3rem;
     font-weight: 700;
   }
 
+  p {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
   span {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
     font-size: 16px;
     background-color: var(--page-bg-color);
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
     color: var(--accent2-quaternary);
   }
 
   @media (min-width: 48em) {
-    .card-number .card-body {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+    .card-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding: 3rem;
+      place-items: center;
     }
 
-    .text-content {
-      text-align: right;
-      padding-right: 20px;
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      padding: 0 2rem;
+    }
+
+    span {
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
     }
   }
 </style>
