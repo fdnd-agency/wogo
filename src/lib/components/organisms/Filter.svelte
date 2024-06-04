@@ -1,7 +1,14 @@
 <script>
   import { page } from '$app/stores'
-  let filter = $page.url.searchParams.getAll('locatie') || []
+  import { onMount } from 'svelte'
+
+  let filter = []
   export let cities
+
+  onMount(() => {
+    const urlSearchParams = new URLSearchParams($page.url.search)
+    filter = urlSearchParams.getAll('locatie') || []
+  })
 
   function applyFilter() {
     return function (event) {
@@ -9,7 +16,6 @@
       const formData = new FormData(event.target)
       const locatie = formData.get('locatie')
       const url = new URL(window.location)
-      url.searchParams.set('locatie', locatie)
 
       if (locatie) {
         url.searchParams.set('locatie', locatie)

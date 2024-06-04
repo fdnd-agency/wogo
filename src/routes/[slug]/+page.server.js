@@ -1,7 +1,8 @@
 import { error } from '@sveltejs/kit'
 import contentfulFetch from './src/api/contentful-fetch'
 
-export async function load({ params }) {
+export async function load({ params, url }) {
+  const locatie = url.searchParams.get('locatie') || ''
   const query = `
   {
     pageCollection(where: {slug:"${params.slug}"}) {
@@ -75,7 +76,6 @@ export async function load({ params }) {
   `
 
   const response = await contentfulFetch(query)
-
   const { data } = await response.json()
   const { items } = data.pageCollection
   const itemCollection = data.itemCollection
@@ -86,6 +86,7 @@ export async function load({ params }) {
       hint: 'It seems this page is under construction, just like a cocktail in the making. Don’t worry, we’re mixing things up and it will be ready soon!',
     })
   }
+
   // Extract cities from the citysCollection
   const cities = []
   itemCollection.componentsCollection.items.forEach((item) => {
@@ -99,8 +100,15 @@ export async function load({ params }) {
   // Remove duplicates
   const uniqueCities = [...new Set(cities)]
 
+  // Filter items based on the selected city
+  const filteredItems = locatie
+    ? itemCollection.componentsCollection.items.filter((item) =>
+        item.citysCollection.items.some((city) => city.location === locatie)
+      )
+    : itemCollection.componentsCollection.items
+
   return {
-    itemCollection,
+    itemCollection: { componentsCollection: { items: filteredItems } },
     pageData: items,
     slug: params.slug,
     cities: uniqueCities,
