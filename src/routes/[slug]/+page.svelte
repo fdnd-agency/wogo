@@ -8,7 +8,6 @@
     TicketCard,
   } from '$lib/index'
   export let data
-  export let mockdata // Voeg mockdata toe als prop
 
   const componentMap = {
     home: HomePage,
@@ -21,10 +20,11 @@
   const items = data.pageData.find((pageDataItem) => pageDataItem.slug === data.slug)
     .componentsCollection.items
   const itemCollection = data.itemCollection
+  const cities = data.cities
 
   const Component = componentMap[data.slug] || HomePage
 </script>
 
-<svelte:component this={Component} {items} {mockdata} {itemCollection} />
+<svelte:component this={Component} {items} {itemCollection} {cities} />
 
 <!-- Geef mockdata prop door -->

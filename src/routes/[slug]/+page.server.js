@@ -60,7 +60,7 @@ export async function load({ params }) {
                 title
               }
             }
-						citysCollection {
+						citysCollection(limit: 4) {
               items {
                 ... on TypeFIlterItem {
                   location
