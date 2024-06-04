@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit'
 import contentfulFetch from './src/api/contentful-fetch'
+console.log(contentfulFetch)
 
 export async function load({ params }) {
   const query = `

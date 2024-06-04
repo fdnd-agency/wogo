@@ -1,5 +1,12 @@
 <script>
-  import { WorkWithUs, HomePage, GroupOutings, TicketsOverview, OverviewPage, TicketCard } from '$lib/index'
+  import {
+    WorkWithUs,
+    HomePage,
+    GroupOutings,
+    TicketsOverview,
+    OverviewPage,
+    TicketCard,
+  } from '$lib/index'
   export let data
   export let mockdata // Voeg mockdata toe als prop
 
@@ -21,4 +28,3 @@
 <svelte:component this={Component} {items} {mockdata} {itemCollection} />
 
 <!-- Geef mockdata prop door -->
-
