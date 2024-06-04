@@ -4,12 +4,15 @@
   export let cities
 </script>
 
-<h1>All walks</h1>
+<section class="body">
+  <section>
+    <h1>Tickets</h1>
+    <Filter {cities} />
+  </section>
 
-<Filter {cities} />
-
-<section>
-  <TicketCard {itemCollection} />
+  <section class="cards">
+    <TicketCard {itemCollection} />
+  </section>
 </section>
 
 <svelte:head>
@@ -18,10 +21,16 @@
 
 <style>
   h1 {
-    color: red;
+    color: white;
+    font-weight: 700;
+    font-size: 3.5rem;
   }
 
-  section {
+  .body {
+    margin: 5rem 2rem;
+  }
+
+  .cards {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
