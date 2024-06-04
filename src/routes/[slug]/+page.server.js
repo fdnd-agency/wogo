@@ -1,27 +1,26 @@
 import { error } from '@sveltejs/kit'
 import contentfulFetch from './src/api/contentful-fetch'
-import { mockdata } from '$lib/index.js'
 
 export async function load({ params }) {
   const query = `
-    {
-      pageCollection(where: {slug:"${params.slug}"}) {
-        items {
-          slug
-          title
-          componentsCollection(limit: 10) {
-            items {
-              ... on Hero {
+  {
+    pageCollection(where: {slug:"${params.slug}"}) {
+      items {
+        slug
+        title
+        componentsCollection(limit: 10) {
+          items {
+            ... on Hero {
+              title
+              subtitle
+              label
+              price
+              location
+              asset {
+                url
                 title
-                subtitle
-                label
-                price
-                location
-                asset {
-                  url
-                  title
-                }   
-              }
+              }   
+            }
           ... on ItemCollection {
             componentsCollection(limit: 4) {
               items {
@@ -41,6 +40,7 @@ export async function load({ params }) {
               }
             }
           }
+          }
         }
       }
     }
@@ -58,6 +58,13 @@ export async function load({ params }) {
               ... on Asset {
                 url
                 title
+              }
+            }
+						citysCollection {
+              items {
+                ... on TypeFIlterItem {
+                  location
+                }
               }
             }
           }
