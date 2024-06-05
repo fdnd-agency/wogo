@@ -10,7 +10,7 @@
         <h3><span>{index + 1}</span>{item.title}</h3>
         <p>{item.textParagraph}</p>
       </div>
-      <Image src={item.image.url} alt="iphone" width="" height=""></Image>
+      <Image src="/" alt="iphone" width="" height=""></Image>
     </article>
   {/each}
 </section>
