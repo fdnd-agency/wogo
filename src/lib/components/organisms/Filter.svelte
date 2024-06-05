@@ -10,30 +10,35 @@
     filter = urlSearchParams.getAll('locatie') || []
   })
 
-  function applyFilter(event) {
-    const locatie = event.target.value
-    const url = new URL(window.location)
+  function applyFilter() {
+    return function (event) {
+      event.preventDefault()
+      const formData = new FormData(event.target)
+      const locatie = formData.get('locatie')
+      const url = new URL(window.location)
 
-    if (locatie) {
-      url.searchParams.set('locatie', locatie)
-    } else {
-      url.searchParams.delete('locatie')
+      if (locatie) {
+        url.searchParams.set('locatie', locatie)
+      } else {
+        url.searchParams.delete('locatie')
+      }
+
+      window.location = url
     }
-
-    window.location = url
   }
 </script>
 
 <section>
-  <form>
-    <select name="locatie" id="locatie-select" tabindex="0" on:change={applyFilter}>
-      <option value="" selected={!filter.length}>Alle locaties</option>
+  <form on:submit={applyFilter()}>
+    <select name="locatie" id="locatie-select" tabindex="0">
+      <option value="" selected={!filter}>Alle locaties</option>
       {#each cities as city}
-        <option value={city} selected={filter.includes(city)}>
+        <option value={city} selected={filter === city}>
           {city}
         </option>
       {/each}
     </select>
+    <button type="submit">Pas filter toe</button>
   </form>
 </section>
 
@@ -63,5 +68,15 @@
 
   option {
     font-weight: 900;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent1-primary);
+    color: var(--accent2-primary);
+    border: none;
+    border-radius: 0.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 </style>
