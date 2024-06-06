@@ -1,6 +1,6 @@
 <script>
   import { Link, Image, CartIcon, BaseButton, ArrowDown } from '$lib/index'
-  import Logo from '$lib/assets/logo.png'
+  import logo from '$lib/assets/logo.png'
   export let navigationItems
 </script>
 
@@ -15,7 +15,7 @@
       size="lg"
     />
   </span>
-  <Image src={Logo} height="70" width="70" alt="Wogo Logo" />
+  <Image src={logo} height="70" width="70" alt="Wogo Logo" />
   <button type="button" id="mainMenuOpen" tabindex="-1"><span></span></button>
   <nav>
     <ul>
