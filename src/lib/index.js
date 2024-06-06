@@ -8,23 +8,19 @@ export { default as HeadLine } from '$lib/components/atoms/HeadLine.svelte'
 export { default as HeaderImage } from '$lib/components/atoms/HeaderImage.svelte'
 
 
-
 //Atoms / Icons
 export { default as ArrowLeft } from '$lib/components/atoms/icons/ArrowLeft.svelte'
 export { default as ArrowRight } from '$lib/components/atoms/icons/ArrowRight.svelte'
 export { default as ArrowDown } from '$lib/components/atoms/icons/ArrowDown.svelte'
 export { default as CartIcon } from '$lib/components/atoms/icons/CartIcon.svelte'
 export { default as RouteIcon } from '$lib/components/atoms/icons/RouteIcon.svelte'
-export { default as CocktailIcon} from '$lib/components/atoms/icons/CocktailIcon.svelte'
+export { default as CocktailIcon } from '$lib/components/atoms/icons/CocktailIcon.svelte'
 export { default as ArrowLeftShort } from '$lib/components/atoms/icons/ArrowLeftShort.svelte'
 export { default as ArrowRightShort } from '$lib/components/atoms/icons/ArrowRightShort.svelte'
-export { default as IconRoute } from '$lib/components/atoms/icons/IconRoute.svelte'
+export { default as IconRoute } from '$lib/ components/atoms/icons/IconRoute.svelte'
 export { default as IconLocation } from '$lib/components/atoms/icons/IconLocation.svelte'
 
 
-
-
-//Atoms / Assets 
 
 
 // Molecules
@@ -33,7 +29,7 @@ export { default as Dropdown } from '$lib/components/molecules/Dropdown.svelte'
 export { default as Translation } from '$lib/components/molecules/Translation.svelte'
 export { default as LargeText } from '$lib/components/molecules/LargeText.svelte'
 export { default as TicketDetails } from '$lib/components/molecules/TicketDetails.svelte'
-export { default as HeaderContent} from '$lib/components/molecules/HeaderContent.svelte'
+export { default as HeaderContent } from '$lib/components/molecules/HeaderContent.svelte'
 
 
 
@@ -64,5 +60,5 @@ export { default as HeaderDetailPage } from '$lib/components/organisms/HeaderDet
 export { default as WorkWithUs } from '$lib/components/pages/WorkWithUs.svelte'
 export { default as HomePage } from '$lib/components/pages/Home.svelte'
 export { default as GroupOutings } from '$lib/components/pages/GroupOutings.svelte'
-export { default as TicketInfoPage} from '$lib/components/pages/TicketInfoPage.svelte'
-export { default as OverviewPage} from '$lib/components/pages/OverviewPage.svelte'
+export { default as TicketInfoPage } from '$lib/components/pages/TicketInfoPage.svelte'
+export { default as OverviewPage } from '$lib/components/pages/OverviewPage.svelte'
