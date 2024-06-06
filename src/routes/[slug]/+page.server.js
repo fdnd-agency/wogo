@@ -18,7 +18,7 @@ export async function load({ params }) {
               location
               asset {
                 url
-                title
+                description
               }   
             }
           ... on ItemCollection {
