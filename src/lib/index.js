@@ -17,7 +17,7 @@ export { default as RouteIcon } from '$lib/components/atoms/icons/RouteIcon.svel
 export { default as CocktailIcon } from '$lib/components/atoms/icons/CocktailIcon.svelte'
 export { default as ArrowLeftShort } from '$lib/components/atoms/icons/ArrowLeftShort.svelte'
 export { default as ArrowRightShort } from '$lib/components/atoms/icons/ArrowRightShort.svelte'
-export { default as IconRoute } from '$lib/ components/atoms/icons/IconRoute.svelte'
+export { default as IconRoute } from '$lib/components/atoms/icons/IconRoute.svelte'
 export { default as IconLocation } from '$lib/components/atoms/icons/IconLocation.svelte'
 
 

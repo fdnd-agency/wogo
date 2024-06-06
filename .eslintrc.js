@@ -1,22 +1,34 @@
-module.exports = {
-    extends: ['eslint:recommended', 'plugin:prettier/recommended'],
-    env: {
-      browser: true,
-      node: true,
-      es6: true,
-    },
-    parserOptions: {
-      sourceType: 'module',
-      ecmaVersion: 2020,
-    },
-    overrides: [
-      {
-        files: ['**/*.svelte'],
-        parser: 'eslint-plugin-svelte3',
-        settings: {
-          'svelte3/ignore-styles': () => true,
-        },
-      },
-    ],
-  };
-  
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:svelte3/recommended"
+  ],
+  "plugins": [
+    "svelte3",
+    "import"
+  ],
+  "env": {
+    "es2021": true,
+    "browser": true,
+    "node": true
+  },
+  "overrides": [
+    {
+      "files": ["**/*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],
+  "rules": {
+    "import/no-unresolved": "error",
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/export": "error",
+    "import/no-extraneous-dependencies": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-unused-modules": "error"
+  },
+  "settings": {
+    "svelte3/typescript": () => require("typescript")
+  }
+}
