@@ -8,4 +8,6 @@
   export let size = ''
 </script>
 
-<BaseButton {disabled} {href} {title} {ariaLabel} {color} {size} />
+<BaseButton {disabled} {href} {title} {ariaLabel} {color} {size}>
+  <slot></slot>
+</BaseButton>
