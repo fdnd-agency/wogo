@@ -1,6 +1,6 @@
 <script>
   import { Link, Image, CartIcon, BaseButton, ArrowDown } from '$lib/index'
-  import logo from '$lib/components/atoms/icons/logo.png'
+  import logo from '$lib/assets/Logo.png'
   export let navigationItems
 </script>
 

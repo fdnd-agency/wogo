@@ -4,7 +4,14 @@
 </script>
 
 <section>
-  <video autoplay muted loop aria-label="">
+  <video
+    autoplay
+    muted
+    loop
+    aria-label={items.description}
+    aria-hidden="true"
+    poster="/hero-image-background.webp"
+  >
     <source src={items[0].asset.url} type="video/mp4" />
   </video>
   <div class="hero-content">

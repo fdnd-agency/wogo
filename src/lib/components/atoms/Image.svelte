@@ -18,7 +18,7 @@
 
 <style>
   img {
-   object-fit: cover;
+    object-fit: cover;
     width: 100%;
     height: 100%;
     display: block;

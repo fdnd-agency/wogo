@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit'
-import contentfulFetch from './src/api/contentful-fetch'
+import contentfulFetch from '../../api/contentful-fetch.js'
+
 
 export async function load({ params, url }) {
   const locatie = url.searchParams.get('locatie') || ''
@@ -19,7 +20,7 @@ export async function load({ params, url }) {
               location
               asset {
                 url
-                title
+                description
               }   
             }
           ... on ItemCollection {
