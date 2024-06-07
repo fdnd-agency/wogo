@@ -4,7 +4,7 @@
   export let cities
 </script>
 
-<section class="body">
+<section>
   <section>
     <h1>Tickets</h1>
     <Filter {cities} />
@@ -26,7 +26,7 @@
     font-size: 3.5rem;
   }
 
-  .body {
+  section:nth-of-type(0) {
     margin: 5rem 2rem;
   }
 
