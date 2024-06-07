@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit'
-import contentfulFetch from './src/api/contentful-fetch'
+import contentfulFetch from '../../../api/contentful-fetch.js'
 
 export async function load({ params }) {
   const query = `
@@ -49,7 +49,6 @@ export async function load({ params }) {
   const response = await contentfulFetch(query)
   const { data } = await response.json()
   const { items } = data.pageCollection
-  const itemCollection = data.itemCollection;
 
   if (!items || items.length === 0) {
     throw error(404, {
