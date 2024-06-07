@@ -1,59 +1,98 @@
-<!-- <script>
-  import { ButtonLink } from '$lib/index'
+<script>
+  import { SecondaryButton, ArrowRight, Image } from '$lib/index'
   export let items
 </script>
 
 <section>
-  {#each items as item}
+  {#each items[2].componentsCollection.items as item}
     <article>
-      <div>
-        <h3>{item.title}</h3>
-        <p>
-          {item.description}
-        </p>
+      <Image src={item.asset.url} alt={item.icon.title} opacity="0.3" brdRadius="10px" />
+      <div class="content-inner">
+        <h3>
+          <span><Image src={item.icon.url} alt={item.icon.title} width="30" height="30" /></span
+          >{item.title}
+        </h3>
+        <p>{item.textParagraph}</p>
+        <SecondaryButton href="/" title="Read More" size="sm">
+          <ArrowRight color="var(--accent2-primary)" width="24" height="24" />
+        </SecondaryButton>
       </div>
-      <ButtonLink href="/" title={item.buttonText} />
     </article>
   {/each}
 </section>
 
 <style>
   section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 4rem;
-    width: 100%;
-    padding: 0 2rem;
+    padding: 2rem;
   }
 
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-    padding-bottom: 40px;
+  article {
+    margin-bottom: 3rem;
   }
 
   h3 {
-    color: var(--accent2-primary);
-    font-size: 32px;
-    line-height: 40px;
-    font-weight: 500;
-    text-align: left;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    color: var(--accent2-tertiary);
+    font-size: 1.2rem;
   }
 
   p {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    color: var(--accent2-secondary);
+    line-height: 1.4;
+    max-width: 32rem;
     text-align: left;
+    padding: 1rem 0;
+    color: var(--txt-quaternary-clr);
   }
 
-  @media (min-width: 48em) {
+  @media (min-width: 55em) {
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
     article {
-      width: 60%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: center;
+      justify-content: space-around;
+      gap: 3rem;
+      max-width: 80em;
+      margin: 0 auto;
+    }
+
+    article:nth-child(even) {
+      direction: rtl;
+    }
+
+    article:nth-child(even) > * {
+      direction: ltr;
+    }
+
+    .content-inner {
+      margin: 0 auto;
     }
   }
-</style> -->
+
+  /* SCROLL DRIVEN ANIMATION  */
+  @keyframes slide-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(5vh);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    article {
+      view-timeline-name: --item-timeline;
+      animation: slide-fade-in both;
+      animation-timeline: --item-timeline;
+      animation-range: contain 0% contain 10%;
+    }
+  }
+</style>

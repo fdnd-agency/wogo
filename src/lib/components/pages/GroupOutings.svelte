@@ -1,6 +1,4 @@
 <script>
-  // export let items
-  // console.log(items)
 </script>
 
 <h1>Group Outings</h1>
