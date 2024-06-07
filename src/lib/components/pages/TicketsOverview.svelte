@@ -10,7 +10,7 @@
     <Filter {cities} />
   </section>
 
-  <section class="cards">
+  <section>
     <TicketCard {itemCollection} />
   </section>
 </section>
@@ -26,11 +26,11 @@
     font-size: 3.5rem;
   }
 
-  section:nth-of-type(0) {
-    margin: 5rem 2rem;
+  section:first-child {
+    margin: 7rem 4rem 4rem 4rem;
   }
 
-  .cards {
+  section:first-child > section:last-child {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
