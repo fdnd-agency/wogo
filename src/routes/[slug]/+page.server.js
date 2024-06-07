@@ -5,7 +5,7 @@ import contentfulFetch from '../../api/contentful-fetch.js'
 export async function load({ params }) {
   const query = `
   {
-    pageCollection(where: {slug:"${params.slug}"}) {
+    pageCollection(where: {slug:"${params.slug}"}, limit: 10) {
       items {
         slug
         title
@@ -22,25 +22,40 @@ export async function load({ params }) {
                 description
               }   
             }
-          ... on ItemCollection {
-            componentsCollection(limit: 4) {
-              items {
-                ... on Card{
-                  title
-                  textParagraph
-                  price
-                  location
-                  cocktailDescription
-                  image {
-                    ... on Asset {
+            ... on ItemCollection {
+              componentsCollection(limit: 4) {
+                items {
+                  ... on Card {
+                    title
+                    textParagraph
+                    price
+                    location
+                    cocktailDescription
+                    image {
+                      ... on Asset {
+                        url
+                        title
+                        description
+                      }
+                    }
+                  }
+                  ... on TypeText {
+                    title
+                    textParagraph
+                    icon {
                       url
                       title
+                      description
+                    }
+                    asset {
+                      url
+                      title
+                      description
                     }
                   }
                 }
               }
             }
-          }
           }
         }
       }
@@ -53,7 +68,6 @@ export async function load({ params }) {
             textParagraph
             location
             cocktailDescription
-            slug
             price
             image {
               ... on Asset {

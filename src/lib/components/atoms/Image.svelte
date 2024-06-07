@@ -6,6 +6,7 @@
   export let color = ''
   export let opacity = ''
   export let srcset = ''
+  export let brdRadius = ''
 </script>
 
 <img
@@ -13,7 +14,7 @@
   {src}
   {alt}
   fill={color}
-  style={`width: ${width}px; height: ${height}px; opacity: ${opacity};`}
+  style={`width: ${width}px; height: ${height}px; opacity: ${opacity}; border-radius: ${brdRadius};`}
 />
 
 <style>
