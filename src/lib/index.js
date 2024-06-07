@@ -34,15 +34,17 @@ export { default as WhatWeDo } from '$lib/components/organisms/WhatWeDo.svelte'
 export { default as AnimationCard } from '$lib/components/organisms/AnimationCard.svelte'
 export { default as Footer } from '$lib/components/organisms/Footer.svelte'
 export { default as TabBar } from '$lib/components/organisms/TabBar.svelte'
+export { default as Filter } from '$lib/components/organisms/Filter.svelte'
 export { default as Header } from '$lib/components/organisms/Header.svelte'
 export { default as AboutThisWalk } from '$lib/components/organisms/AboutThisWalk.svelte'
 export { default as HeaderDetailPage } from '$lib/components/organisms/HeaderDetailPage.svelte'
 
 // Templates
 
-// Pages 
+// Pages
 export { default as WorkWithUs } from '$lib/components/pages/WorkWithUs.svelte'
 export { default as HomePage } from '$lib/components/pages/Home.svelte'
 export { default as GroupOutings } from '$lib/components/pages/GroupOutings.svelte'
 export { default as TicketInfoPage } from '$lib/components/pages/TicketInfoPage.svelte'
+export { default as TicketsOverview } from '$lib/components/pages/TicketsOverview.svelte'
 export { default as OverviewPage } from '$lib/components/pages/OverviewPage.svelte'
