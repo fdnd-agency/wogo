@@ -1,135 +1,170 @@
 <script>
-  import { Link, Image } from '$lib/index'
+  import { Link, Image, PrimaryButton, ArrowRight } from '$lib/index'
+  import logo from '$lib/components/atoms/icons/logo.png'
   export let footerItems
 </script>
 
-<footer>
+<footer class="footer">
   <div class="footer-wrapper">
     <div class="footer-logo-social">
-      <Link href="/" ariaLabel=""><Image src="/" alt="" width="100" height="100" /></Link>
-      <ul class="social-list" role="list" aria-label="Social links">
+      <ul class="social-media-list" role="list" aria-label="Social links">
         {#each footerItems[0].socialMediaIconsCollection.items as item}
           <li>
             <Link href={item.url}>
-              <Image src={item.assetCollection.items[0].url} alt="" width="40" height="40" />
+              <Image
+                src={item.assetCollection.items[0].url}
+                height="50"
+                width="50"
+                alt={item.assetCollection.items[0].title}
+              />
             </Link>
           </li>
         {/each}
       </ul>
+      <p class="footer-text">Follow us:</p>
+      <Image src={logo} height="100" width="100" alt="Wogo Logo" />
     </div>
-
-    <nav>
-      {#each footerItems[0].footerLinksCollection.items as item}
+    <div class="footer-section">
+      <nav>
         <ul aria-label="Footer" role="list">
-          <li>
-            <Link href={item.slug} aria-label="" title={item.title}></Link>
-          </li>
+          {#each footerItems[0].footerLinksCollection.items as item}
+            <li>
+              <Link href={item.slug} aria-label={item.title} title={item.title}></Link>
+            </li>
+          {/each}
         </ul>
-      {/each}
-    </nav>
-
-    <div class="container-footer-form">
-      <h2>{footerItems[0].newsletterTitle}</h2>
-      <form action="/" method="POST">
+      </nav>
+    </div>
+    <div class="footer-newsletter">
+      <h3 class="newsletter-title">{footerItems[0].newsletterTitle}</h3>
+      <form action="https://www.freecodecamp.org/email-submit" id="form" method="post">
         <label for="email">{footerItems[0].newsLetterDescription}</label>
-        <div class="input-button-wrapper">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            aria-required="true"
-            placeholder={footerItems[0].placeholderText}
-          />
-          <!-- <Button type="submit" title="Subscribe" /> -->
-        </div>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder={footerItems[0].placeholderText}
+          required
+        />
+        <PrimaryButton title="Subscribe" icon={ArrowRight} size="sm" type="submit" />
       </form>
     </div>
+  </div>
+  <div class="copyright">
+    <p class="copyright-text">copyright test</p>
   </div>
 </footer>
 
 <style>
+  /* Mobile  */
   footer {
-    width: 100%;
-    padding: var(--size-700);
+    padding: 0 5vw;
   }
+
   .footer-wrapper {
     display: grid;
-    gap: var(--size-700);
+    gap: 3rem;
     grid-template-areas:
       'form'
       'nav'
       'logo-social';
   }
+
   .footer-logo-social {
     grid-area: logo-social;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    gap: var(--size-700);
+    gap: 0.5rem;
   }
+
   footer nav {
     grid-area: nav;
+    columns: 2;
+    gap: clamp(1rem, 30vw, 2rem);
   }
+
+  .footer-text {
+    margin: 0.625rem 0;
+    color: var(--accent2-quaternary);
+  }
+
   footer li {
-    padding-bottom: 0.5rem;
+    padding: 0.5rem;
     list-style: none;
     color: var(--accent2-tertiary);
   }
-  .container-footer-form {
-    grid-area: form;
-    color: var(--accent2-tertiary);
-  }
-  .container-footer-form form {
-    display: grid;
-    max-width: 500px;
-    gap: var(--size-200);
-  }
 
-  h2 {
-    color: var(--accent2-tertiary);
-    padding-bottom: 1rem;
-  }
-  footer form label {
-    margin-bottom: 0.5em;
-  }
-
-  .input-button-wrapper {
+  .social-media-list {
     display: flex;
-    gap: 1em;
+    align-items: center;
+    gap: 1rem;
   }
 
+  /* Footer newsletter */
+  .footer-newsletter {
+    grid-area: form;
+    flex: 0 1 340px;
+  }
+
+  label {
+    color: var(--accent2-quaternary);
+  }
+
+  .footer-newsletter h3 {
+    color: var(--accent2-primary);
+  }
   input:where([type='email']) {
-    flex: 1;
-    border-radius: 100vw;
-    padding: var(--size-300) var(--size-400);
+    display: block;
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 1rem;
+    width: 100%;
     border: 0;
     background-color: var(--accent2-quaternary);
+    border-radius: 10px;
   }
 
   input::placeholder {
     color: var(--accent1-tertiary);
   }
 
-  @media (min-width: 50em) {
-    .footer-wrapper {
-      grid-template-areas: 'logo-social nav form';
-    }
+  .footer-text,
+  .newsletter-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
   }
 
-  @media (max-width: 50em) {
+  .copyright {
+    background-color: var(--sec-color-alpha);
+    text-align: center;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  /* Desktop */
+  @media screen and (min-width: 48em) {
+    footer {
+      padding-left: calc((100% - 1060px) / 2);
+      padding-right: calc((100% - 1060px) / 2);
+    }
+
+    .footer-wrapper {
+      grid-template-areas: 'logo-social nav nav form';
+    }
+
+    .footer nav {
+      gap: clamp(2rem, 30vw, 4rem);
+    }
+
     .footer-wrapper > * {
       margin-inline: auto;
     }
-  }
 
-  footer nav {
-    columns: 2;
-    gap: clamp(var(--size-200), 30vw, var(--size-900));
-  }
-
-  .social-list {
-    display: flex;
-    gap: var(--size-600);
+    .footer-wrapper > * {
+      margin-inline: auto;
+    }
   }
 </style>

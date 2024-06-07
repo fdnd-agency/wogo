@@ -1,5 +1,5 @@
 <script>
-  import { Header } from '$lib/index'
+  import { Header, Footer } from '$lib/index'
   export let data
 </script>
 
@@ -8,3 +8,5 @@
 <main id="main">
   <slot />
 </main>
+
+<Footer footerItems={data.footer} />
