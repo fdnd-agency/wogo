@@ -1,7 +1,8 @@
 <script>
   import { Link, Image, CartIcon, BaseButton, ArrowDown } from '$lib/index'
   import logo from '$lib/assets/Logo.png'
-  export let navigationItems
+  export let navigation
+  console.log(navigation)
 </script>
 
 <header>
@@ -19,7 +20,7 @@
   <button type="button" id="mainMenuOpen" tabindex="-1"><span></span></button>
   <nav>
     <ul>
-      {#each navigationItems[0].navigationLinksCollection.items as link}
+      {#each navigation.navigationLinksCollection.items as link}
         {#if link.title === 'More'}
           <li class="more-button">
             <BaseButton
