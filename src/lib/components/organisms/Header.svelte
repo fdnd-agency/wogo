@@ -1,8 +1,7 @@
 <script>
   import { Link, Image, CartIcon, BaseButton, ArrowDown } from '$lib/index'
-  import logo from '$lib/assets/Logo.png'
+  import logo from '$lib/assets/logo.webp'
   export let navigation
-  console.log(navigation)
 </script>
 
 <header>
