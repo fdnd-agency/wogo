@@ -1,8 +1,7 @@
 <script>
-  import { Link, Image, CartIcon, BaseButton, ArrowDown } from '$lib/index'
-  import logo from '$lib/assets/Logo.png'
+  import { Link, CartIcon, BaseButton, ArrowDown } from '$lib/index'
+  import logo from '$lib/assets/logo.webp'
   export let navigation
-  console.log(navigation)
 </script>
 
 <header>
@@ -16,7 +15,7 @@
       size="lg"
     />
   </span>
-  <Image src={logo} height="70" width="70" alt="Wogo Logo" />
+  <img src={logo} height="70" width="70" alt="Wogo Logo" />
   <button type="button" id="mainMenuOpen" tabindex="-1"><span></span></button>
   <nav>
     <ul>

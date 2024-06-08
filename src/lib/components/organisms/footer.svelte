@@ -1,6 +1,6 @@
 <script>
   import { Link, Image, PrimaryButton, ArrowRight } from '$lib/index'
-  import logo from '$lib/assets/Logo.png'
+  import logo from '$lib/assets/logo.webp'
   export let footerItems
 </script>
 
