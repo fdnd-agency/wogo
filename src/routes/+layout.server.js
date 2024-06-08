@@ -4,11 +4,10 @@ import contentfulFetch from '../api/contentful-fetch'
 
 const query = `
 {
-  navigationCollection(limit: 1) {
-    items {
-    navigationLinksCollection(limit: 5) {
-        items {
-          ... on TypeLink {
+  navigation(id: "4xhowg37MDjXP7okbSrx1b") {
+    navigationLinksCollection {
+      items {
+         ... on TypeLink {
            title
            label
           	slug
@@ -26,7 +25,6 @@ const query = `
         }
       }
     }
-  }
 
   footerCollection(limit: 1) {
     items {
@@ -70,14 +68,11 @@ const query = `
       })
     }
     const { data } = await response.json()
-    const { items: navigationItems } = data.navigationCollection
+    const { navigation } = data
     const { items: footerItems } = data.footerCollection
-    // const { items: tabBarItems } = data.tabBarCollection
-    
     
     return {
-      navigation: navigationItems,
-      footer: footerItems,
-      // tabBar: tabBarItems,
-    }
+      navigation,
+      footer: footerItems
+    };
   }
