@@ -5,16 +5,17 @@
 
 <section>
   <ul>
-    {#each items[2].componentsCollection.items as item, index}
+    {#each items[1].componentsCollection.items as item, index}
       <li class="card-list card-number">
         <div class="card-body" tabIndex="0">
           <div class="image-container">
-            <Image src="/" alt="/" width="/" height="/" loading="lazy"></Image>
+            <Image src={item.image.url} alt={item.image.title} width="/" height="/" loading="lazy"
+            ></Image>
           </div>
           <div class="text-content">
             <div class="span-cirkel">
               <span aria-label="Step {index + 1}">{index + 1}</span>
-              <h3>test</h3>
+              <h3>{item.title}</h3>
             </div>
             <p>{item.textParagraph}</p>
           </div>
