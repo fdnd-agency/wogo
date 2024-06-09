@@ -48,6 +48,8 @@
   }
 
   div:first-of-type {
+    height: 100%;
+    min-height: 4em;
     position: relative;
   }
 
@@ -61,6 +63,7 @@
     font-size: 2em;
     line-height: 1em;
     color: var(--txt-quaternary-clr);
+    min-height: 2.5em;
   }
 
   div:first-of-type p {
@@ -69,10 +72,11 @@
     top: 1em;
     margin: 0;
     padding: 0.2rem 0.5rem;
-    font-weight: bold;
+    font-weight: 800;
     border-radius: var(--radius-lg);
     color: var(--txt-quaternary-clr);
     background-color: var(--accent2-primary);
+    min-height: 1.5em;
   }
 
   p {
