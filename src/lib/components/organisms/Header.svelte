@@ -1,5 +1,4 @@
 <script>
-  import { ariaLabel } from './../../../../.svelte-kit/output/server/chunks/OverviewPage.svelte_svelte_type_style_lang.js'
   import { Link, CartIcon, BaseButton, ArrowDown } from '$lib/index'
   import logo from '$lib/assets/logo.webp'
   export let navigation
@@ -17,7 +16,9 @@
     />
   </span>
   <img src={logo} height="70" width="70" alt="Wogo Logo" />
-  <button type="button" id="mainMenuOpen" tabindex="-1"><span></span></button>
+  <button type="button" id="mainMenuOpen" tabindex="-1" aria-label="hamburger-button"
+    ><span></span></button
+  >
   <nav>
     <ul>
       {#each navigation.navigationLinksCollection.items as link}
@@ -31,7 +32,6 @@
               backgroundColor="var(--btn-primary-bg)"
               color="var(--txt-dark-clr)"
               size="lg"
-              ariaLabel="hamburger-button"
             />
             <ul class="more-dropdown">
               {#each link.subLinksCollection.items as sublink}
@@ -52,7 +52,7 @@
             <Link
               href={link.slug}
               title={link.title}
-              aria-label={link.label}
+              arialabel={link.label}
               size="lg"
               color="var(--txt-secondary-clr)"
             />
@@ -77,7 +77,7 @@
     </ul>
   </nav>
   <div class="button-cart-container">
-    <CartIcon width="60px" height="60px" fill="var(--accent2-primary)" />
+    <CartIcon width="60px" height="60px" fill="var(--accent2-primary)" ariaLabel="shopicon" />
   </div>
 </header>
 
