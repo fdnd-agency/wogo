@@ -9,7 +9,7 @@
     <article>
       <div>
         <h3>{item.title}</h3>
-        <Image src={item.image.url} alt={item.image.title} />
+        <Image src={item.image.url} alt={item.image.title} loading="lazy" />
         <p>{item.price}</p>
       </div>
       <div class="content">
