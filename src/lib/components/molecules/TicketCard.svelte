@@ -48,7 +48,8 @@
   }
 
   div:first-of-type {
-    min-height: 200px;
+    height: 100%;
+    min-height: 4em;
     position: relative;
   }
 
