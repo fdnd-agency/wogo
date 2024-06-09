@@ -15,7 +15,9 @@
     poster="/hero-image-background.webp"
   >
     <source src={items[0].asset.url} type="video/webm" />
-    <source src={items[0].asset.url.replace('.webm', '.mp4')} type="video/mp4" />
+    <source src={items[0].asset.url} type="video/webm" />
+    <source src="path/to/video-480p.mp4" type="video/mp4" media="(min-width: 480px)" />
+    <source src="path/to/video-360p.mp4" type="video/mp4" media="(max-width: 360px)" />
   </video>
   <div class="hero-content">
     <h1>

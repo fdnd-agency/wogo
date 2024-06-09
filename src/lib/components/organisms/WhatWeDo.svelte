@@ -6,10 +6,23 @@
 <section>
   {#each items[2].componentsCollection.items as item}
     <article>
-      <Image src={item.asset.url} alt={item.icon.title} opacity="0.3" brdRadius="10px" />
+      <Image
+        src={item.asset.url}
+        alt={item.icon.title}
+        opacity="0.3"
+        brdRadius="10px"
+        lazy="loading"
+      />
       <div class="content-inner">
         <h3>
-          <span><Image src={item.icon.url} alt={item.icon.title} width="30" height="30" /></span
+          <span
+            ><Image
+              src={item.icon.url}
+              alt={item.icon.title}
+              width="30"
+              height="30"
+              lazy="loading"
+            /></span
           >{item.title}
         </h3>
         <p>{item.textParagraph}</p>
