@@ -22,7 +22,7 @@
         {/each}
       </ul>
       <p class="footer-text">Follow us:</p>
-      <img src={logo} height="100" width="100" alt="Wogo Logo" />
+      <Image src={logo} height="100" width="100" alt="Wogo Logo" />
     </div>
     <div class="footer-section">
       <nav>
