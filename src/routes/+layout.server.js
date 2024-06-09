@@ -1,4 +1,4 @@
- import { error } from '@sveltejs/kit'
+import { error } from '@sveltejs/kit'
 import contentfulFetch from '../api/contentful-fetch'
 
 

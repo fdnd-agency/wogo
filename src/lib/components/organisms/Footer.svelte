@@ -16,6 +16,7 @@
                 height="50"
                 width="50"
                 alt={item.assetCollection.items[0].title}
+                loading="lazy"
               />
             </Link>
           </li>

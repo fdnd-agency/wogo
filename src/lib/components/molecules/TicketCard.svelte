@@ -9,12 +9,7 @@
     <article>
       <div>
         <h3>{item.title}</h3>
-        <Image
-          src="https://images.ctfassets.net/ujjnpzbu47yu/3f4gZ7wj1buxsqyPukeXKh/13c4426f8855a2175c3f7b88a33b5db4/DSC_5150-min.webp"
-          class="img"
-          alt=""
-          loading="lazy"
-        />
+        <Image src={item.image.url} alt={item.image.title} />
         <p>{item.price}</p>
       </div>
       <div class="content">
