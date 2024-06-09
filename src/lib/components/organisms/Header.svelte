@@ -1,4 +1,5 @@
 <script>
+  import { ariaLabel } from './../../../../.svelte-kit/output/server/chunks/OverviewPage.svelte_svelte_type_style_lang.js'
   import { Link, CartIcon, BaseButton, ArrowDown } from '$lib/index'
   import logo from '$lib/assets/logo.webp'
   export let navigation
@@ -13,6 +14,7 @@
       backgroundColor="var(--btn-secondary-bg)"
       border="1.5px solid var(--btn-primary-bg)"
       size="lg"
+      ariaLabel="shop button"
     />
   </span>
   <img src={logo} height="70" width="70" alt="Wogo Logo" />
@@ -77,7 +79,7 @@
     </ul>
   </nav>
   <div class="button-cart-container">
-    <CartIcon width="60px" height="60px" fill="var(--accent2-primary)" ariaLabel="shopicon" />
+    <CartIcon width="60px" height="60px" fill="var(--accent2-primary)" />
   </div>
 </header>
 
