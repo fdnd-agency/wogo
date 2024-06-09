@@ -9,7 +9,7 @@
       <li class="card-list card-number">
         <div class="card-body" tabIndex="0">
           <div class="image-container">
-            <Image src="/" alt="/" width="/" height="/"></Image>
+            <Image src="/" alt="/" width="/" height="/" loading="lazy"></Image>
           </div>
           <div class="text-content">
             <div class="span-cirkel">
