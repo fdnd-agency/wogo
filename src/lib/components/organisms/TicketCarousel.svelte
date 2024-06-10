@@ -1,5 +1,5 @@
 <script>
-  import { TicketCard, BaseButton, ArrowRightShort, ArrowLeftShort } from '$lib'
+  import { TicketCard, ArrowRightShort, ArrowLeftShort, Link, ArrowRight } from '$lib'
   import { onMount } from 'svelte'
   export let itemCollection
 
@@ -81,6 +81,19 @@
   })
 </script>
 
+<div class="carousel-title">
+  <h2>Explore Walks</h2>
+  <Link
+    href="/walks"
+    title="See all Walks"
+    icon={ArrowRight}
+    iconColor="var(--txt-tertiary-clr)"
+    color="var(--txt-tertiary-clr)"
+    fontSize="var(--fs-md)"
+  />
+</div>
+
+<!-- 
 {#if itemCollection}
   <section>
     <button
@@ -117,14 +130,25 @@
       </span>
     </div>
 
-    <!-- als JavaScript uit staat -->
-    <!-- <div class="button-container">
+  
+    <div class="button-container">
       <button class="carousel-info-button"> Scroll voor de volgende slide </button>
-    </div> -->
+    </div>
   </section>
-{/if}
+{/if} -->
 
 <style>
+  .carousel-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .carousel-title h2 {
+    display: flex;
+    color: var(--txt-tertiary-clr);
+    font-weight: 600;
+  }
   section {
     --arrow-size: 40px;
     display: flex;
@@ -213,5 +237,14 @@
 
   .carousel-indicator-span-span.is-active {
     opacity: 1;
+  }
+
+  @media (min-width: 55em) {
+    .carousel-title {
+      padding: 2rem;
+    }
+    .carousel-title h2 {
+      font-size: var(--fs-xl);
+    }
   }
 </style>
