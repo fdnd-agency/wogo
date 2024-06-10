@@ -5,7 +5,7 @@
 </script>
 
 {#each items as item}
-  <a href="/">
+  <a href="/" alt="cocktail walk ticket">
     <article>
       <div>
         <h3>{item.title}</h3>
@@ -74,8 +74,8 @@
     padding: 0.2rem 0.5rem;
     font-weight: 800;
     border-radius: var(--radius-lg);
-    color: var(--txt-quaternary-clr);
-    background-color: var(--accent2-primary);
+    color: var(--btn-primary-text-clr);
+    background-color: var(--btn-secondary-bg);
     min-height: 1.5em;
   }
 
