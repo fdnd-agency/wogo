@@ -9,10 +9,6 @@
 </svelte:head>
 
 <Hero {items} />
-<div>
-  <h2>Cocktail Walk Tickets</h2>
-  <a href="/" aria-label="">see all walks</a>
-</div>
 <TicketCarousel {itemCollection} />
 <HeadLine title="How It Works" />
 <AnimationCard {items} />
