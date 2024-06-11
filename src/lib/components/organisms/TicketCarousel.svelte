@@ -1,17 +1,14 @@
 <script>
-  import { TicketCard, ArrowRightShort, ArrowLeftShort, Link, ArrowRight } from '$lib'
+  import { TicketCard, Link, ArrowRightShort, ArrowLeftShort, ArrowRight } from '$lib'
   import { onMount } from 'svelte'
   export let itemCollection
-
   // Functie voor het scrollen naar links of rechts binnen de carousel
   function scrollLeftOrRight(direction) {
     const carouselElement = document.querySelector('.carousel-inner')
     const offsetWidth = carouselElement.offsetWidth
     const scrollXBy = direction === 'left' ? -offsetWidth : offsetWidth
-
     const scrollWidth = carouselElement.scrollWidth
     const scrollLeft = carouselElement.scrollLeft
-
     // Controleer of de carousel helemaal naar links of rechts is gescrold
     if (direction === 'left' && scrollLeft === 0) {
       carouselElement.scrollTo({
@@ -29,18 +26,15 @@
         behavior: 'smooth',
       })
     }
-
     // Werk de actieve indicator bij
     updateActiveIndicator()
   }
-
   // Functie voor het bijwerken van de actieve indicator in de carousel
   function updateActiveIndicator() {
-    const carouselElement = document.querySelector('.carousel-inner')
+    const carouselElement = document.querySelector('.card-container')
     const scrollLeft = carouselElement.scrollLeft
     const offsetWidth = carouselElement.offsetWidth
     const activeIndex = Math.round(scrollLeft / offsetWidth)
-
     const indicators = document.querySelectorAll('.carousel-indicator-span-span')
     indicators.forEach((ind, index) => {
       if (index === activeIndex) {
@@ -50,19 +44,15 @@
       }
     })
   }
-
   function scrollToSlide(index) {
-    const carouselElement = document.querySelector('.carousel-inner')
+    const carouselElement = document.querySelector('.card-container')
     const offsetWidth = carouselElement.offsetWidth
-
     carouselElement.scrollTo({
       left: offsetWidth * index,
       behavior: 'smooth',
     })
-
     updateActiveIndicator()
   }
-
   // Functie die wordt uitgevoerd wanneer het component wordt gemonteerd
   onMount(() => {
     // Zorg ervoor dat de knoppen en indicatoren zichtbaar zijn bij als de browser JS heeft ingeschakeld
@@ -71,7 +61,6 @@
       element.hidden = false
     })
   })
-
   // Zorg ervoor dat de carousel informatie button niet zichtbaar is waneer JS ingeschakeld is
   onMount(() => {
     const carouselElements = document.querySelectorAll('.carousel-info-button')
@@ -93,12 +82,11 @@
   />
 </div>
 
-<!-- 
 {#if itemCollection}
   <section>
     <button
       type="button"
-      class="carousel-button left-arrow"
+      class="carousel-arrow carousel-arrow--prev"
       on:click={() => scrollLeftOrRight('left')}
       title="Vorige slide"
       hidden
@@ -106,12 +94,12 @@
       <ArrowLeftShort />
     </button>
 
-    <div class="carousel-inner">
+    <div class="card-container">
       <TicketCard {itemCollection} />
     </div>
 
     <button
-      class="carousel-button right-arrow"
+      class="carousel-arrow carousel-arrow--next"
       on:click={() => scrollLeftOrRight('right')}
       title="Volgende slide"
       hidden
@@ -130,12 +118,11 @@
       </span>
     </div>
 
-  
     <div class="button-container">
       <button class="carousel-info-button"> Scroll voor de volgende slide </button>
     </div>
   </section>
-{/if} -->
+{/if}
 
 <style>
   .carousel-title {
@@ -151,69 +138,77 @@
   }
   section {
     --arrow-size: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;
     position: relative;
-    margin: 0 0 0 1rem;
-    gap: 1rem;
-    overflow: auto;
   }
 
-  .carousel-inner {
-    --white-space: clamp(1rem, 5vw, 2rem);
-    display: grid;
-    grid-auto-flow: column;
-    gap: 1rem;
+  .card-container {
+    gap: 8px;
+    width: 100%;
+    display: flex;
+    margin: 0 0 0 1rem;
+    width: calc(100% - 16px);
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
     scroll-behavior: smooth;
   }
 
-  .carousel-inner::-webkit-scrollbar {
+  .card-container::-webkit-scrollbar {
     display: none;
   }
 
-  .carousel-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  @media (min-width: 55em) {
+    .carousel-title {
+      padding: 2rem;
+    }
+    .carousel-title h2 {
+      font-size: var(--fs-xl);
+    }
+  }
+
+  .carousel-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border: none;
-    color: #000;
-    font-size: 20px;
-    z-index: 2;
-    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    bottom: 64px;
     background-color: var(--accent2-quaternary);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.686);
-    margin: 0 -33px;
+    color: var(--txt-dark-clr);
+    margin-block: auto;
+    height: fit-content;
+    width: 48px;
+    border: none;
+    border-radius: 50%;
+    font-size: 3rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 100ms;
+    z-index: 2;
   }
 
-  .carousel-button.left-arrow {
-    left: 5%;
+  .carousel-arrow:hover,
+  .carousel-arrow:focus {
+    opacity: 1;
   }
 
-  .carousel-button.right-arrow {
-    right: 5%;
+  .carousel-arrow--prev {
+    left: 1%;
+  }
+
+  .carousel-arrow--next {
+    right: 1%;
   }
 
   .carousel-indicator {
     --indicator-size: 15px;
     --max-indicators: 5;
-    position: absolute;
+    display: flex;
+    justify-content: center;
     padding: 1rem;
     bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: calc(
-      var(--max-indicators) * var(--indicator-size) + (var(--max-indicators) - 1) *
-        var(--indicator-size) / 2
-    );
     pointer-events: auto;
   }
 
@@ -237,14 +232,5 @@
 
   .carousel-indicator-span-span.is-active {
     opacity: 1;
-  }
-
-  @media (min-width: 55em) {
-    .carousel-title {
-      padding: 2rem;
-    }
-    .carousel-title h2 {
-      font-size: var(--fs-xl);
-    }
   }
 </style>

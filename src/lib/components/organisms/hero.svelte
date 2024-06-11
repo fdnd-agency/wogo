@@ -34,7 +34,7 @@
     place-items: center;
     position: relative;
     height: 55vh;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   video {

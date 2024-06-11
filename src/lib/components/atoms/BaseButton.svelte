@@ -108,6 +108,11 @@
     --btn-padding: 0.375em 1em;
   }
 
+  .btn[style*='--btn-size: m;'] {
+    --scale: 0.975;
+    --btn-padding: 0.8em 1em;
+  }
+
   .btn[style*='--btn-size: lg;'] {
     --scale: 1.25;
     --btn-padding: 0.75em 1.5em;
@@ -116,5 +121,12 @@
   .btn[style*='--btn-size: xl;'] {
     --scale: 1.5;
     --btn-padding: 1em 2em;
+  }
+
+  @media (min-width: 48em) {
+    .btn[style*='--btn-size: m;'] {
+      --scale: 1.5;
+      --btn-padding: 0.8em 1.4em;
+    }
   }
 </style>
