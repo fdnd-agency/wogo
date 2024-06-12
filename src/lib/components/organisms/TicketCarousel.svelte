@@ -162,6 +162,7 @@
     --arrow-size: 40px;
     width: 100%;
     position: relative;
+    overflow: hidden;
   }
 
   .card-container {
