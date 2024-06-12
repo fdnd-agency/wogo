@@ -162,6 +162,7 @@
     --arrow-size: 40px;
     width: 100%;
     position: relative;
+    overflow: hidden;
   }
 
   .card-container {
@@ -169,7 +170,6 @@
     width: 100%;
     display: flex;
     margin: 0 0 0 2rem;
-    width: calc(100% - 16px);
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;

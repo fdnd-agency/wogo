@@ -8,12 +8,13 @@
   export let iconWidth = '24px'
   export let iconHeight = '24px'
   export let iconColor = ''
+  export let filter = ''
 </script>
 
 <a
   {href}
   data-sveltekit-preload-data
-  style="--clr: {color}; --font-size: {fontSize}"
+  style="--clr: {color}; --font-size: {fontSize}; --filter: {filter};"
   aria-label={ariaLabel}
 >
   {title}
@@ -29,12 +30,12 @@
   a {
     display: flex;
     align-items: center;
-    vertical-align: middle;
     gap: 0.5rem;
     text-decoration: none;
     color: var(--clr);
     font-size: var(--font-size);
     white-space: nowrap;
+    filter: var(--filter);
   }
 
   span {

@@ -41,7 +41,6 @@
                     href={sublink.slug}
                     title={sublink.title}
                     aria-label={sublink.label}
-                    size="lg"
                     color="var(--txt-dark-clr)"
                   />
                 </li>
@@ -54,8 +53,8 @@
               href={link.slug}
               title={link.title}
               arialabel={link.label}
-              size="lg"
               color="var(--txt-secondary-clr)"
+              filter="var(--filter-drop)"
             />
             {#if link.subLinksCollection.items.length > 0}
               <ul class="sub-menu" aria-label="Submenu">
@@ -65,7 +64,6 @@
                       href={sublink.slug}
                       title={sublink.title}
                       aria-label={sublink.label}
-                      size="lg"
                       color="var(--txt-dark-clr)"
                     />
                   </li>
@@ -123,6 +121,9 @@
 
   nav li {
     position: relative;
+    font-size: var(--fs-lg);
+    font-weight: 550;
+    padding: 0.5rem 1rem;
   }
   nav li:last-of-type {
     margin-left: 5px;
@@ -142,7 +143,7 @@
     top: 150%;
     left: 0;
     background-color: var(--accent2-tertiary);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     overflow: hidden;
     opacity: 0;
     transform: translateY(-10px);
@@ -258,7 +259,7 @@
       display: flex;
       flex-direction: column;
       font-weight: 500;
-      font-size: 4em;
+      font-size: var(--fs-xl);
       padding: 1rem 0 1rem 0;
     }
 

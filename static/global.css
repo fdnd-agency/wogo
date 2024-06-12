@@ -95,6 +95,10 @@ h1, h2, h3, h4, h5, h6 {
     --fs-lg: clamp(1.35rem, calc(1.22rem + 0.64vw), 1.72rem);
     --fs-xl: clamp(1.94rem, calc(1.69rem + 1.29vw), 2.69rem);
     --fs-2xl: clamp(2.80rem, calc(2.31rem + 2.43vw), 4.20rem);
+
+    --filter-drop: drop-shadow(0 0 0.4rem #000);
+
+    --txt-shadow: 1px 1px 2px pink;
   
     /* line heights */
     --lh-1: 1;
