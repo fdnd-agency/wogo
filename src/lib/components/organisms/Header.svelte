@@ -1,5 +1,4 @@
 <script>
-  import { ariaLabel } from './../../../../.svelte-kit/output/server/chunks/OverviewPage.svelte_svelte_type_style_lang.js'
   import { Link, CartIcon, BaseButton, ArrowDown } from '$lib/index'
   import logo from '$lib/assets/logo.webp'
   export let navigation

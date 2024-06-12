@@ -15,6 +15,7 @@
   export let size = 'default'
   export let iconWidth = ''
   export let iconHeight = ''
+  export let iconColor = ''
 </script>
 
 {#if href}
@@ -37,7 +38,7 @@
 {:else}
   <button
     class="btn"
-    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border};  --btn-size: {size}; --btn-disabled: {btnDisabled};   "
+    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border};  --btn-size: {size}; --btn-disabled: {btnDisabled}; svgColor={iconColor}  "
     {type}
     aria-disabled={btnDisabled === 'true'}
     aria-label={ariaLabel}
@@ -47,7 +48,13 @@
     {title}
     {#if icon}
       <span class="btn-icon">
-        <svelte:component this={icon} class="btn-icon" width={iconWidth} height={iconHeight} />
+        <svelte:component
+          this={icon}
+          class="btn-icon"
+          width={iconWidth}
+          height={iconHeight}
+          svgColor={iconColor}
+        />
       </span>
     {/if}
     <slot></slot>
@@ -108,6 +115,11 @@
     --btn-padding: 0.375em 1em;
   }
 
+  .btn[style*='--btn-size: m;'] {
+    --scale: 0.975;
+    --btn-padding: 0.8em 1em;
+  }
+
   .btn[style*='--btn-size: lg;'] {
     --scale: 1.25;
     --btn-padding: 0.75em 1.5em;
@@ -116,5 +128,12 @@
   .btn[style*='--btn-size: xl;'] {
     --scale: 1.5;
     --btn-padding: 1em 2em;
+  }
+
+  @media (min-width: 48em) {
+    .btn[style*='--btn-size: m;'] {
+      --scale: 1.5;
+      --btn-padding: 0.8em 1.4em;
+    }
   }
 </style>
