@@ -1,18 +1,28 @@
 <script>
-  import { TicketCard, Link, ArrowRightShort, ArrowLeftShort, ArrowRight } from '$lib'
+  import {
+    TicketCard,
+    Link,
+    ArrowRightShort,
+    ArrowLeftShort,
+    ArrowRight,
+    SecondaryButton,
+  } from '$lib'
   import { onMount } from 'svelte'
   export let itemCollection
-  // Functie voor het scrollen naar links of rechts binnen de carousel
+
+  let activeInd = 0
+
   function scrollLeftOrRight(direction) {
-    const carouselElement = document.querySelector('.carousel-inner')
-    const offsetWidth = carouselElement.offsetWidth
-    const scrollXBy = direction === 'left' ? -offsetWidth : offsetWidth
+    const carouselElement = document.querySelector('.card-container')
+    const cardElement = document.querySelector('.ticket-card')
+    const offsetWidth = activeInd >= 3 ? carouselElement.offsetWidth : cardElement.offsetWidth
+    const scrollXBy = direction === 'left' ? -300 : 300
     const scrollWidth = carouselElement.scrollWidth
     const scrollLeft = carouselElement.scrollLeft
-    // Controleer of de carousel helemaal naar links of rechts is gescrold
+
     if (direction === 'left' && scrollLeft === 0) {
       carouselElement.scrollTo({
-        left: scrollWidth - offsetWidth,
+        left: activeInd === 0 ? scrollWidth - carouselElement.offsetWidth : scrollXBy,
         behavior: 'smooth',
       })
     } else if (direction === 'right' && Math.abs(scrollWidth - (scrollLeft + offsetWidth)) <= 1) {
@@ -26,45 +36,51 @@
         behavior: 'smooth',
       })
     }
-    // Werk de actieve indicator bij
-    updateActiveIndicator()
+    updateActiveIndicator(direction)
+    updateIndicators()
   }
-  // Functie voor het bijwerken van de actieve indicator in de carousel
-  function updateActiveIndicator() {
-    const carouselElement = document.querySelector('.card-container')
-    const scrollLeft = carouselElement.scrollLeft
-    const offsetWidth = carouselElement.offsetWidth
-    const activeIndex = Math.round(scrollLeft / offsetWidth)
-    const indicators = document.querySelectorAll('.carousel-indicator-span-span')
-    indicators.forEach((ind, index) => {
-      if (index === activeIndex) {
-        ind.classList.add('is-active')
-      } else {
-        ind.classList.remove('is-active')
-      }
-    })
+
+  function updateActiveIndicator(direction) {
+    if (direction === 'right') {
+      activeInd = activeInd >= 3 ? 0 : activeInd + 1
+    } else {
+      activeInd = activeInd === 0 ? 3 : activeInd - 1
+    }
   }
+
   function scrollToSlide(index) {
+    activeInd = index
     const carouselElement = document.querySelector('.card-container')
     const offsetWidth = carouselElement.offsetWidth
     carouselElement.scrollTo({
       left: offsetWidth * index,
       behavior: 'smooth',
     })
-    updateActiveIndicator()
+
+    updateIndicators()
   }
-  // Functie die wordt uitgevoerd wanneer het component wordt gemonteerd
+
+  function updateIndicators() {
+    const indicators = document.querySelectorAll('.carousel-indicator')
+    indicators.forEach((indicator, index) => {
+      if (index === activeInd) {
+        indicator.classList.add('active')
+      } else {
+        indicator.classList.remove('active')
+      }
+    })
+  }
+
   onMount(() => {
-    // Zorg ervoor dat de knoppen en indicatoren zichtbaar zijn bij als de browser JS heeft ingeschakeld
-    const carouselElements = document.querySelectorAll('.carousel-button, .carousel-indicator')
+    // Zorg ervoor dat de knoppen en indicatoren zichtbaar zijn als de browser JS heeft ingeschakeld
+    const carouselElements = document.querySelectorAll('.carousel-arrow, .carousel-indicator')
     carouselElements.forEach(function (element) {
       element.hidden = false
     })
-  })
-  // Zorg ervoor dat de carousel informatie button niet zichtbaar is waneer JS ingeschakeld is
-  onMount(() => {
-    const carouselElements = document.querySelectorAll('.carousel-info-button')
-    carouselElements.forEach(function (element) {
+
+    // Verberg de info-button als JS ingeschakeld is
+    const infoButtons = document.querySelectorAll('.button-container')
+    infoButtons.forEach(function (element) {
       element.style.display = 'none'
     })
   })
@@ -88,7 +104,7 @@
       type="button"
       class="carousel-arrow carousel-arrow--prev"
       on:click={() => scrollLeftOrRight('left')}
-      title="Vorige slide"
+      title="prev slide"
       hidden
     >
       <ArrowLeftShort />
@@ -101,7 +117,7 @@
     <button
       class="carousel-arrow carousel-arrow--next"
       on:click={() => scrollLeftOrRight('right')}
-      title="Volgende slide"
+      title="next slide"
       hidden
     >
       <ArrowRightShort />
@@ -111,7 +127,7 @@
       <span class="carousel-indicator-span">
         {#each itemCollection.componentsCollection.items as item, index}
           <button
-            class="carousel-indicator-span-span {index === 0 ? 'is-active' : ''}"
+            class="carousel-indicator-span-span {index === activeInd ? 'is-active' : ''}"
             on:click={() => scrollToSlide(index)}
           ></button>
         {/each}
@@ -119,7 +135,13 @@
     </div>
 
     <div class="button-container">
-      <button class="carousel-info-button"> Scroll voor de volgende slide </button>
+      <SecondaryButton
+        type="button"
+        title="Swipe right to see more slides"
+        size="m"
+        icon={ArrowRight}
+        iconColor="var(--accent2-primary)"
+      />
     </div>
   </section>
 {/if}
@@ -146,7 +168,7 @@
     gap: 8px;
     width: 100%;
     display: flex;
-    margin: 0 0 0 1rem;
+    margin: 0 0 0 2rem;
     width: calc(100% - 16px);
     overflow-x: auto;
     overflow-y: hidden;
@@ -171,7 +193,6 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    display: flex;
     justify-content: center;
     top: 0;
     bottom: 64px;
@@ -182,11 +203,11 @@
     width: 48px;
     border: none;
     border-radius: 50%;
-    font-size: 3rem;
     cursor: pointer;
     opacity: 0.5;
     transition: opacity 100ms;
     z-index: 2;
+    cursor: pointer;
   }
 
   .carousel-arrow:hover,
@@ -195,7 +216,7 @@
   }
 
   .carousel-arrow--prev {
-    left: 1%;
+    left: 3%;
   }
 
   .carousel-arrow--next {
@@ -205,15 +226,13 @@
   .carousel-indicator {
     --indicator-size: 15px;
     --max-indicators: 5;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     padding: 1rem;
-    bottom: -5px;
     pointer-events: auto;
   }
 
   .carousel-indicator-span {
-    display: flex;
+    display: inline-flex;
     gap: calc(var(--indicator-size) / 2);
     height: var(--indicator-size);
   }
@@ -232,5 +251,11 @@
 
   .carousel-indicator-span-span.is-active {
     opacity: 1;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
   }
 </style>

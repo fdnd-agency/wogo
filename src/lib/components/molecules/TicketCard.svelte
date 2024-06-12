@@ -5,7 +5,7 @@
 </script>
 
 {#each items as item}
-  <article>
+  <article class="ticket-card">
     <div>
       <h3>{item.title}</h3>
       <Image src={item.image.url} alt={item.image.title} loading="lazy" />
