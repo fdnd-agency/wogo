@@ -23,6 +23,15 @@ export async function load({ params, url }) {
                 description
               }   
             }
+            ... on TypeText {
+                title
+                textParagraph
+                asset {
+                url
+                title
+                description
+              }
+            }
             ... on ItemCollection {
               componentsCollection(limit: 4) {
                 items {
@@ -68,6 +77,7 @@ export async function load({ params, url }) {
             title
             textParagraph
             location
+            slug
             cocktailDescription
             price
             image {
