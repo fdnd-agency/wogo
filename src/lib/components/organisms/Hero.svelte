@@ -47,7 +47,7 @@
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    opacity: 0.8;
+    opacity: 0.5;
   }
 
   .hero-content {

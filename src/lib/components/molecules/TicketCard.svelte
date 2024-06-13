@@ -1,4 +1,5 @@
 <script>
+  import { opacity } from './../../../../.svelte-kit/output/server/chunks/Image.js'
   import { Image, RouteIcon, CocktailIcon, PrimaryButton, SecondaryButton } from '$lib/index'
   export let itemCollection
   const items = itemCollection.componentsCollection.items
@@ -8,7 +9,13 @@
   <article class="ticket-card">
     <div>
       <h3>{item.title}</h3>
-      <Image src={item.image.url} alt={item.image.title} loading="lazy" />
+      <Image
+        src={item.image.url}
+        alt={item.image.title}
+        brdRadius="var(--radius-lg)"
+        opacity="0.6"
+        loading="lazy"
+      />
       <p>{item.price}</p>
     </div>
 
@@ -42,8 +49,8 @@
   }
 
   div:nth-of-type(1) {
-    border-radius: var(--radius-lg);
     position: relative;
+    background: linear-gradient(137deg, rgba(206, 101, 56, 1) 0%, rgba(32, 22, 17, 1) 0%);
   }
 
   div:nth-of-type(2) {
@@ -63,6 +70,7 @@
     font-size: var(--fs-md);
     line-height: 1em;
     color: var(--txt-quaternary-clr);
+    z-index: 1;
   }
 
   div:first-of-type p {
@@ -89,6 +97,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: none;
     gap: 0.2em;
     padding: 0.9rem 0;
   }

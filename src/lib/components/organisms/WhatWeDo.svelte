@@ -9,7 +9,7 @@
       <Image
         src={item.asset.url}
         alt={item.icon.title}
-        opacity="0.3"
+        opacity="0.4"
         brdRadius="10px"
         lazy="loading"
       />
