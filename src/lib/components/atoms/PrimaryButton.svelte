@@ -19,6 +19,7 @@
   {iconWidth}
   {iconHeight}
   {size}
+  iconColor="var(--txt-dark-clr)"
   border-radius="var(--btn-radius)"
   backgroundColor="var(--btn-primary-bg)"
   color="var(--btn-primary-text-clr)"

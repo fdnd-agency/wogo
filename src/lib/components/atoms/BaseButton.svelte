@@ -22,7 +22,7 @@
   <a
     data-sveltekit-preload-data
     class="btn"
-    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow};  --btn-size: {size}; --btn-disabled: {btnDisabled};"
+    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow};  --btn-size: {size}; --btn-disabled: {btnDisabled}; svgColor={iconColor}"
     {href}
     aria-disabled={btnDisabled === 'true'}
     aria-label={ariaLabel}
