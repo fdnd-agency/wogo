@@ -38,6 +38,8 @@ export { default as Filter } from '$lib/components/organisms/Filter.svelte'
 export { default as Header } from '$lib/components/organisms/Header.svelte'
 export { default as AboutThisWalk } from '$lib/components/organisms/AboutThisWalk.svelte'
 export { default as HeaderDetailPage } from '$lib/components/organisms/HeaderDetailPage.svelte'
+export { default as GiftCard } from '$lib/components/organisms/GiftCard.svelte'
+
 
 // Templates
 

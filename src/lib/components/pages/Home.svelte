@@ -1,5 +1,5 @@
 <script>
-  import { Hero, TicketCarousel, AnimationCard, HeadLine, WhatWeDo } from '$lib/index'
+  import { Hero, TicketCarousel, AnimationCard, HeadLine, WhatWeDo, GiftCard } from '$lib/index'
   export let items
   export let itemCollection
 </script>
@@ -14,14 +14,4 @@
 <AnimationCard {items} />
 <HeadLine title="What We Do" />
 <WhatWeDo {items} />
-
-<style>
-  div {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem;
-    color: red;
-  }
-</style>
+<GiftCard items={items[3]} />
