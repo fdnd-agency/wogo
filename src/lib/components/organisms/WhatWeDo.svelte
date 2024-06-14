@@ -1,8 +1,4 @@
 <script>
-  import {
-    iconWidth,
-    iconHeight,
-  } from './../../../../.svelte-kit/output/server/chunks/OverviewPage.svelte_svelte_type_style_lang.js'
   import { SecondaryButton, ArrowRight, Image } from '$lib/index'
   export let items
 </script>
