@@ -29,7 +29,7 @@
               icon={ArrowDown}
               iconWidth="15"
               iconHeight="15"
-              title="More"
+              title="more"
               backgroundColor="var(--btn-primary-bg)"
               color="var(--txt-dark-clr)"
               size="lg"
@@ -98,7 +98,6 @@
   header {
     display: flex;
     position: fixed;
-    font-weight: 500;
     top: 0;
     right: 0;
     left: 0;
@@ -122,7 +121,7 @@
   nav li {
     position: relative;
     font-size: var(--fs-lg);
-    font-weight: 550;
+    text-transform: lowercase;
     padding: 0.5rem 1rem;
   }
   nav li:last-of-type {
@@ -258,7 +257,6 @@
     #mainMenuOpen + nav li {
       display: flex;
       flex-direction: column;
-      font-weight: 500;
       font-size: var(--fs-xl);
       padding: 1rem 0 1rem 0;
     }

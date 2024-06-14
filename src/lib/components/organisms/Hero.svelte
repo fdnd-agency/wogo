@@ -22,7 +22,7 @@
   <div class="hero-content">
     <h1>
       {items[0].title}
-      <PrimaryButton title="Book a Walk" icon={ArrowRight} size="lg" type="button" on:click />
+      <PrimaryButton title="book a walk" icon={ArrowRight} size="lg" type="button" on:click />
     </h1>
     <p>{items[0].subtitle}</p>
   </div>
@@ -53,14 +53,12 @@
   .hero-content {
     padding: 1rem;
     margin-top: 3rem;
-    font-weight: 700;
     color: #fff;
   }
 
   h1 {
     position: relative;
     display: inline-block;
-    font-weight: 700;
     font-size: clamp(2.648rem, 6vw, 4.241rem);
     letter-spacing: -1px;
     filter: drop-shadow(0 0 0.4rem #000);
@@ -80,7 +78,7 @@
 
   p {
     font-size: 1.5rem;
-    font-weight: 700;
+    text-transform: lowercase;
     letter-spacing: 0.2rem;
     padding: 1.5rem 0;
     filter: drop-shadow(0 0 0.4rem #000);

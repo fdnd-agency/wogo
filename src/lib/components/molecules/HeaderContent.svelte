@@ -49,7 +49,6 @@
     border: 1px solid var(--accent2-tertiary);
     border-radius: 3rem;
     font-size: 1rem;
-    font-weight: 600;
     text-align: center;
     color: var(--accent2-tertiary);
   }
@@ -73,7 +72,6 @@
   }
 
   .price {
-    font-weight: 600;
     color: var(--accent2-primary);
   }
 

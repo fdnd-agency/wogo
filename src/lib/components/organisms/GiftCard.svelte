@@ -21,6 +21,7 @@
     gap: 4rem;
     width: 100%;
     min-height: 90vh;
+    padding: 5rem 0;
   }
 
   h2 {
@@ -33,7 +34,7 @@
 
   @media (min-width: 48em) {
     h2 {
-      max-width: 600px;
+      max-width: 630px;
       font-size: var(--fs-2xl);
     }
   }

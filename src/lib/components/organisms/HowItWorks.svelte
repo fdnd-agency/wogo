@@ -116,14 +116,13 @@
   h3 {
     display: inline-flex;
     align-items: center;
+    text-transform: uppercase;
     gap: 0.5rem;
     font-size: 1.3rem;
-    font-weight: 700;
   }
 
   p {
     font-size: 1.2rem;
-    font-weight: 500;
   }
 
   span {
@@ -132,7 +131,6 @@
     line-height: 25px;
     border-radius: 50%;
     text-align: center;
-    font-weight: bold;
     font-size: 16px;
     background-color: var(--page-bg-color);
     color: var(--accent2-quaternary);

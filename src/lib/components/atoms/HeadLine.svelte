@@ -9,9 +9,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-transform: uppercase;
     font-size: var(--fs-xl);
     color: var(--txt-tertiary-clr);
-    font-weight: 600;
-    padding: 2em 0;
+    padding: 1em;
   }
 </style>

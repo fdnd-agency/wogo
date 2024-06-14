@@ -45,7 +45,6 @@
 
   section a {
     padding: 15px 15px;
-    font-weight: bold;
     font-size: 0.9em;
     text-decoration: none;
     text-transform: uppercase;

@@ -31,7 +31,7 @@ export { default as HeaderContent } from '$lib/components/molecules/HeaderConten
 export { default as Hero } from '$lib/components/organisms/Hero.svelte'
 export { default as TicketCarousel } from '$lib/components/organisms/TicketCarousel.svelte'
 export { default as WhatWeDo } from '$lib/components/organisms/WhatWeDo.svelte'
-export { default as AnimationCard } from '$lib/components/organisms/AnimationCard.svelte'
+export { default as HowItWorks } from '$lib/components/organisms/HowItWorks.svelte'
 export { default as Footer } from '$lib/components/organisms/Footer.svelte'
 export { default as TabBar } from '$lib/components/organisms/TabBar.svelte'
 export { default as Filter } from '$lib/components/organisms/Filter.svelte'

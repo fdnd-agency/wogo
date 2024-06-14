@@ -61,13 +61,11 @@
     border: none;
     background-color: var(--accent2-primary);
     color: var(--accent1-primary);
-    font-weight: 900;
     text-transform: uppercase;
     border-radius: 0.8rem;
   }
 
   option {
-    font-weight: 900;
   }
 
   button {
@@ -76,7 +74,6 @@
     color: var(--accent2-primary);
     border: none;
     border-radius: 0.8rem;
-    font-weight: 900;
     text-transform: uppercase;
   }
 </style>

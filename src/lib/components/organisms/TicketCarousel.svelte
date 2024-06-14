@@ -87,10 +87,10 @@
 </script>
 
 <div class="carousel-title">
-  <h2>Explore Walks</h2>
+  <h2>Explore Cocktail Walks</h2>
   <Link
     href="/walks"
-    title="See all Walks"
+    title="see all walks"
     icon={ArrowRight}
     iconColor="var(--txt-tertiary-clr)"
     color="var(--txt-tertiary-clr)"
@@ -150,13 +150,15 @@
   .carousel-title {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 3rem 1rem;
   }
   .carousel-title h2 {
     display: flex;
+    padding-bottom: 0.5rem;
     color: var(--txt-tertiary-clr);
-    font-weight: 600;
+    text-transform: uppercase;
   }
   section {
     --arrow-size: 40px;
@@ -182,7 +184,7 @@
 
   @media (min-width: 55em) {
     .carousel-title {
-      padding: 2rem;
+      padding: 3rem 2rem;
     }
     .carousel-title h2 {
       font-size: var(--fs-xl);

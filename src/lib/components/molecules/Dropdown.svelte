@@ -23,7 +23,6 @@
     padding: 1rem;
     background-color: var(--accent2-primary);
     color: var(--accent1-primary);
-    font-weight: bold;
     text-transform: uppercase;
     border-radius: 0.8rem;
     width: 8vw;
@@ -52,7 +51,6 @@
   li {
     padding: 1rem;
     list-style: none;
-    font-weight: bold;
     text-transform: uppercase;
   }
 

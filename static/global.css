@@ -10,14 +10,26 @@
 }
 
 body {
-  font-family: 'BemboItalic', Arial, Helvetica, sans-serif;
+  font-family: "Epilogue", Helvetica, sans-serif;
   background-color: var(--page-bg-color);
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  letter-spacing: .1em;
+  line-height: 1.2;
+  letter-spacing: .3;
 }
+
+
+
+
+@font-face {
+  font-family: 'Epilogue';
+  src: url('fonts/Epilogue-VariableFont_wght.ttf') format('truetype');
+}
+   
+
+
 
 
 
@@ -97,8 +109,8 @@ h1, h2, h3, h4, h5, h6 {
     --fs-2xl: clamp(2.80rem, calc(2.31rem + 2.43vw), 4.20rem);
 
     --filter-drop: drop-shadow(0 0 0.4rem #000);
-
     --txt-shadow: 1px 1px 2px pink;
+
   
     /* line heights */
     --lh-1: 1;

@@ -22,7 +22,7 @@
   <a
     data-sveltekit-preload-data
     class="btn"
-    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow};  --btn-size: {size}; --btn-disabled: {btnDisabled}; svgColor={iconColor}"
+    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border}; --box-shadow: {boxShadow};  --btn-size: {size}; --btn-disabled: {btnDisabled}"
     {href}
     aria-disabled={btnDisabled === 'true'}
     aria-label={ariaLabel}
@@ -30,7 +30,13 @@
     {title}
     {#if icon}
       <span class="btn-icon">
-        <svelte:component this={icon} class="btn-icon" width={iconWidth} height={iconHeight} />
+        <svelte:component
+          this={icon}
+          class="btn-icon"
+          width={iconWidth}
+          height={iconHeight}
+          svgColor={iconColor}
+        />
       </span>
     {/if}
     <slot></slot>
@@ -38,7 +44,7 @@
 {:else}
   <button
     class="btn"
-    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border};  --btn-size: {size}; --btn-disabled: {btnDisabled}; svgColor={iconColor}  "
+    style="--bgc: {backgroundColor}; --clr: {color}; --border: {border};  --btn-size: {size}; --btn-disabled: {btnDisabled}"
     {type}
     aria-disabled={btnDisabled === 'true'}
     aria-label={ariaLabel}
@@ -74,7 +80,6 @@
     text-align: center;
     letter-spacing: 1px;
     line-height: var(--lh-1);
-    font-weight: 700;
     text-decoration: none;
     border: 0;
     background-color: var(--bgc);

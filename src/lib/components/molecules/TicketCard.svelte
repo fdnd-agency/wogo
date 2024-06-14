@@ -1,5 +1,4 @@
 <script>
-  import { opacity } from './../../../../.svelte-kit/output/server/chunks/Image.js'
   import { Image, RouteIcon, CocktailIcon, PrimaryButton, SecondaryButton } from '$lib/index'
   export let itemCollection
   const items = itemCollection.componentsCollection.items
@@ -79,7 +78,6 @@
     top: 1em;
     margin: 0;
     padding: 0.2rem 0.5rem;
-    font-weight: 800;
     line-height: 1.75em;
     border-radius: var(--radius-lg);
     color: var(--btn-primary-text-clr);

@@ -92,6 +92,7 @@
 
   footer li {
     padding: 0.5rem;
+    text-transform: lowercase;
     list-style: none;
     color: var(--accent2-tertiary);
   }
@@ -133,7 +134,6 @@
 
   .footer-text,
   .newsletter-title {
-    font-weight: 700;
     margin-bottom: 1rem;
   }
 
@@ -158,10 +158,6 @@
 
     .footer nav {
       gap: clamp(2rem, 30vw, 4rem);
-    }
-
-    .footer-wrapper > * {
-      margin-inline: auto;
     }
 
     .footer-wrapper > * {

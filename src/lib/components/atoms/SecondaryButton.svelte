@@ -9,7 +9,6 @@
   export let icon = ''
   export let iconWidth = '24px'
   export let iconHeight = '24px'
-  export let iconColor = ''
 </script>
 
 <BaseButton
@@ -20,13 +19,12 @@
   {icon}
   {iconWidth}
   {iconHeight}
-  {iconColor}
   {ariaLabel}
   {size}
+  iconColor="var(--accent2-primary)"
   border-radius="var(--btn-radius)"
   color="var(--txt-primary-clr)"
   border="1.5px solid var(--btn-primary-bg)"
-  boxShadow="var(--btn-shadow)"
 >
   <slot />
 </BaseButton>

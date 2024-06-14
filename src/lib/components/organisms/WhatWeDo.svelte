@@ -1,4 +1,8 @@
 <script>
+  import {
+    iconWidth,
+    iconHeight,
+  } from './../../../../.svelte-kit/output/server/chunks/OverviewPage.svelte_svelte_type_style_lang.js'
   import { SecondaryButton, ArrowRight, Image } from '$lib/index'
   export let items
 </script>
@@ -26,9 +30,7 @@
           >{item.title}
         </h3>
         <p>{item.textParagraph}</p>
-        <SecondaryButton href="/" title="Read More" size="sm">
-          <ArrowRight color="var(--accent2-primary)" width="24" height="24" />
-        </SecondaryButton>
+        <SecondaryButton href="/" title="Read More" size="sm" icon={ArrowRight} />
       </div>
     </article>
   {/each}
@@ -46,6 +48,7 @@
   h3 {
     display: inline-flex;
     align-items: center;
+    text-transform: uppercase;
     gap: 1rem;
     padding: 0.5rem 0;
     color: var(--accent2-tertiary);

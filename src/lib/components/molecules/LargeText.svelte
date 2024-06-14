@@ -26,7 +26,6 @@
     font-size: 2rem;
     color: white;
     text-align: left;
-    font-weight: 600;
     margin-bottom: 2rem;
   }
 
