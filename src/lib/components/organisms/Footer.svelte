@@ -89,6 +89,7 @@
   footer nav {
     grid-area: nav;
     columns: 2;
+    font-size: var(--fs-lg);
     gap: clamp(1rem, 30vw, 2rem);
   }
 
@@ -98,7 +99,7 @@
   }
 
   footer li {
-    padding: 0.5rem;
+    padding: 1rem;
     text-transform: lowercase;
     list-style: none;
     color: var(--accent2-tertiary);
@@ -155,8 +156,7 @@
   /* Desktop */
   @media screen and (min-width: 48em) {
     footer {
-      padding-left: calc((100% - 1060px) / 2);
-      padding-right: calc((100% - 1060px) / 2);
+      padding: 0 3vw;
     }
 
     .footer-wrapper {
