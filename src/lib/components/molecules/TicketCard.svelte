@@ -76,7 +76,7 @@
     position: absolute;
     left: 1em;
     top: 1em;
-    padding: 0.2rem;
+    padding: 0.5rem;
     font-weight: 600;
     border-radius: var(--radius-lg);
     color: var(--btn-primary-text-clr);
