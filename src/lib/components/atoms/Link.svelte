@@ -1,21 +1,20 @@
 <script>
-  export let fontSize = ''
   export let color = ''
   export let href = ''
   export let title = ''
-  export let ariaLabel = ''
   export let icon = null
   export let iconWidth = '24px'
   export let iconHeight = '24px'
   export let iconColor = ''
   export let filter = ''
+  export let fontSize = ''
 </script>
 
 <a
   {href}
   data-sveltekit-preload-data
   style="--clr: {color}; --font-size: {fontSize}; --filter: {filter};"
-  aria-label={ariaLabel}
+  {...$$restProps}
 >
   {title}
   {#if icon}

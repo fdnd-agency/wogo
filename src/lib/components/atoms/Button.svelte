@@ -32,7 +32,6 @@
 
 <style>
   .btn {
-    /* --btn-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25); */
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
@@ -40,6 +39,7 @@
     text-align: center;
     letter-spacing: 1px;
     line-height: var(--lh-1);
+    font-weight: 700;
     text-decoration: none;
     gap: 0.5rem;
     border: 0;
@@ -60,12 +60,28 @@
     background-color: var(--btn-primary-bg);
     color: var(--btn-primary-text-clr);
     box-shadow: var(--btn-shadow);
+    border: 2px solid var(--btn-primary-bg);
   }
 
   .btn-secondary {
     border-radius: var(--btn-radius);
     color: var(--txt-primary-clr);
-    border: 1.5px solid var(--btn-primary-bg);
+    border: 2px solid var(--btn-primary-bg);
+  }
+
+  .btn-secondary,
+  .btn-primary {
+    transition:
+      box-shadow 0.2s,
+      transform 0.3s;
+  }
+
+  .btn-secondary:hover,
+  .btn-secondary:focus,
+  .btn-primary:hover,
+  .btn-primary:focus {
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+    transform: scale(1.1);
   }
 
   .btn-icon {

@@ -85,6 +85,8 @@
     href="/walks"
     title="see all walks"
     size="m"
+    fontSize="var(--fs-lg)"
+    color="var(--accent2-tertiary)"
     icon={ArrowRight}
     iconColor="var(--txt-tertiary-clr)"
   />

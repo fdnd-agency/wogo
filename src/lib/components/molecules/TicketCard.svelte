@@ -76,9 +76,8 @@
     position: absolute;
     left: 1em;
     top: 1em;
-    margin: 0;
-    padding: 0.2rem 0.5rem;
-    line-height: 1.75em;
+    padding: 0.2rem;
+    font-weight: 600;
     border-radius: var(--radius-lg);
     color: var(--btn-primary-text-clr);
     background-color: var(--btn-secondary-bg);
