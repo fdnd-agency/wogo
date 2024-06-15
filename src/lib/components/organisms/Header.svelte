@@ -1,19 +1,18 @@
 <script>
-  import { Link, CartIcon, BaseButton, ArrowDown } from '$lib/index'
+  import { Link, CartIcon, ArrowDown, Button } from '$lib/index'
   import logo from '$lib/assets/logo.webp'
   export let navigation
 </script>
 
 <header>
   <span class="skip-link">
-    <BaseButton
-      href="#main"
-      title="Skip To Content"
-      color="var(--txt-primary-clr)"
-      backgroundColor="var(--btn-secondary-bg)"
-      border="1.5px solid var(--btn-primary-bg)"
+    <Button
+      variant="primary"
+      href="#content"
+      title="skip to content"
       size="lg"
-      ariaLabel="shop button"
+      aria-label="skip to content"
+      data-sveltekit-preload-data="false"
     />
   </span>
   <img src={logo} height="70" width="70" alt="Wogo Logo" />
@@ -25,14 +24,12 @@
       {#each navigation.navigationLinksCollection.items as link}
         {#if link.title === 'More'}
           <li class="more-button">
-            <BaseButton
-              icon={ArrowDown}
-              iconWidth="15"
-              iconHeight="15"
+            <Button
+              variant="primary"
+              aria-label="more links"
               title="more"
-              backgroundColor="var(--btn-primary-bg)"
-              color="var(--txt-dark-clr)"
-              size="lg"
+              icon={ArrowDown}
+              size="m"
             />
             <ul class="more-dropdown">
               {#each link.subLinksCollection.items as sublink}
@@ -76,7 +73,7 @@
     </ul>
   </nav>
   <div class="button-cart-container">
-    <CartIcon width="60px" height="60px" fill="var(--accent2-primary)" />
+    <CartIcon aria-label="shopping cart" width="60px" height="60px" fill="var(--accent2-primary)" />
   </div>
 </header>
 

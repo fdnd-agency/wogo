@@ -1,5 +1,5 @@
 <script>
-  import { PrimaryButton, ArrowRight } from '$lib/index'
+  import { ArrowRight, Button } from '$lib/index'
   export let items
 </script>
 
@@ -22,7 +22,14 @@
   <div class="hero-content">
     <h1>
       {items[0].title}
-      <PrimaryButton title="book a walk" icon={ArrowRight} size="lg" type="button" on:click />
+      <Button
+        variant="primary"
+        title="book now"
+        icon={ArrowRight}
+        iconColor="var(--btn-primary-text-clr)"
+        aria-label="click me"
+        size="lg"
+      />
     </h1>
     <p>{items[0].subtitle}</p>
   </div>

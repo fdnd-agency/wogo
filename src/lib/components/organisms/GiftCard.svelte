@@ -1,5 +1,5 @@
 <script>
-  import { Image, PrimaryButton, ArrowRight } from '$lib/index'
+  import { Image, Button, ArrowRight } from '$lib/index'
 
   export let items
   const { textParagraph, asset } = items
@@ -8,7 +8,14 @@
 <section>
   <Image src={asset.url} alt={asset.title} width="350" height="350" />
   <h2>{textParagraph}</h2>
-  <PrimaryButton title="Buy a Gift" icon={ArrowRight} size="lg" type="button" on:click />
+  <Button
+    type="button"
+    variant="primary"
+    title="buy a gift"
+    icon={ArrowRight}
+    iconColor="var(--btn-primary-text-clr)"
+    size="lg"
+  />
 </section>
 
 <style>

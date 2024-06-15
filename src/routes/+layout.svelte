@@ -5,7 +5,7 @@
 
 <Header navigation={data.navigation} />
 
-<main id="main">
+<main id="content">
   <slot />
 </main>
 

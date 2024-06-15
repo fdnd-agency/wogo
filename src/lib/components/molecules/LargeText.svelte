@@ -1,5 +1,5 @@
 <script>
-  import { PrimaryButton, ArrowRight } from '$lib/index'
+  import { Button, ArrowRight } from '$lib/index'
 
   const mockData = {
     largetext: [
@@ -13,7 +13,14 @@
 
 <section>
   <p>{mockData.largetext[0].title}</p>
-  <PrimaryButton title="Book a Walk" icon={ArrowRight} size="lg" type="button" on:click />
+  <Button
+    type="button"
+    variant="primary"
+    title="book a walk"
+    icon={ArrowRight}
+    size="lg"
+    on:click
+  />
 </section>
 
 <style>

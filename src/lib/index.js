@@ -1,11 +1,9 @@
 // Atoms
 export { default as Link } from '$lib/components/atoms/Link.svelte'
-export { default as BaseButton } from '$lib/components/atoms/BaseButton.svelte'
-export { default as PrimaryButton } from '$lib/components/atoms/PrimaryButton.svelte'
-export { default as SecondaryButton } from '$lib/components/atoms/SecondaryButton.svelte'
 export { default as Image } from '$lib/components/atoms/Image.svelte'
 export { default as HeadLine } from '$lib/components/atoms/HeadLine.svelte'
 export { default as HeaderImage } from '$lib/components/atoms/HeaderImage.svelte'
+export { default as Button } from '$lib/components/atoms/Button.svelte'
 
 //Atoms / Icons
 export { default as ArrowLeft } from '$lib/components/atoms/icons/ArrowLeft.svelte'

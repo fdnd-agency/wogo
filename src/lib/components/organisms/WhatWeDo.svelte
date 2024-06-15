@@ -1,9 +1,9 @@
 <script>
-  import { SecondaryButton, ArrowRight, Image } from '$lib/index'
+  import { Button, ArrowRight, Image } from '$lib/index'
   export let items
 </script>
 
-<section>
+<section id="main">
   {#each items[2].componentsCollection.items as item}
     <article>
       <Image
@@ -26,7 +26,14 @@
           >{item.title}
         </h3>
         <p>{item.textParagraph}</p>
-        <SecondaryButton href="/" title="Read More" size="sm" icon={ArrowRight} />
+        <Button
+          href="/"
+          variant="secondary"
+          title="Read More"
+          size="sm"
+          icon={ArrowRight}
+          iconColor="var(--accent2-primary)"
+        />
       </div>
     </article>
   {/each}

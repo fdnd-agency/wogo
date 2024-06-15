@@ -1,12 +1,5 @@
 <script>
-  import {
-    TicketCard,
-    Link,
-    ArrowRightShort,
-    ArrowLeftShort,
-    ArrowRight,
-    SecondaryButton,
-  } from '$lib'
+  import { TicketCard, Link, ArrowRightShort, ArrowLeftShort, ArrowRight, Button } from '$lib'
   import { onMount } from 'svelte'
   export let itemCollection
 
@@ -91,10 +84,9 @@
   <Link
     href="/walks"
     title="see all walks"
+    size="m"
     icon={ArrowRight}
     iconColor="var(--txt-tertiary-clr)"
-    color="var(--txt-tertiary-clr)"
-    fontSize="var(--fs-md)"
   />
 </div>
 
@@ -135,9 +127,10 @@
     </div>
 
     <div class="button-container">
-      <SecondaryButton
+      <Button
         type="button"
-        title="Swipe right to see more slides"
+        variant="secondary"
+        title="swipe right to see more slides"
         size="m"
         icon={ArrowRight}
         iconColor="var(--accent2-primary)"

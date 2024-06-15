@@ -1,5 +1,5 @@
 <script>
-  import { Image, RouteIcon, CocktailIcon, PrimaryButton, SecondaryButton } from '$lib/index'
+  import { Image, RouteIcon, CocktailIcon, Button } from '$lib/index'
   export let itemCollection
   const items = itemCollection.componentsCollection.items
 </script>
@@ -30,8 +30,8 @@
       </p>
 
       <div>
-        <PrimaryButton title="Book Now" type="button" size="m" />
-        <SecondaryButton title="Read More" href="/home/{item.slug}" size="m" />
+        <Button type="button" variant="primary" title="Book Now" size="m" />
+        <Button href="/home/{item.slug}" variant="secondary" title="Read More" size="m" />
       </div>
     </div>
   </article>
