@@ -102,6 +102,7 @@ export async function load({ params, url }) {
 
   const response = await contentfulFetch(query)
   const { data } = await response.json()
+  console.log(data)
   const { items } = data.pageCollection
   const itemCollection = data.itemCollection
 

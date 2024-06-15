@@ -82,7 +82,7 @@
 <div class="carousel-title">
   <h2>Explore Cocktail Walks</h2>
   <Link
-    href="/walks"
+    href="/walks-overview"
     title="see all walks"
     size="m"
     fontSize="var(--fs-lg)"

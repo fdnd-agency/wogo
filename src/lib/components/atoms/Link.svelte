@@ -11,8 +11,8 @@
 </script>
 
 <a
+  data-sveltekit-reload
   {href}
-  data-sveltekit-preload-data
   style="--clr: {color}; --font-size: {fontSize}; --filter: {filter};"
   {...$$restProps}
 >

@@ -1,20 +1,12 @@
 <script>
-  import {
-    WorkWithUs,
-    HomePage,
-    GroupOutings,
-    TicketsOverview,
-    OverviewPage,
-    TicketCard,
-  } from '$lib/index'
+  import { WorkWithUs, HomePage, GroupOutings, TicketsOverview } from '$lib/index'
   export let data
 
   const componentMap = {
     home: HomePage,
-    walks: OverviewPage,
+    'walks-overview': TicketsOverview,
     'work-with-us': WorkWithUs,
     'group-outings': GroupOutings,
-    'walks-overview': TicketsOverview,
   }
 
   const items = data.pageData.find((pageDataItem) => pageDataItem.slug === data.slug)
