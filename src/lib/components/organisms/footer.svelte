@@ -1,5 +1,5 @@
 <script>
-  import { Link, Image, PrimaryButton, ArrowRight } from '$lib/index'
+  import { Link, Image, Button, ArrowRight } from '$lib/index'
   import logo from '$lib/assets/logo.webp'
   export let footerItems
 </script>
@@ -47,7 +47,14 @@
           placeholder={footerItems[0].placeholderText}
           required
         />
-        <PrimaryButton title="Subscribe" icon={ArrowRight} size="sm" type="submit" />
+        <Button
+          type="submit"
+          variant="primary"
+          title="Subscribe"
+          icon={ArrowRight}
+          iconColor="var(--btn-primary-text-clr)"
+          size="sm"
+        />
       </form>
     </div>
   </div>
@@ -148,8 +155,7 @@
   /* Desktop */
   @media screen and (min-width: 48em) {
     footer {
-      padding-left: calc((100% - 1060px) / 2);
-      padding-right: calc((100% - 1060px) / 2);
+      padding: 0 3vw;
     }
 
     .footer-wrapper {

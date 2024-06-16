@@ -1,5 +1,5 @@
 <script>
-  import { ArrowRight, Button } from '$lib/index'
+  import { Button, ArrowRight } from '$lib/index'
   export let items
 </script>
 
@@ -54,18 +54,20 @@
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    opacity: 0.5;
+    opacity: 0.8;
   }
 
   .hero-content {
     padding: 1rem;
     margin-top: 3rem;
+    font-weight: 700;
     color: #fff;
   }
 
   h1 {
     position: relative;
     display: inline-block;
+    font-weight: 700;
     font-size: clamp(2.648rem, 6vw, 4.241rem);
     letter-spacing: -1px;
     filter: drop-shadow(0 0 0.4rem #000);
@@ -85,9 +87,9 @@
 
   p {
     font-size: 1.5rem;
-    text-transform: lowercase;
+    font-weight: 700;
     letter-spacing: 0.2rem;
-    padding: 1.5rem 0;
+    padding: 0.5rem;
     filter: drop-shadow(0 0 0.4rem #000);
     position: relative;
     animation-name: content;

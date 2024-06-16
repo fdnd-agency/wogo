@@ -89,7 +89,6 @@
   footer nav {
     grid-area: nav;
     columns: 2;
-    font-size: var(--fs-lg);
     gap: clamp(1rem, 30vw, 2rem);
   }
 
@@ -99,7 +98,7 @@
   }
 
   footer li {
-    padding: 1rem;
+    padding: 0.5rem;
     text-transform: lowercase;
     list-style: none;
     color: var(--accent2-tertiary);
