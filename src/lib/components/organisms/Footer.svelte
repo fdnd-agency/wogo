@@ -98,7 +98,8 @@
   }
 
   footer li {
-    padding: 0.5rem;
+    padding: 1rem;
+    font-size: var(--fs-md);
     text-transform: lowercase;
     list-style: none;
     color: var(--accent2-tertiary);
