@@ -263,9 +263,9 @@
       color: var(--txt-primary-clr);
       display: block;
       position: absolute;
-      top: 1.8rem;
+      top: 1.5rem;
       right: 1.2rem;
-      font-size: 1rem;
+      font-size: 2.5rem;
       cursor: pointer;
     }
 
