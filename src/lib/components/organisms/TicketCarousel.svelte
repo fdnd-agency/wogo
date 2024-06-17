@@ -130,7 +130,7 @@
 
     <div class="button-container">
       <Button
-        type="button"
+        aria-label="slide to next"
         variant="secondary"
         title="swipe right to see more slides"
         size="m"
@@ -147,7 +147,7 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 3rem 1rem;
+    padding: 3rem 2rem;
   }
   .carousel-title h2 {
     display: flex;
@@ -221,7 +221,7 @@
   }
 
   .carousel-indicator {
-    --indicator-size: 15px;
+    --indicator-size: 20px;
     --max-indicators: 5;
     text-align: center;
     padding: 1rem;

@@ -1,13 +1,13 @@
 <script>
   export let width = ''
   export let height = ''
-  export let color = ''
+  export let svgColor = ''
 </script>
 
 <svg
   {width}
   {height}
-  fill={color}
+  stroke={svgColor}
   xmlns="http://www.w3.org/2000/svg"
   xml:space="preserve"
   viewBox="0 0 330 330"
