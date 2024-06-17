@@ -9,7 +9,7 @@
     loop
     muted
     width="1280"
-    height="700"
+    height="1000"
     aria-label={items.description}
     aria-hidden="true"
     poster="/hero-image-background.webp"
@@ -17,7 +17,7 @@
     <source src={items[0].asset.url} type="video/webm" />
     <source src={items[0].asset.url} type="video/webm" />
     <source src="path/to/video-480p.mp4" type="video/mp4" media="(min-width: 480px)" />
-    <source src="path/to/video-360p.mp4" type="video/mp4" media="(max-width: 360px)" />
+    <source src="path/to/video-360p.mp4" type="video/mp4" media="(max-width: 1280px)" />
   </video>
   <div class="hero-content">
     <h1>
@@ -27,7 +27,6 @@
         title="book now"
         icon={ArrowRight}
         iconColor="var(--btn-primary-text-clr)"
-        aria-label="click me"
         size="lg"
       />
     </h1>
@@ -41,7 +40,7 @@
     place-items: center;
     position: relative;
     height: 55vh;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 
   video {
