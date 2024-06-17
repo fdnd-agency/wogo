@@ -24,13 +24,7 @@
       {#each navigation.navigationLinksCollection.items as link}
         {#if link.title === 'More'}
           <li class="more-button">
-            <Button
-              variant="primary"
-              aria-label="more links"
-              title="more"
-              icon={ArrowDown}
-              size="m"
-            />
+            <Button variant="primary" title="more" icon={ArrowDown} size="m" />
             <ul class="more-dropdown">
               {#each link.subLinksCollection.items as sublink}
                 <li>
@@ -73,7 +67,7 @@
     </ul>
   </nav>
   <div class="button-cart-container">
-    <CartIcon aria-label="shopping cart" width="60px" height="60px" fill="var(--accent2-primary)" />
+    <CartIcon width="60px" height="60px" fill="var(--accent2-primary)" />
   </div>
 </header>
 

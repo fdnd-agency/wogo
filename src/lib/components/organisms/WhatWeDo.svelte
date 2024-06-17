@@ -11,7 +11,7 @@
         alt={item.icon.title}
         opacity="0.4"
         brdRadius="10px"
-        lazy="loading"
+        loading="lazy"
       />
       <div class="content-inner">
         <h3>
@@ -21,7 +21,7 @@
               alt={item.icon.title}
               width="30"
               height="30"
-              lazy="loading"
+              loading="lazy"
             /></span
           >{item.title}
         </h3>
