@@ -27,4 +27,16 @@ This project is licensed under the terms of the MIT license.
 
 ## Links 🔗
 
+<<<<<<< HEAD
 [Backlog](https://github.com/orgs/fdnd-agency/projects/29/views/1)
+=======
+[Backlog]()
+
+[Huisstijl]()  
+
+[Design]()  
+
+[Website WoGo](https://www.wogoamsterdam.com)
+
+[WoGo API]()
+>>>>>>> parent of 3a83458 (Update README.md)
