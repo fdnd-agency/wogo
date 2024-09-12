@@ -1,16 +1,12 @@
 <script>
-  import { Navigation } from '$lib'
+  import { Header, Footer } from '$lib/index'
   export let data
 </script>
 
-<header>
-  <Navigation items={data.navigation[0].navigationLinksCollection.items} />
-</header>
+<Header navigation={data.navigation} />
 
-<main id="main">
+<main id="content">
   <slot />
 </main>
 
-<style global>
-  @import './global.css';
-</style>
+<Footer footerItems={data.footer} />

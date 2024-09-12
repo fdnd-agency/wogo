@@ -1,18 +1,30 @@
 <script>
-  import { ButtonLink } from '$lib/index'
+  import { PrimaryButton, ArrowRight } from '$lib/index'
   export let items
 </script>
 
 <section>
-  <video autoplay muted loop aria-label={items.backgroundAsset.title}>
-    <source src={items.backgroundAsset.url} type="video/mp4" />
+  <video
+    autoplay
+    loop
+    muted
+    width="1280"
+    height="700"
+    aria-label={items.description}
+    aria-hidden="true"
+    poster="/hero-image-background.webp"
+  >
+    <source src={items[0].asset.url} type="video/webm" />
+    <source src={items[0].asset.url} type="video/webm" />
+    <source src="path/to/video-480p.mp4" type="video/mp4" media="(min-width: 480px)" />
+    <source src="path/to/video-360p.mp4" type="video/mp4" media="(max-width: 360px)" />
   </video>
   <div class="hero-content">
     <h1>
-      {items.headline}
-      <ButtonLink style="display: flex gap: 1rem;" href="/" title={items.buttonText} />
+      {items[0].title}
+      <PrimaryButton title="Book a Walk" icon={ArrowRight} size="lg" type="button" on:click />
     </h1>
-    <p>{items.bodyText}</p>
+    <p></p>
   </div>
 </section>
 
@@ -22,7 +34,7 @@
     place-items: center;
     position: relative;
     height: 55vh;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   video {

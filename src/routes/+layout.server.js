@@ -2,29 +2,61 @@ import { error } from '@sveltejs/kit'
 import contentfulFetch from '../api/contentful-fetch'
 
 
-const query = ` {
-  navigationCollection {
-    items {
-     logo {
-      url
-      description
+const query = `
+{
+  navigation(id: "4xhowg37MDjXP7okbSrx1b") {
+    navigationLinksCollection {
+      items {
+         ... on TypeLink {
+           title
+           label
+          	slug
+            isMoreLink
+            subLinksCollection(limit: 5) {
+              items {
+                ... on TypeLink {
+                  title
+                  slug
+                  isMoreLink
+                }
+              }
+            }
+          }
+        }
       }
-      navigationLinksCollection(limit: 5) { # Beperkt het aantal navigatielinks
+    }
+
+  footerCollection(limit: 1) {
+    items {
+      newsletterTitle
+			newsLetterDescription
+      placeholderText
+      footerLinksCollection(limit: 5) {
         items {
-          internalName
-          url
-          subLinksCollection(limit: 5) { # Beperkt het aantal sublinks
-            items {
-              internalName
-              url
+          ... on TypeLink {
+            title
+            slug
+          }
+        }
+      }
+      socialMediaIconsCollection(limit: 3) {
+        items {
+          ... on TypeAssets {
+            url
+            assetCollection {
+              items {
+                title
+                description
+                url
+              }
             }
           }
         }
       }
     }
   }
-  }
-  ` 
+}
+`;
 
 
   export async function load() {
@@ -36,9 +68,11 @@ const query = ` {
       })
     }
     const { data } = await response.json()
-    const { items } = data.navigationCollection
-
+    const { navigation } = data
+    const { items: footerItems } = data.footerCollection
+    
     return {
-      navigation: items,
-    }
+      navigation,
+      footer: footerItems
+    };
   }
