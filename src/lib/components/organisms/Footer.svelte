@@ -1,5 +1,5 @@
 <script>
-  import { Link, Image, Button, ArrowRight } from '$lib/index'
+  import { Link, Image, PrimaryButton, ArrowRight } from '$lib/index'
   import logo from '$lib/assets/logo.webp'
   export let footerItems
 </script>
@@ -47,14 +47,7 @@
           placeholder={footerItems[0].placeholderText}
           required
         />
-        <Button
-          type="submit"
-          variant="primary"
-          title="Subscribe"
-          icon={ArrowRight}
-          iconColor="var(--btn-primary-text-clr)"
-          size="sm"
-        />
+        <PrimaryButton title="Subscribe" icon={ArrowRight} size="sm" type="submit" />
       </form>
     </div>
   </div>
@@ -89,7 +82,6 @@
   footer nav {
     grid-area: nav;
     columns: 2;
-    font-size: var(--fs-lg);
     gap: clamp(1rem, 30vw, 2rem);
   }
 
@@ -99,7 +91,7 @@
   }
 
   footer li {
-    padding: 1rem;
+    padding: 0.5rem;
     text-transform: lowercase;
     list-style: none;
     color: var(--accent2-tertiary);
@@ -156,7 +148,8 @@
   /* Desktop */
   @media screen and (min-width: 48em) {
     footer {
-      padding: 0 3vw;
+      padding-left: calc((100% - 1060px) / 2);
+      padding-right: calc((100% - 1060px) / 2);
     }
 
     .footer-wrapper {
