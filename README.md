@@ -1,42 +1,9 @@
-# WOGO
-
-## Beschrijving 📄
-WOGO Cocktailwalks organiseert culinaire wandeltochten waarbij deelnemers verschillende horecagelegenheden bezoeken. Tijdens deze tochten krijgen de deelnemers op elke locatie een speciaal samengestelde cocktails geserveerd. Het doel van WOGO Cocktailwalks is om een unieke en sociale drinkervaring te bieden, waarbij men kan genieten van diverse creatieve cocktails, terwijl men ook de stad en de horeca beter leert kennen. Dit was een samenwerkingsopdracht. 
-
-![mockup-wogo2](https://github.com/mcphendriks/wogo/assets/112857444/8a4b6785-f30d-488b-a680-0893cdb2cc2e)
+# Wogo
 
 
-## Kenmerken 🧰
+## Design challenge
+The current website was built with [WIX](https://www.wix.com/), a no-code website builder, and no longer meets the client's requirements. It is too difficult to add new features and improve on existing features because the website does not comply with web standards. This leaves the accessibility and performance of the website to be desired. The assignment is to develop a new robuste website, based on web standards and the principles of the web...
 
-**TOOLS:**
-* VSCode
-* Figma
-  
-**GEBRUIKTE TECHNIEKEN 🛠️:**
-* Sveltekit
-* Contentful
-
-## Installatie ⚙️
-1. Clone of download deze repository naar de gewenste folder.
-2. Open de root directory van dit project en open het project in een code editor naar keuze.
-3. Gebruik npm install om de benodigde packages te downloaden voor dit project.
-5. Start een server met npm run dev.
-   
-## Licentie ⚠️
-This project is licensed under the terms of the MIT license.
-
-## Links 🔗
-
-<<<<<<< HEAD
 [Backlog](https://github.com/orgs/fdnd-agency/projects/29/views/1)
-=======
-[Backlog]()
 
-[Huisstijl]()  
-
-[Design]()  
-
-[Website WoGo](https://www.wogoamsterdam.com)
-
-[WoGo API]()
->>>>>>> parent of 3a83458 (Update README.md)
+[mockup-wogo](https://github.com/mcphendriks/wogo/assets/112857444/8a4b6785-f30d-488b-a680-0893cdb2cc2e)
