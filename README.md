@@ -10,7 +10,7 @@ The current website was built with [WIX](https://www.wix.com/), a no-code websit
 
 [Design](...)
 
-[Content]()
+[Content](https://github.com/fdnd-agency/wogo/tree/main/content)
 
 [API](...)
 
