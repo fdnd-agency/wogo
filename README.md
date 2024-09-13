@@ -17,4 +17,4 @@ The current website was built with [WIX](https://www.wix.com/), a no-code websit
 
 [Live site](https://wogo.netlify.app/home)
 
-[Pictures WOGO] (https://drive.google.com/drive/folders/1ENLAdUeCZnnoIq4DdbKJ-uEV7nwW4I5z?usp=sharing)
+[Pictures WOGO](https://drive.google.com/drive/folders/1ENLAdUeCZnnoIq4DdbKJ-uEV7nwW4I5z?usp=sharing)
