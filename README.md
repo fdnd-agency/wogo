@@ -22,11 +22,16 @@ On the WOGO website, you can find more information on the homepage about how the
 
 ### Group Bookings
 
-<img height="666" alt="Screenshot 2025-01-09 at 15 09 09" src="https://github.com/user-attachments/assets/5447365c-d6af-4984-b004-8f7236d10ed3" />
+<img height="666" alt="Screenshot 2025-01-09 at 15 09 09" src="https://github.com/user-attachments/assets/f5c3e8df-8d58-4b45-b774-27fb6f396abb" />
 
 ### About Us
 
+<img height="999" alt="Screenshot 2025-01-09 at 15 09 09" src="https://github.com/user-attachments/assets/677260cc-d9e4-4bea-a4dd-45d1acacb9f1" />
+
 ### FAQ
+
+<img height="666" alt="Screenshot 2025-01-09 at 15 09 09" src="https://github.com/user-attachments/assets/0c6b9f49-a9f3-4792-af67-62b2c22a8f3a" />
+
 
 ## Features
 ### Techniques used:
