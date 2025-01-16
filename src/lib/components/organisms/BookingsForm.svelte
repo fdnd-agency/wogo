@@ -14,10 +14,15 @@
   async function handleSubmit(event) {
     event.preventDefault();
 
+    const form = event.target;
+    const jsEnabledField = document.getElementById("jsEnabled");
+
+    jsEnabledField.value = "true"; // Mark JS as enabled
+
     isLoading = true;
 
     // Prepare the form data as JSON
-    const formData = new FormData(event.target);
+    const formData = new FormData(form);
     const data = {};
 
     // Convert FormData to a plain object
@@ -41,7 +46,7 @@
         setTimeout(() => {
         isSuccess = false;
         errorMessage = ''; 
-        event.target.reset();
+        form.reset();
       }, 3000);
       } else {
         errorMessage = 'Er is iets misgegaan. Probeer het later opnieuw.';
@@ -55,8 +60,9 @@
 </script>
 
 <section id="form">
-  <form on:submit={handleSubmit} method="post" class="{errorMessage ? 'error-form' : ''}">
+  <form action="/api/submit" on:submit={handleSubmit} method="post" class="{errorMessage ? 'error-form' : ''}">
     <h1>Boeken</h1>
+    <input type="hidden" name="jsEnabled" id="jsEnabled" value="false">
     <TextInput id="firstName" name="firstName" required>Voornaam:</TextInput>
     <TextInput id="lastName" name="lastName" required>Achternaam:</TextInput>
     <TextInput id="email" name="email" type="email" required>Email:</TextInput>
@@ -171,6 +177,44 @@
     color: white;
   }
 
+  .loading-state, .success-state {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #3F2B21;
+    color: white;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  .loading-state, .success-state, h2 {
+    font-size: var(--fs-2xl);
+  }
+  .loading-state, .success-state, p {
+    font-size: var(--fs-md);
+  }
+
+  .spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #f7956f;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 2em;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 
   button {
     background-color: #f7956f;
@@ -258,7 +302,6 @@
     section > article:nth-of-type(1) {
       flex-direction: column;
     }
-    
   }
 
   @media (min-width: 55em) {
