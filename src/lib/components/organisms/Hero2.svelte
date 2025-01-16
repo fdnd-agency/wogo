@@ -115,7 +115,6 @@
     border-radius: 4px;
     margin-bottom: 4px;
     box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-    animation: none;
   }
   
   article > p {
@@ -176,14 +175,11 @@
     font-size: clamp(2.648rem, 6vw, 4.241rem);
     letter-spacing: -1px;
     filter: drop-shadow(0 0 0.4rem #000);
-    animation: heading;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
   }
 
   @keyframes heading {
     0% {
-      top: -200px;
+      top: -100px;
     }
     100% {
       top: -2px;
@@ -194,17 +190,26 @@
     font-size: 1.2rem;
     font-weight: 700;
     position: relative;
-    animation-name: content;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
   }
 
   @keyframes content {
     0% {
-      left: -1000px;
+      left: -200px;
     }
     100% {
       left: 0px;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    h1 {
+      animation: heading 1.5s forwards;
+    }
+    p {
+      animation: content 1.5s forwards;
+    }
+    section:nth-of-type(2) > div > article::before {
+      animation: content 1.5s forwards;
     }
   }
 
