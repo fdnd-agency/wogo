@@ -144,10 +144,13 @@ export async function load({ params, url }) {
       )
     : itemCollection.componentsCollection.items
 
+  const success = url.searchParams.get('success') === 'true';
+
   return {
     itemCollection: { componentsCollection: { items: filteredItems } },
     pageData: items,
     slug: params.slug,
     cities: uniqueCities,
+    success: success,
   }
 }

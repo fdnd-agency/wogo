@@ -1,6 +1,7 @@
 <script>
   import { WorkWithUs, HomePage, GroupOutings, FrequentlyAsked, TicketsOverview, AboutUs } from '$lib/index'
   export let data
+  const { success } = data;
 
   const componentMap = {
     home: HomePage,
@@ -20,4 +21,4 @@
   const Component = componentMap[data.slug] || HomePage;
 </script>
 
-<svelte:component this={Component} {items} {itemCollection} {cities} />
+<svelte:component this={Component} {items} {itemCollection} {cities} {success} />

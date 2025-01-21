@@ -2,12 +2,12 @@
   import { TextInput, TextareaInput, DatePicker, TimePicker, Image } from '$lib/index';
   import logo from '$lib/assets/logo.webp';
   export let items;
+  export let success = false;
 
   let FormulierInfo = items[3].componentsCollection.items;
   let SocialIcons = items[4].componentsCollection.items;
 
   let isLoading = false;
-  let isSuccess = false;
   let errorMessage = '';
 
   // Function to handle form submission
@@ -42,9 +42,9 @@
       const result = await response.json();
 
       if (result.success) {
-        isSuccess = true;
+        success = true;
         setTimeout(() => {
-        isSuccess = false;
+        success = false;
         errorMessage = ''; 
         form.reset();
       }, 3000);
@@ -63,14 +63,14 @@
   <form action="/api/submit" on:submit={handleSubmit} method="post" class="{errorMessage ? 'error-form' : ''}">
     <h1>Boeken</h1>
     <input type="hidden" name="jsEnabled" id="jsEnabled" value="false">
-    <TextInput id="firstName" name="firstName" required>Voornaam:</TextInput>
-    <TextInput id="lastName" name="lastName" required>Achternaam:</TextInput>
-    <TextInput id="email" name="email" type="email" required>Email:</TextInput>
-    <TextInput id="phone" name="phone" type="tel" pattern="\d{10}" required>Telefoonnummer:</TextInput>
-    <TextInput id="persons" name="persons" type="number" required>Hoeveel personen?</TextInput>
+    <TextInput id="firstName" name="firstName" required>Voornaam:*</TextInput>
+    <TextInput id="lastName" name="lastName" required>Achternaam:*</TextInput>
+    <TextInput id="email" name="email" type="email" required>Email:*</TextInput>
+    <TextInput id="phone" name="phone" type="tel" pattern="\d{10}" required>Telefoonnummer:*</TextInput>
+    <TextInput id="persons" name="persons" type="number" required>Hoeveel personen?*</TextInput>
     <TextareaInput id="request" name="request" placeholder="Typ hier uw bericht...">Aanvraag:</TextareaInput>
-    <DatePicker id="date" name="date" required>Datum:</DatePicker>
-    <TimePicker id="time" name="time" value="14:30" min="09:00" max="22:00" required>Kies een tijdstip:</TimePicker>
+    <DatePicker id="date" name="date">Datum:</DatePicker>
+    <TimePicker id="time" name="time" value="14:30" min="09:00" max="22:00">Kies een tijdstip:</TimePicker>
 
     {#if isLoading}
       <article class="loading-state">
@@ -80,7 +80,7 @@
       </article>
     {/if}
 
-    {#if isSuccess}
+    {#if success}
       <article class="success-state">
         <svg fill="#41a146" version="1.1" xmlns="http://www.w3.org/2000/svg" width="120px" height="120px" viewBox="-30.5 -30.5 366.00 366.00" xml:space="preserve" stroke="#41a146">
           <g transform="translate(44.22529,44.22529), scale(0.71)">
@@ -217,12 +217,19 @@
 
 
   button {
-    background-color: #f7956f;
+    background-color: var(--btn-primary-bg);
     border: none;
     padding: 1em;
-    color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  button:hover {
+    box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.5);
   }
   
   section > article > picture,

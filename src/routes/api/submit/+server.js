@@ -64,7 +64,7 @@ export async function POST({ request }) {
     const redirectResponse = new Response('', {
       status: 302,
       headers: {
-        Location: '/group-bookings',
+        Location: '/group-bookings?success=true',
       },
     });
 
