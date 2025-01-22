@@ -4,6 +4,13 @@
 
 WOGO Cocktailwalks organizes culinary walking tours where participants visit various hospitality venues. During these tours, participants are served specially crafted cocktails at each location. The goal of WOGO Cocktailwalks is to provide a unique and social drinking experience, allowing people to enjoy a variety of creative cocktails while also getting to know the city and the local hospitality scene better. Design and create a new accessible website with a team, where you can book a cocktail tour within cities.
 
+## Team
+* [Zainab el Faiz](github.com/zainablfz)
+* [Patrick Hordijk](github.com/Patrickkhr)
+* [Tygo Wolven](github.com/TygoWolven)
+* [Seijno van Nieuwkoop](github.com/Seijno)
+* [Latoya Nijmeijer](github.com/latoyaln)
+
 ## Description
 We were assigned to improve and optimize the current website. Earlier, former second-year students worked on this project, and the goal was for us to take over their website and make adjustments. The goal was also to build upon the existing website so that it would become a complete project, as it was not fully finished. We were free to come up with new concepts/designs for both existing and new components.
 
