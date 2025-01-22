@@ -37,8 +37,7 @@ On the WOGO website, you can find more information on the homepage about how the
 
 ### FAQ
 
-<img height="666" alt="Screenshot 2025-01-09 at 15 09 09" src="https://github.com/user-attachments/assets/f5c3e8df-8d58-4b45-b774-27fb6f396abb" />
-
+![Schermafbeelding 2025-01-23 om 12 51 16 AM](https://github.com/user-attachments/assets/093fd746-ad18-4d63-a944-3db3c2ab02e7)
 
 ## Features
 ### Techniques used:
