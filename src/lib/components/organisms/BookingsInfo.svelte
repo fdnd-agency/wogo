@@ -15,7 +15,6 @@
     muted
     width="1280"
     height="1000"
-    aria-label="{HeroText.asset.description}"
     aria-hidden="true"
     poster={HeroText.asset.url}
   >
@@ -97,6 +96,7 @@
     justify-content: space-between;
     max-width: 90em;
     margin: auto;
+    gap: 2em;
   }
 
   section:nth-of-type(2) > div > article {

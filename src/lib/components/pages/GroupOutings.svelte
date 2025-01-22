@@ -1,5 +1,5 @@
 <script>
-  import { Hero2, BookingsForm } from '$lib/index';
+  import { BookingsInfo, BookingsForm } from '$lib/index';
   export let items
   export let success;
 </script>
@@ -8,7 +8,7 @@
   <title></title>
 </svelte:head>
 
-  <Hero2 {items} />
+  <BookingsInfo {items} />
   <BookingsForm {items} {success} />
 
 <style></style>
