@@ -9,7 +9,7 @@ We were assigned to improve and optimize the current website. Earlier, former se
 
 <img width="568" alt="Screenshot 2025-01-09 at 14 16 13" src="https://github.com/user-attachments/assets/87649750-66c9-49e8-a247-adca04567b9d" />
 
-Livelink: [Wogo](https://wogo.netlify.app/) 
+Livelink: [Wogo](https://wogo.agency.fdnd.nl/home) 
 
 ## Usage
 On the WOGO website, you can find more information on the homepage about how the system works, and you can also view the available cocktail tours and book them to experience _(new)_ bars in your city. You can book for yourself and your friends, or make a group booking for larger groups/events. There is also a page that explains what WOGO stands for and who they are. Finally, there is a page with frequently asked questions (FAQ) for any clarifications.
