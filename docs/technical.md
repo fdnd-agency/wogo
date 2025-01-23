@@ -52,3 +52,74 @@ The main folder, `src`, contains the source code. Here's how it’s organized:
 4. **`static` Folder**  
 The static folder has all static files. Here you can find fonts, images but also the global.css used throughout the whole project.
 ---
+
+## Important components
+
+The important components are components that are frequently used throughout the project and/or are things that can make/break the website.
+
+### **Pages**
+
+The page components serve as the key elements of the WoGo UI. Without the pages, the user can't interact/navigate in the site. The pages provide the structure, layout, and functionality for individual pages.
+
+Example home.svelte: 
+
+The home.svelte file pulls in modular components like Hero and Reviews.
+`js
+<script>
+  import { Hero, Reviews, TicketCarousel, HowItWorks, HeadLine, WhatWeDo, GiftCard } from '$lib/index';
+  export let items;
+  export let itemCollection;
+</script>
+`
+Dynamically sets the page title based on the first item in items.
+`
+<svelte:head>
+  <title>{items[0].title}</title>
+</svelte:head>
+`
+
+To edit a page component like home.svelte:
+
+1. You can modify the imported components: If you want to change how a specific section looks or works, update the respective child component ( Hero, Reviews).
+
+2. Change the data passed:
+Example: If you want the Reviews component to display different reviews:
+`
+<Reviews reviews={items[3].componentsCollection.items} />
+`
+
+3. Add New Sections or Components: To introduce a new section, import the necessary component and include it in the layout.:
+
+`
+<HeadLine title="New Feature Section" />
+<NewFeature data={items[5]} />
+
+`
+
+### **Button.svelte**
+
+The button component is frequently reused throughout the project and is therefore an important component or atleast an component that is word mentioning. The button component is an atom called 'Button.svelte' so you can use this in molecules organisms and pages. It’s a customizable button you can place anywhere on the website.
+
+1. **Customizable Options**:  
+   The button has **options** like:
+   - `variant`: This changes the style (e.g., primary, secondary).
+   - `size`: This changes how big or small the button is.
+   - `href`: If you provide a link, it turns into a clickable link instead of a button.
+   - `title`: The text that shows on the button.
+   - `icon`: If you want to show an icon next to the text, you can add one.
+   - `iconColor`: This lets you choose the color of the icon.
+
+2. **Link or Button**:  
+   If you provide an `href` (a link), the button becomes a clickable link (`<a>` tag). If no `href` is provided, it stays as a regular button (`<button>` tag) that can trigger actions like submitting a form.
+
+3. **Icon Support**:  
+   If you want an icon (like a small image), you can pass that through the `icon` prop, and it will appear inside the button next to the text.
+
+4. **Styling**:  
+   The button’s look changes based on the `variant` you choose. For example:
+   - `btn-primary` will make the button stand out more, with a bold color.
+   - `btn-secondary` has a lighter style.
+   - It also grows or shrinks depending on the `size`.
+
+5. **User Interaction**:  
+   When users hover over or click the button, it shows visual effects, like growing a little or showing a shadow, to let them know they can interact with it.
