@@ -80,7 +80,7 @@
 </script>
 
 <div class="carousel-title">
-  <h2>Explore Cocktail Walks</h2>
+  <h2>Explore Highlighted Cocktail Walks</h2>
   <Link
     href="/walks-overview"
     title="see all walks"
@@ -163,14 +163,14 @@
   }
 
   .card-container {
-    gap: 8px;
+    gap: var(--margin);
     width: 100%;
     display: flex;
-    margin: 0 0 0 2rem;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
+    justify-content: center;
   }
 
   .card-container::-webkit-scrollbar {
