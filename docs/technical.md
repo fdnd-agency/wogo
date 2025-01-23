@@ -30,10 +30,10 @@ The main folder, `src`, contains the source code. Here's how it’s organized:
 
    - **`assets`**: Stores static resources such as images and fonts.
    - **`components`**: Houses UI components organized using Atomic Design:
-     - **`atoms`**: 
-     - **`molecules`**: 
-     - **`organisms`**: 
-     - **`pages`**: 
+     - **`atoms`**
+     - **`molecules`**
+     - **`organisms`** 
+     - **`pages`**
    - **`mockdata`**: Provides sample data for development and testing.
    - **`index.js`**: Simplifies imports by exporting all `atoms` for use elsewhere.
 
@@ -64,19 +64,21 @@ The page components serve as the key elements of the WoGo UI. Without the pages,
 Example home.svelte: 
 
 The home.svelte file pulls in modular components like Hero and Reviews.
-`js
+
+```js
 <script>
   import { Hero, Reviews, TicketCarousel, HowItWorks, HeadLine, WhatWeDo, GiftCard } from '$lib/index';
   export let items;
   export let itemCollection;
 </script>
-`
+```
+
 Dynamically sets the page title based on the first item in items.
-`
+```
 <svelte:head>
   <title>{items[0].title}</title>
 </svelte:head>
-`
+```
 
 To edit a page component like home.svelte:
 
@@ -84,17 +86,16 @@ To edit a page component like home.svelte:
 
 2. Change the data passed:
 Example: If you want the Reviews component to display different reviews:
-`
+```
 <Reviews reviews={items[3].componentsCollection.items} />
-`
+```
 
 3. Add New Sections or Components: To introduce a new section, import the necessary component and include it in the layout.:
 
-`
+```
 <HeadLine title="New Feature Section" />
 <NewFeature data={items[5]} />
-
-`
+```
 
 ### **Button.svelte**
 
