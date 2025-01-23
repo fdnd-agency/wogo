@@ -130,9 +130,29 @@ The button component is frequently reused throughout the project and is therefor
 WoGo uses Contentful as CMS. Contentful allows you to define custom content types (such as "pages", "cards", or "blog posts"), store content for these types, and easily retrieve and display them through APIs.
 
 1. **Content Types**:  
-   Contentful allows you to define different "content types." Which looks like this:
 
-2. **How Data Is Fetched**:  
+Contentful organizes content into spaces, that allows you to group all the related resources for a       project together, this includes content entries, media assets, and settings for localizing content into different languages.
+
+**Content type properties**
+
+All content types have standard fields that contain basic information about the content type, its fields and metadata.
+Each space has a content model that represents the content types you create.
+
+![Schermafbeelding 2025-01-23 om 2 16 02 AM](https://github.com/user-attachments/assets/e809ebc7-a1bb-4ad4-a104-486acbab9d43)
+
+### Content model for WoGo
+On the left you see the name of the content and on the right you can see how many fields it has.
+
+![Schermafbeelding 2025-01-23 om 2 17 46 AM](https://github.com/user-attachments/assets/a758f226-8d68-49f2-8ad3-7e079ba4ddb4)
+
+![Schermafbeelding 2025-01-23 om 2 19 27 AM](https://github.com/user-attachments/assets/be6623b0-7c51-46e3-b879-521bcbb4485b)
+
+If we zoom into the Cards you can see what fields it has
+
+![Schermafbeelding 2025-01-23 om 2 22 27 AM](https://github.com/user-attachments/assets/1a24d7e6-c7f3-4a49-8895-b68c187b580a)
+
+
+3. **How Data Is Fetched**:  
    - When you visit a page, the `+page-server.js` file uses the **slug** (a unique identifier in the URL) to find the correct content in Contentful.
    - The data fetched from Contentful is then passed to components in the front-end (like `HomePage`, `TicketsOverview`).
 
@@ -140,7 +160,15 @@ WoGo uses Contentful as CMS. Contentful allows you to define custom content type
 - Log in to Contentful and create/edit **entries** for your content types. For example, you can create a new **page** and set its title, description, and other fields. 
 - Once the content is published in Contentful, it can be automatically fetched and displayed on the website through the code.
 
-## API Documentation
+This is what it looks like if you were to add an card for example:
 
----
+1. You click on add entry and choose card
+   ![Schermafbeelding 2025-01-23 om 2 23 56 AM](https://github.com/user-attachments/assets/48bbfad9-2e64-4c16-9e7b-8d1ed1e79eeb)
+
+2. You fill in the fields
+   ![Schermafbeelding 2025-01-23 om 2 25 05 AM](https://github.com/user-attachments/assets/7b170d0e-429a-4474-ab03-b62e23d83c16)
+
+3. You click on publish
+   ![Schermafbeelding 2025-01-23 om 2 25 14 AM](https://github.com/user-attachments/assets/2cfbd26c-8a4d-433e-8574-525e1ef572b6)
+
 
