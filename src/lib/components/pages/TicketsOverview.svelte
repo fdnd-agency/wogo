@@ -66,16 +66,14 @@
   }
 
   .tours-cards {
-    width: 80%;
-    max-width: 100vw;
+    width: 100%;
     min-width: 300px;
     margin: 0 auto;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin: 2rem 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: var(--margin);
   }
 </style>
