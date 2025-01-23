@@ -98,19 +98,21 @@
   }
 
   /* SCROLL DRIVEN ANIMATION  */
-  @keyframes slide-fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(5vh);
-    }
+  @keyframes reveal {
+		from {
+			opacity: 0;
+			transform: translateY(50%);
+		}
+		40% {
+			opacity: 1;
+			transform: translateY(0);
+		}
   }
 
   @media (prefers-reduced-motion: no-preference) {
     article {
-      view-timeline-name: --item-timeline;
-      animation: slide-fade-in both;
-      animation-timeline: --item-timeline;
-      animation-range: contain 0% contain 10%;
+      animation: reveal linear forwards;
+      animation-timeline: view();
     }
   }
 </style>
