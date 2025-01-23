@@ -123,3 +123,23 @@ The button component is frequently reused throughout the project and is therefor
 
 5. **User Interaction**:  
    When users hover over or click the button, it shows visual effects, like growing a little or showing a shadow, to let them know they can interact with it.
+
+## CMS configuration
+
+WoGo uses Contentful as CMS. Contentful allows you to define custom content types (such as "pages", "cards", or "blog posts"), store content for these types, and easily retrieve and display them through APIs.
+
+1. **Content Types**:  
+   Contentful allows you to define different "content types." Which looks like this:
+
+2. **How Data Is Fetched**:  
+   - When you visit a page, the `+page-server.js` file uses the **slug** (a unique identifier in the URL) to find the correct content in Contentful.
+   - The data fetched from Contentful is then passed to components in the front-end (like `HomePage`, `TicketsOverview`).
+
+### **How to Add or Update Content in Contentful?**
+- Log in to Contentful and create/edit **entries** for your content types. For example, you can create a new **page** and set its title, description, and other fields. 
+- Once the content is published in Contentful, it can be automatically fetched and displayed on the website through the code.
+
+## API Documentation
+
+---
+
