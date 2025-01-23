@@ -98,6 +98,10 @@
     }
   }
 
+  details:hover {
+    cursor: pointer;
+  }
+
   details[open] > summary::after {
       background: url('../../assets/min.svg') no-repeat;
       background-size: contain;
