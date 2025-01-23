@@ -4,8 +4,6 @@ Dit bestand bevat informatie over het voortzetten van het **WOGO** project. WOGO
 
 ## Huidige status 
 
-Momenteel hebben bijna alle pagina's een redesign gekregen en is dit gebouwd in code, behalve de giftcard pagina. In deze pagina's zijn alle teksten en afbeeldingen dynamisch ingeladen vanuit Contentful.
-
 - Momenteel hebben alle pagina's een redesign gekregen en zijn deze ontwikkeld, met uitzondering van de giftcard pagina. 
 - De component library is ingedeeld volgens het Atomic Design, waardoor dit overzichtelijk en onderhoudbaar is.
 - De CMS (Contentful) is volledig ingericht en laadt alle benodigde data correct in, behalve dat niet alles dynamisch wordt veranderd wanneer iets wordt aangepast qua volgorde (homepage componenten) of het verwijderen/toevoegen van een nieuwe tourcard.
