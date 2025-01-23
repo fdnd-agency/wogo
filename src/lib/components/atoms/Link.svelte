@@ -32,7 +32,7 @@
     gap: 0.5rem;
     text-decoration: none;
     color: var(--link-color);
-    font-size: var(--font-size);
+    font-size: 20px;
     white-space: nowrap;
     filter: var(--filter);
   }

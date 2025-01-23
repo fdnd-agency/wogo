@@ -82,7 +82,6 @@
               title={link.title}
               arialabel={link.label}
               color="var(--txt-primary-clr)"
-              filter="var(--filter-drop)"
             />
             {#if link.subLinksCollection.items.length > 0}
               <ul class="sub-menu" aria-label="Submenu">
