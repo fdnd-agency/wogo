@@ -104,6 +104,7 @@
         margin: var(--margin) 0;
       }
     }
+    
     & picture, article {
       width: 50%;
       display: flex;
@@ -111,10 +112,14 @@
       flex-direction: column;
     }
     & picture img {
-        max-width: 60%;
+        max-width: 50%;
         aspect-ratio: 1;
         object-fit: cover;
         background: white;
+
+        @media (max-width: 768px) {
+          max-width: 100%;
+        }
     }
   }
 
