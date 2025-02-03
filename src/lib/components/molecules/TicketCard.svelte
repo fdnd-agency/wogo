@@ -101,7 +101,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    /* overflow: hidden; */
     & h2 {
       padding-left: 0.5em;
       padding-top: 0.5em;

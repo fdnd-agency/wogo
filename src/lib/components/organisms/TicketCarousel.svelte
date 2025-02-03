@@ -12,7 +12,7 @@
     const scrollXBy = direction === 'left' ? -300 : 300
     const scrollWidth = carouselElement.scrollWidth
     const scrollLeft = carouselElement.scrollLeft
-
+  
     if (direction === 'left' && scrollLeft === 0) {
       carouselElement.scrollTo({
         left: activeInd === 0 ? scrollWidth - carouselElement.offsetWidth : scrollXBy,
@@ -93,7 +93,7 @@
 </div>
 
 {#if itemCollection}
-  <section>
+  <section>   
     <button
       type="button"
       class="carousel-arrow carousel-arrow--prev"
@@ -170,7 +170,7 @@
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    justify-content: center;
+    margin: 0 2rem;
   }
 
   .card-container::-webkit-scrollbar {
