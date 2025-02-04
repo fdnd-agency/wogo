@@ -3,8 +3,6 @@
 All notable changes to this project will be documented in this file.
 
 ## 3-2-2025 [Unreleased]
-### Added
-- Feature description
 
 ### Changed
 - Carrousel responsive gemaakt. 
@@ -15,8 +13,6 @@ All notable changes to this project will be documented in this file.
 
 
 ## 4-2-2025 [Unreleased]
-### Added
-- Feature description
 
 ### Changed
 - Carrousel interactief gemaakt. 
