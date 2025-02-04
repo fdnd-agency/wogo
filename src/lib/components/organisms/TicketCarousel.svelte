@@ -9,9 +9,11 @@
     const carouselElement = document.querySelector('.card-container')
     const cardElement = document.querySelector('.ticket-card')
     const offsetWidth = activeInd >= 3 ? carouselElement.offsetWidth : cardElement.offsetWidth
-    const scrollXBy = direction === 'left' ? -300 : 300
+    const scrollXBy = direction === 'left' ? -380 : 380
     const scrollWidth = carouselElement.scrollWidth
     const scrollLeft = carouselElement.scrollLeft
+
+   5
   
     if (direction === 'left' && scrollLeft === 0) {
       carouselElement.scrollTo({
@@ -31,8 +33,9 @@
     }
     updateActiveIndicator(direction)
     updateIndicators()
+  
   }
-
+  // console.log(scrollWidth)
   function updateActiveIndicator(direction) {
     if (direction === 'right') {
       activeInd = activeInd >= 3 ? 0 : activeInd + 1
@@ -164,13 +167,14 @@
 
   .card-container {
     gap: var(--margin);
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    margin: 0 2rem;
+    margin-left: 1.5rem;
+
   }
 
   .card-container::-webkit-scrollbar {

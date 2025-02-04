@@ -12,7 +12,7 @@
 </script>
 
 {#each items as item}
-  <article>
+  <article class="ticket-card">
     <div class="card-header">
       <p>
         <span class="location-icon">
