@@ -121,6 +121,9 @@
     width: 350px;
     height: 250px;
     filter: brightness(0.5);
+    @media (max-width: 768px) {
+      max-width: 316px;
+    }
   }
 
   .card-description {
