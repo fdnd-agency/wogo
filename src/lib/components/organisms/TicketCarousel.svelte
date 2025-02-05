@@ -9,7 +9,7 @@
     const carouselElement = document.querySelector('.card-container')
     const cardElement = document.querySelector('.ticket-card')
     const offsetWidth = activeInd >= 3 ? carouselElement.offsetWidth : cardElement.offsetWidth
-    const scrollXBy = direction === 'left' ? -380 : 380
+    const scrollXBy = direction === 'left' ? -350 : 350
     const scrollWidth = carouselElement.scrollWidth
     const scrollLeft = carouselElement.scrollLeft
 
@@ -120,10 +120,11 @@
       <ArrowRightShort />
     </button>
 
-    <div class="carousel-indicator">
+    <div class="carousel-indicator" >
       <span class="carousel-indicator-span">
         {#each itemCollection.componentsCollection.items as item, index}
           <button
+            aria-label="carrousel indicator"
             class="carousel-indicator-span-span {index === activeInd ? 'is-active' : ''}"
             on:click={() => scrollToSlide(index)}
           ></button>

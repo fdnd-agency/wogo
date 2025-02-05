@@ -37,7 +37,7 @@
     padding-top: 0.5em;
     padding-right: 2em;
     font-size: 14px;
-    @media (min-width: 768px) {
+    @container (min-width: 768px) {
       font-size: 16px;
     }
   }
