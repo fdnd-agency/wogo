@@ -13,7 +13,6 @@
     const scrollWidth = carouselElement.scrollWidth
     const scrollLeft = carouselElement.scrollLeft
 
-   5
   
     if (direction === 'left' && scrollLeft === 0) {
       carouselElement.scrollTo({
@@ -125,7 +124,7 @@
         {#each itemCollection.componentsCollection.items as item, index}
           <button
             aria-label="carrousel indicator"
-            class="carousel-indicator-span-span {index === activeInd ? 'is-active' : ''}"
+                        class="carousel-indicator-span-span {index === activeInd ? 'is-active' : ''}"
             on:click={() => scrollToSlide(index)}
           ></button>
         {/each}
