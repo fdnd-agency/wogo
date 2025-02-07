@@ -202,6 +202,17 @@
     text-transform: lowercase;
     padding: 0.5rem 1rem;
   }
+  
+  :global(nav li:hover::after) {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: var(--accent2-primary);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+
   nav li:last-of-type {
     margin-left: 5px;
   }
