@@ -13,7 +13,6 @@
     const scrollWidth = carouselElement.scrollWidth
     const scrollLeft = carouselElement.scrollLeft
 
-  
     if (direction === 'left' && scrollLeft === 0) {
       carouselElement.scrollTo({
         left: activeInd === 0 ? scrollWidth - carouselElement.offsetWidth : scrollXBy,
@@ -32,9 +31,8 @@
     }
     updateActiveIndicator(direction)
     updateIndicators()
-  
   }
-  // console.log(scrollWidth)
+ 
   function updateActiveIndicator(direction) {
     if (direction === 'right') {
       activeInd = activeInd >= 3 ? 0 : activeInd + 1
@@ -95,7 +93,7 @@
 </div>
 
 {#if itemCollection}
-  <section>   
+  <section>
     <button
       type="button"
       class="carousel-arrow carousel-arrow--prev"
@@ -119,7 +117,7 @@
       <ArrowRightShort />
     </button>
 
-    <div class="carousel-indicator" >
+    <div class="carousel-indicator">
       <span class="carousel-indicator-span">
         {#each itemCollection.componentsCollection.items as item, index}
           <button
@@ -166,15 +164,13 @@
   }
 
   .card-container {
-    gap: var(--margin);
-    /* width: 100%; */
+    gap: var(--margin-default-gap);
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     margin-left: 1.5rem;
-
   }
 
   .card-container::-webkit-scrollbar {

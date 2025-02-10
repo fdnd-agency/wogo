@@ -150,5 +150,6 @@ h2 {
   --radius-full: 100vmax;
 
   /* margin */
-  --margin: 2rem;
+  --margin: 3rem;
+  --margin-default-gap:2rem;
 }
