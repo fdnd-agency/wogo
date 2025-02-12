@@ -20,6 +20,3 @@ All notable changes to this project will be documented in this file.
 **Wat heb ik aangepast?** 
 -De js code, zoadat de knoppen werken  
 - De scroll width aan gepast zodat elke kaar 1 voor 1 kan worden gescrolld 
-
-
-
