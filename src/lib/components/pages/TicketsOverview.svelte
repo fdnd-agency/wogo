@@ -15,13 +15,20 @@
 
   const CitySelect = (city) => {
     selectedCity = city;
+    selectedCity = city === "All" ? null : city
   };
+ 
 </script>
 
 <section class="tours-city">
   <h1>Tours</h1>
   <ul>
+     <li class="active cityNames"
+     class:active={selectedCity === null} 
+     on:click={() => CitySelect("All")}
+   >All</li>  
     {#each cityCollection as city}
+   
       <li
         class="cityNames"
         class:active={selectedCity === city}
