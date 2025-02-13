@@ -112,4 +112,7 @@
   .active {
     color: var(--accent2-primary);
   }
+  .hidden {
+    display: none;
+  }
 </style>
