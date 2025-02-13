@@ -12,7 +12,7 @@
 </script>
 
 {#each items as item}
-  <article>
+  <article class="ticket-card">
     <div class="card-header">
       <p>
         <span class="location-icon">
@@ -101,13 +101,13 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     & h2 {
       padding-left: 0.5em;
       padding-top: 0.5em;
       font-size: 20px;
       letter-spacing: 1px;
     }
+
     @media (min-width: 768px) {
       width: 80%;
       max-width: 350px;
@@ -121,6 +121,10 @@
     width: 350px;
     height: 250px;
     filter: brightness(0.5);
+  
+    @media (max-width: 768px) {
+      max-width: 316px;
+    }
   }
 
   .card-description {

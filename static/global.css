@@ -151,4 +151,5 @@ h2 {
 
   /* margin */
   --margin: 3rem;
+  --margin-default-gap:2rem;
 }

@@ -9,7 +9,7 @@
     const carouselElement = document.querySelector('.card-container')
     const cardElement = document.querySelector('.ticket-card')
     const offsetWidth = activeInd >= 3 ? carouselElement.offsetWidth : cardElement.offsetWidth
-    const scrollXBy = direction === 'left' ? -300 : 300
+    const scrollXBy = direction === 'left' ? -350 : 350
     const scrollWidth = carouselElement.scrollWidth
     const scrollLeft = carouselElement.scrollLeft
 
@@ -32,7 +32,7 @@
     updateActiveIndicator(direction)
     updateIndicators()
   }
-
+ 
   function updateActiveIndicator(direction) {
     if (direction === 'right') {
       activeInd = activeInd >= 3 ? 0 : activeInd + 1
@@ -121,7 +121,8 @@
       <span class="carousel-indicator-span">
         {#each itemCollection.componentsCollection.items as item, index}
           <button
-            class="carousel-indicator-span-span {index === activeInd ? 'is-active' : ''}"
+            aria-label="button under slider"
+                        class="carousel-indicator-span-span {index === activeInd ? 'is-active' : ''}"
             on:click={() => scrollToSlide(index)}
           ></button>
         {/each}
@@ -163,14 +164,13 @@
   }
 
   .card-container {
-    gap: var(--margin);
-    width: 100%;
+    gap: var(--margin-default-gap);
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    justify-content: center;
+    margin-left: 1.5rem;
   }
 
   .card-container::-webkit-scrollbar {
