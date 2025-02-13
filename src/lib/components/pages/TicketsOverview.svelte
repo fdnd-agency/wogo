@@ -13,7 +13,6 @@
 
   let cityCollection = ["Amsterdam", "Rotterdam", "Londen"];
 
-  // When a city is clicked, set it as the selected city
   const CitySelect = (city) => {
     selectedCity = city;
   };
@@ -23,9 +22,9 @@
   <h1>Tours</h1>
   <ul>
     {#each cityCollection as city}
-      <li 
-        class="cityNames" 
-        class:active={selectedCity === city} 
+      <li
+        class="cityNames"
+        class:active={selectedCity === city}
         on:click={() => CitySelect(city)}
       >
         {city}
@@ -34,13 +33,7 @@
   </ul>
 </section>
 
-
-
 <section class="tours-cards">
-  <!-- {#each filteredCards as item}
-    <TicketCard {items} />
-  {/e
-  ach} -->
   <TicketCard {itemCollection} />
 </section>
 
@@ -89,10 +82,10 @@
     transition: 0.5s;
   }
 
-  .tours-city ul li:hover::after,.tours-city ul li.active::after  {
+  .tours-city ul li:hover::after,
+  .tours-city ul li.active::after {
     width: 100%;
   }
-
 
   .tours-cards {
     width: 100%;
