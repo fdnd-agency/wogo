@@ -23,7 +23,6 @@
           /></span
         >
         {item.location}
-        
       </p>
       <p class="cocktail-price">{item.price}</p>
     </div>
