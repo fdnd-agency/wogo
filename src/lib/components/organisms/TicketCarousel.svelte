@@ -121,7 +121,7 @@
       <span class="carousel-indicator-span">
         {#each itemCollection.componentsCollection.items as item, index}
           <button
-            aria-label="carrousel indicator"
+            aria-label="button under slider"
                         class="carousel-indicator-span-span {index === activeInd ? 'is-active' : ''}"
             on:click={() => scrollToSlide(index)}
           ></button>
