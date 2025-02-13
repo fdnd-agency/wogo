@@ -1,41 +1,36 @@
 <script>
   import { TicketCard } from "$lib/index";
-
   import { onMount } from "svelte";
+
   export let itemCollection;
   let selectedCity = null;
+  const citiesList = ["Amsterdam", "Rotterdam", "Londen"];
 
-  // console.log("ItemCollection:", itemCollection.componentsCollection.items);
+  // Als de waarde van city gelijk is aan "All", dan wordt selectedCity ingesteld op null.
+  // Anders wordt selectedCity ingesteld op de waarde van city (de stad die is geselecteerd).
 
-  // itemCollection.componentsCollection.items.forEach(itemC => {
-  //   console.log("city item:", itemC.citysCollection.items);
-  // });
-
-  let cityCollection = ["Amsterdam", "Rotterdam", "Londen"];
-
-  const CitySelect = (city) => {
+  const selectCity = (city) => {
+  if (city === "All") {
+    selectedCity = null;
+  } else {
     selectedCity = city;
-    selectedCity = city === "All" ? null : city
-  };
- 
+  }
+};
+
 </script>
 
 <section class="tours-city">
   <h1>Tours</h1>
   <ul>
-     <li class="active cityNames"
-     class:active={selectedCity === null} 
-     on:click={() => CitySelect("All")}
-   >All</li>  
-    {#each cityCollection as city}
-   
-      <li
-        class="cityNames"
-        class:active={selectedCity === city}
-        on:click={() => CitySelect(city)}
-      >
+    <button class:active={!selectedCity} 
+    on:click={() => selectCity("All")}>
+    All</button> <!-- selected city word null  -->
+    {#each citiesList as city}
+      <button class:active={selectedCity === city}
+       on:click={() => selectCity(city)}
+       tabindex="0">
         {city}
-      </li>
+  </button>
     {/each}
   </ul>
 </section>
@@ -61,25 +56,30 @@
     display: flex;
     list-style: none;
     justify-content: center;
-
     padding-top: 0.5em;
     padding-right: 2em;
     font-size: 14px;
-    @container (min-width: 768px) {
+  }
+
+  @container (min-width: 768px) {
+    ul {
       font-size: 16px;
     }
   }
 
-  li {
+  button {
     color: var(--accent2-quaternary);
     cursor: pointer;
     padding: 0.5em 1em 0 2em;
-    &:hover {
-      color: var(--accent2-primary);
-    }
+    background:none;
+    border: none;
   }
 
-  .tours-city ul li::after {
+  button:hover {
+    color: var(--accent2-primary);
+  }
+
+  button::after {
     content: "";
     width: 0%;
     height: 2px;
@@ -89,15 +89,14 @@
     transition: 0.5s;
   }
 
-  .tours-city ul li:hover::after,
-  .tours-city ul li.active::after {
+  button:hover::after, 
+  button.active::after {
     width: 100%;
   }
 
   .tours-cards {
     width: 100%;
     min-width: 300px;
-    margin: 0 auto;
     margin: 2rem 0;
     display: flex;
     overflow-x: auto;
@@ -111,8 +110,5 @@
 
   .active {
     color: var(--accent2-primary);
-  }
-  .hidden {
-    display: none;
   }
 </style>
