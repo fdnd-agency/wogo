@@ -5,6 +5,19 @@
   export let itemCollection;
   let selectedCity = null;
   const citiesList = ["Amsterdam", "Rotterdam", "Londen"];
+    // console.log(itemCollection.componentsCollection.items)
+  //   itemCollection.componentsCollection.items.forEach(item => {
+  // console.log(item.citysCollection.items);
+  // console.dir(itemCollection, { depth: null });
+
+//});
+
+const filteredItemsAmsterdam= itemCollection.componentsCollection.items.filter(item => 
+    item.citysCollection.items.some(city => city.location.includes("Amsterdam"))
+);
+
+console.log(filteredItemsAmsterdam)
+
 
   // Als de waarde van city gelijk is aan "All", dan wordt selectedCity ingesteld op null.
   // Anders wordt selectedCity ingesteld op de waarde van city (de stad die is geselecteerd).

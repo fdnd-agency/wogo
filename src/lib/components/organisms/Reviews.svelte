@@ -160,7 +160,7 @@
   
     /* Active state for dots */
     .dot.active {
-      background: var(--primary-color);
+      background: var(--accent1-secondary);
     }
   
     .dot:focus {
