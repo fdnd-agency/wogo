@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import { Link, CartIcon, ArrowDown, Button } from '$lib/index'
+  import { Link, CartIcon, ArrowDown, Button,Translation } from '$lib/index'
   import logo from '$lib/assets/logo.webp'
   export let navigation
 
@@ -149,9 +149,13 @@
           {/if}
         {/each}
       </ul>
+      
     </nav>
     <button type="button" id="mobileMenuClose" aria-label="close-menu-button"><span></span></button>
   </section>
+  <div>
+    <Translation></Translation>
+  </div>
   <div class="button-cart-container">
     <CartIcon width="60px" height="60px" fill="var(--accent2-primary)" />
   </div>
