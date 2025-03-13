@@ -63,10 +63,14 @@
   <form action="/api/submit" on:submit={handleSubmit} method="post" class="{errorMessage ? 'error-form' : ''}">
     <h1>Boeken</h1>
     <input type="hidden" name="jsEnabled" id="jsEnabled" value="false">
-    <TextInput id="firstName" name="firstName" required>Voornaam:*</TextInput>
-    <TextInput id="lastName" name="lastName" required>Achternaam:*</TextInput>
+    <section>
+    <div class="fullName">
+      <TextInput id="firstName" name="firstName" required>Voornaam:*</TextInput>
+      <TextInput id="lastName" name="lastName" required>Achternaam:*</TextInput>
+    </div>
     <TextInput id="email" name="email" type="email" required>Email:*</TextInput>
     <TextInput id="phone" name="phone" type="tel" pattern="\d{10}" required>Telefoonnummer:*</TextInput>
+  </section>
     <TextInput id="persons" name="persons" type="number" required>Hoeveel personen?*</TextInput>
     <TextareaInput id="request" name="request" placeholder="Typ hier uw bericht...">Aanvraag:</TextareaInput>
     <DatePicker id="date" name="date">Datum:</DatePicker>
@@ -143,7 +147,7 @@
 <style>
   section {
     padding-inline: 2em;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     gap: 3em;
     padding-block: 4em;
@@ -173,8 +177,12 @@
   }
 
   form > h1 {
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-xl);
     color: white;
+  }
+
+  .fullName {
+    display: flex;
   }
 
   .loading-state, .success-state {
@@ -313,7 +321,7 @@
 
   @media (min-width: 55em) {
     section {
-      padding-inline: 8em;
+      /* padding-inline: 8em; */
     }
   }
 </style>

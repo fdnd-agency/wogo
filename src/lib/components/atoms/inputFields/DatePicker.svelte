@@ -10,9 +10,9 @@
 <style>
   input {
     width: 100%;
-    padding: 0.625em;
+    padding: 0.7em;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     background-color: #fff;
     color: #000;
   }
