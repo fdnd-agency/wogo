@@ -12,12 +12,15 @@
   textarea {
     width: 100%;
     padding: 0.7em;
-    border: none;
-    border-radius: 25px;
-    background-color: #fff;
+    border: solid 1px;
+    border-radius: 10px;
+    background-color: var(--accent2-tertiary);
     color: #000;
   }
   label {
-    color: white;
+    color: var(--accent2-tertiary);
+    font-weight: 600;
+    margin-bottom: .5em;
+    display: block;
   }
 </style>
