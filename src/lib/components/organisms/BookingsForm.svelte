@@ -249,7 +249,7 @@
 
   .background-color {
     background-color: var(--accent1-tertiary);
-    padding: 2rem;
+    padding: 0 2rem;
     border-radius: 0.5em;
     margin: 1em;
   }
@@ -422,6 +422,7 @@
     }
     section > article:nth-of-type(1) {
       flex-direction: column;
+      min-height: max-content;
     }
     #form {
       flex-direction: row-reverse;
