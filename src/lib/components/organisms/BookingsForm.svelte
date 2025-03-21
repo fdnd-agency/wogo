@@ -17,8 +17,6 @@
   let errorMessage = "";
   let activeSection = 1;
 
-  console.log(SocialIcons);
-
   // Function to handle form submission
   async function handleSubmit(event) {
     event.preventDefault();

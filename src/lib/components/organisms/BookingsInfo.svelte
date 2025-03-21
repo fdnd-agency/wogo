@@ -38,33 +38,29 @@
       />
     </div>
   </article>
-</section>
-
-<section>
-  <div>
-    <article>
-      {#each BoekingsInfoL as item}
-        <p><Image
-          src={item.icon.url}
-          alt={item.icon.title}
-          width="30"
-          height="30"
-          loading="lazy"
-        />{item.title}</p>
-      {/each}
-    </article>
-    <article>
-      {#each BoekingsInfoR as item}
-        <p><Image
-          src={item.icon.url}
-          alt={item.icon.title}
-          width="30"
-          height="30"
-          loading="lazy"
-        />{item.title}</p>
-      {/each}
-    </article>
-  </div>
+  
+  <section class="BoekingsInfo">
+  <article>
+    {#each BoekingsInfoL as item}
+    <p><Image
+      src={item.icon.url}
+      alt={item.icon.title}
+      width="30"
+      height="30"
+      loading="lazy"
+    />{item.title}</p>
+  {/each}
+  {#each BoekingsInfoR as item}
+  <p><Image
+    src={item.icon.url}
+    alt={item.icon.title}
+    width="30"
+    height="30"
+    loading="lazy"
+  />{item.title}</p>
+{/each}
+  </article>
+</section> 
 </section>
 
 <style>
@@ -162,7 +158,7 @@
   }
 
   .hero-description > p {
-    padding: 0.5em;
+    /* padding: 0.5em; */
   }
 
   h1 {
@@ -170,7 +166,7 @@
     display: inline-block;
     text-align: center;
     width: 100%;
-    margin-bottom: 2em;
+    /* margin-bottom: 2em; */
     font-weight: 700;
     font-size: clamp(2.648rem, 6vw, 4.241rem);
     letter-spacing: -1px;
