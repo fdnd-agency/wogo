@@ -17,8 +17,6 @@
   let errorMessage = "";
   let activeSection = 1;
 
-  console.log(SocialIcons);
-
   // Function to handle form submission
   async function handleSubmit(event) {
     event.preventDefault();
@@ -69,7 +67,7 @@
   }
 
   function nextSection() {
-    if ((activeSection = 1)) {
+    if ((activeSection === 1)) {
       activeSection++;
     }
   }
@@ -207,6 +205,7 @@
     <picture>
       <img src={logo} height="150" width="150" alt="Wogo" loading="lazy" />
     </picture>
+
     <div class="info-list">
       {#each FormulierInfo as item}
         <div class="info">
@@ -223,6 +222,7 @@
         </div>
       {/each}
     </div>
+
     <ul class="social-media-list" role="list">
       {#each SocialIcons as item}
         <li>
@@ -438,7 +438,7 @@
   }
   @media (max-width: 768px) {
     .fullName {
-      flex-direction: column; /* Velden worden gestapeld op kleinere schermen */
+      flex-direction: column;
     }
   }
 </style>
