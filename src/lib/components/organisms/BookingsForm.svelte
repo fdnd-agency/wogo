@@ -19,7 +19,7 @@
 
   // Function to handle form submission
   async function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(); //prevent page refresh
 
     const form = event.target;
     const jsEnabledField = document.getElementById("jsEnabled");
@@ -77,6 +77,7 @@
       activeSection--;
     }
   }
+
 </script>
 
 <section id="form">
@@ -106,15 +107,17 @@
             id="phone"
             name="phone"
             type="tel"
-            pattern="\d{10}"
-            required>Telefoonnummer:*</TextInput
+            pattern="\d${10}"
+            max="10"
+            required
+            >Telefoonnummer:*</TextInput
           >
         </section>
       {/if}
 
       {#if activeSection === 2}
         <section class="sectionForm">
-          <TextInput id="persons" name="persons" type="number" required
+          <TextInput id="persons" name="persons" type="number" min="0" max="30" required
             >Hoeveel personen?*</TextInput
           >
           <TextareaInput
@@ -122,13 +125,14 @@
             name="request"
             placeholder="Typ hier uw bericht...">Aanvraag:</TextareaInput
           >
-          <DatePicker id="date" name="date">Datum:</DatePicker>
+          <DatePicker id="date" name="date" required>Datum:*</DatePicker>
           <TimePicker
             id="time"
             name="time"
             value="14:30"
             min="09:00"
-            max="22:00">Kies een tijdstip:</TimePicker
+            max="22:00"
+            required> Kies een tijdstip:*</TimePicker
           >
         </section>
       {/if}
