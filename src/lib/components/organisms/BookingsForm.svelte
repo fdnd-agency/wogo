@@ -219,7 +219,7 @@
           </p>
         </div>
         <div class="info-mail">
-          <img src="{FormulierInfo[1].icon.url}" alt="{FormulierInfo[1].icon.title}" width="30" height="30" />
+          <img src="{FormulierInfo[1].icon.url}" alt="{FormulierInfo[1].icon.title}" width="25" height="25" />
           <p class="title">
             <a href="mailto:{FormulierInfo[1].title}">
               {FormulierInfo[1].title}</a>
