@@ -94,14 +94,14 @@
         <section class="sectionForm">
           <div class="fullName">
             <TextInput id="firstName" name="firstName" required
-              >Voornaam:*</TextInput
+              >Voornaam*</TextInput
             >
             <TextInput id="lastName" name="lastName" required
-              >Achternaam:*</TextInput
+              >Achternaam*</TextInput
             >
           </div>
           <TextInput id="email" name="email" type="email" required
-            >Email:*</TextInput
+            >Email*</TextInput
           >
           <TextInput
             id="phone"
@@ -110,7 +110,7 @@
             pattern="\d${10}"
             max="10"
             required
-            >Telefoonnummer:*</TextInput
+            >Telefoonnummer*</TextInput
           >
         </section>
       {/if}
@@ -123,16 +123,16 @@
           <TextareaInput
             id="request"
             name="request"
-            placeholder="Typ hier uw bericht...">Aanvraag:</TextareaInput
+            placeholder="Typ hier uw bericht...">Aanvraag</TextareaInput
           >
-          <DatePicker id="date" name="date" required>Datum:*</DatePicker>
+          <DatePicker id="date" name="date" required>Datum*</DatePicker>
           <TimePicker
             id="time"
             name="time"
             value="14:30"
             min="09:00"
             max="22:00"
-            required> Kies een tijdstip:*</TimePicker
+            required> Kies een tijdstip*</TimePicker
           >
         </section>
       {/if}
@@ -211,21 +211,21 @@
     </picture>
 
     <div class="info-list">
-      {#each FormulierInfo as item}
-        <div class="info">
-          {#if item.icon}
-            <Image
-              src={item.icon.url}
-              alt={item.icon.title}
-              width="30"
-              height="auto"
-              loading="lazy"
-            />
-          {/if}
-          <p class="title">{item.title}</p>
+      <div class="info-number">
+        <img src="{FormulierInfo[0].icon.url}" alt="{FormulierInfo[0].icon.title}" width="25" height="25" />
+          <p class="title">
+            <a href="tel:{FormulierInfo[0].title}">
+            {FormulierInfo[0].title}</a>
+          </p>
         </div>
-      {/each}
-    </div>
+        <div class="info-mail">
+          <img src="{FormulierInfo[1].icon.url}" alt="{FormulierInfo[1].icon.title}" width="30" height="30" />
+          <p class="title">
+            <a href="mailto:{FormulierInfo[1].title}">
+              {FormulierInfo[1].title}</a>
+          </p> 
+        </div>
+     </div>
 
     <ul class="social-media-list" role="list">
       {#each SocialIcons as item}
@@ -253,7 +253,7 @@
 
   .background-color {
     background-color: var(--accent1-tertiary);
-    padding: 0 2rem;
+    padding: 0 2rem .5em;
     border-radius: 0.5em;
     margin: 1em;
   }
@@ -384,7 +384,15 @@
   .info-list {
     margin: 2em 0;
   }
-
+.info-number a, .info-mail a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: .5em;
+}
+.info-number, .info-mail {
+    display: flex;
+    margin: 1em 0;
+}
   .info {
     display: flex;
     margin: 1em;

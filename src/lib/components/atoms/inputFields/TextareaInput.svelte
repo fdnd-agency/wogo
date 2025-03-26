@@ -12,10 +12,11 @@
   textarea {
     width: 100%;
     padding: 0.7em;
-    border: solid 1px;
-    border-radius: 10px;
+    border: none;
+    border-radius: 5px;
     background-color: var(--accent2-tertiary);
     color: #000;
+    margin-bottom: 1rem;
   }
   label {
     color: var(--accent2-tertiary);
