@@ -7,74 +7,73 @@
     BookIcon,
     Button,
   } from "$lib/index";
-  export let itemCollection;
-  const items = itemCollection.componentsCollection.items;
+  export let item = {};  // Enkel één item wordt doorgegeven aan TicketCard
+
+  console.log("TicketCard received item:", item);
 </script>
 
-{#each items as item}
-  <article class="ticket-card">
-    <div class="card-header">
-      <p>
-        <span class="location-icon">
-          <IconLocationThin
-            width="13"
-            height="13"
-            fill="var(--txt-dark-clr)"
-          /></span
-        >
-        {item.location}
-      </p>
-      <p class="cocktail-price">{item.price}</p>
-    </div>
-    <img style="{`view-transition-name:${item.image.title.replace(/\s+/g, "-")}`}"
-      src={item.image.url}
-      alt={item.image.title}
-      loading="lazy"
-      width="450"
-      height="321"
-      title={item.image.title.replace(/\s+/g, "-")}
+<article class="ticket-card">
+  <div class="card-header">
+    <p>
+      <span class="location-icon">
+        <IconLocationThin
+          width="13"
+          height="13"
+          fill="var(--txt-dark-clr)"
+        /></span
+      >
+      {item.location}
+    </p>
+    <p class="cocktail-price">{item.price}</p>
+  </div>
+  <img style="{`view-transition-name:${item.image.title.replace(/\s+/g, "-")}`}"
+    src={item.image.url}
+    alt={item.image.title}
+    loading="lazy"
+    width="450"
+    height="321"
+    title={item.image.title.replace(/\s+/g, "-")}
+  />
+  <h2>{item.title}</h2>
+  <ul class="card-description">
+    <li>
+      <span
+        ><RouteIcon
+          width="20"
+          height="20"
+          fill="var(--page-bg-color)"
+        /></span
+      >
+      {item.location}
+    </li>
+    <li>
+      <span
+        ><CocktailIcon
+          width="20"
+          height="20"
+          fill="var(--page-bg-color)"
+        /></span
+      >
+      {item.cocktailDescription}
+    </li>
+  </ul>
+  <div class="card-buttons">
+    <Button
+      variant="tertiary"
+      title="Boek nu"
+      icon={BookIcon}
+      iconColor="var(--txt-quaternary-clr)"
+      size="s"
     />
-    <h2>{item.title}</h2>
-    <ul class="card-description">
-      <li>
-        <span
-          ><RouteIcon
-            width="20"
-            height="20"
-            fill="var(--page-bg-color)"
-          /></span
-        >
-        {item.location}
-      </li>
-      <li>
-        <span
-          ><CocktailIcon
-            width="20"
-            height="20"
-            fill="var(--page-bg-color)"
-          /></span
-        >
-        {item.cocktailDescription}
-      </li>
-    </ul>
-    <div class="card-buttons">
-      <Button
-        variant="tertiary"
-        title="Boek nu"
-        icon={BookIcon}
-        iconColor="var(--txt-quaternary-clr)"
-        size="s"
-      />
-      <Button
-        href="/home/{item.slug}"
-        variant="secondary"
-        title="Lees Meer"
-        icon={ArrowRightShort}
-        size="s"
-      />
-    </div>
-  </article>
-{/each}
+    <Button
+      href="/home/{item.slug}"
+      variant="secondary"
+      title="Lees Meer"
+      icon={ArrowRightShort}
+      size="s"
+    />
+  </div>
+</article>
 
 <style>
   .card-header {

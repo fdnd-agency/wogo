@@ -32,7 +32,7 @@
     updateActiveIndicator(direction)
     updateIndicators()
   }
- 
+
   function updateActiveIndicator(direction) {
     if (direction === 'right') {
       activeInd = activeInd >= 3 ? 0 : activeInd + 1
@@ -105,7 +105,9 @@
     </button>
 
     <div class="card-container">
-      <TicketCard {itemCollection} />
+      {#each itemCollection.componentsCollection.items as item}
+        <TicketCard {item} />
+      {/each}
     </div>
 
     <button
@@ -122,7 +124,7 @@
         {#each itemCollection.componentsCollection.items as item, index}
           <button
             aria-label="button under slider"
-                        class="carousel-indicator-span-span {index === activeInd ? 'is-active' : ''}"
+            class="carousel-indicator-span-span {index === activeInd ? 'is-active' : ''}"
             on:click={() => scrollToSlide(index)}
           ></button>
         {/each}
@@ -150,12 +152,14 @@
     justify-content: space-between;
     padding: 3rem 2rem;
   }
+
   .carousel-title h2 {
     display: flex;
     padding-bottom: 0.5rem;
     color: var(--txt-tertiary-clr);
     text-transform: uppercase;
   }
+
   section {
     --arrow-size: 40px;
     width: 100%;
@@ -181,6 +185,7 @@
     .carousel-title {
       padding: 3rem 2rem;
     }
+
     .carousel-title h2 {
       font-size: var(--fs-xl);
     }
