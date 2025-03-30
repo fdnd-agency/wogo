@@ -18,7 +18,7 @@
     aria-hidden="true"
     poster={HeroText.asset.url}
   >
-    <source src={HeroText.asset.url} type="video/webm" />
+    <source preload="auto" src={HeroText.asset.url} type="video/webm" />
     <source src={HeroText.asset.url} type="video/webm" />
   </video>
   <div class="overlay"></div>

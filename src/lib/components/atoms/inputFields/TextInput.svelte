@@ -63,14 +63,6 @@ input:-webkit-autofill:valid {
 input:-webkit-autofill:invalid {
   border: solid 2px rgb(239, 90, 90);
 }
-/* 
-  input:-webkit-autofill:user-valid{
-    border:solid 4px rgb(103, 158, 103);
-  }
-
-  input:-webkit-autofill:user-invalid{
-    border:solid 4px rgb(205, 98, 81);
-  } */
 
   input:user-valid {
     border:solid 2px rgb(103, 158, 103);
@@ -84,6 +76,5 @@ input:-webkit-autofill:invalid {
     font-weight: 600;
     margin-bottom: 0.5em;
     display: block;
-    /* margin-left: 0.5rem; */
   }
 </style>
