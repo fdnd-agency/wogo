@@ -1,6 +1,6 @@
 <script>
-  import { Button, ArrowRight, Image } from '$lib/index'
-  export let items
+  import { Button, ArrowRight, Image } from "$lib/index";
+  export let items;
 
   let HeroText = items[0].componentsCollection.items[0];
   let ButtonText = items[0].componentsCollection.items[1];
@@ -21,14 +21,16 @@
     <source src={HeroText.asset.url} type="video/webm" />
     <source src={HeroText.asset.url} type="video/webm" />
   </video>
-  <div class="overlay"></div>
-  <article class="hero-content">
-    <h1>
-      {HeroText.title}
-    </h1>
-    <div class="hero-description">
-      <p>{HeroText.textParagraph}</p>
+
+  <h1>
+    {HeroText.title}
+  </h1>
+
+  <div class="section-allContent">
+    <article class="hero-content">
+      <p class="hero-description">{HeroText.textParagraph}</p>
       <Button
+        id="hero-button"
         variant="primary"
         title={ButtonText.title}
         icon={ArrowRight}
@@ -36,50 +38,55 @@
         size="lg"
         href={ButtonText.slug}
       />
-    </div>
-  </article>
-  
-  <section class="BoekingsInfo">
-  <article>
-    {#each BoekingsInfoL as item}
-    <p><Image
-      src={item.icon.url}
-      alt={item.icon.title}
-      width="30"
-      height="30"
-      loading="lazy"
-    />{item.title}</p>
-  {/each}
-  {#each BoekingsInfoR as item}
-  <p><Image
-    src={item.icon.url}
-    alt={item.icon.title}
-    width="30"
-    height="30"
-    loading="lazy"
-  />{item.title}</p>
-{/each}
-  </article>
-</section> 
+    </article>
+    <div class="overlay"></div>
+    <section class="BoekingsInfo">
+      <ul>
+        {#each BoekingsInfoL as item}
+          <li>
+            <Image
+              src={item.icon.url}
+              alt={item.icon.title}
+              width="30"
+              height="30"
+              loading="lazy"
+            />{item.title}
+          </li>
+        {/each}
+        {#each BoekingsInfoR as item}
+          <li>
+            <Image
+              src={item.icon.url}
+              alt={item.icon.title}
+              width="30"
+              height="30"
+              loading="lazy"
+            />{item.title}
+          </li>
+        {/each}
+      </ul>
+    </section>
+  </div>
 </section>
 
 <style>
   section {
-    padding-inline: 2em;
+    padding: 1em;
+    color: #fff;
+    z-index: 2;
   }
 
   section:nth-of-type(1) {
     display: grid;
     position: relative;
-    height: 55vh;
+    /* height: 55vh; */
     overflow: hidden;
-    align-items: center;
+    /* align-items: center; */
   }
-  section:nth-of-type(1) > article {
+  /* section:nth-of-type(1) > article {
     max-width: 90em;
-    margin: auto;
     width: 100%;
-  }
+  } */
 
   section:nth-of-type(2) {
     background-color: var(--accent1-secondary);
@@ -100,7 +107,7 @@
     flex-direction: column;
     gap: 1em;
   }
-  
+  /*   
   section:nth-of-type(2) > div > article::before {
     content: '';
     display: block;
@@ -112,18 +119,21 @@
     margin-bottom: 4px;
     box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
   }
-  
+   */
   article > p {
     color: var(--txt-quaternary-clr);
     font-weight: 600;
+    width: 34ch;
+    line-height: 1.4;
   }
-  
-  article > p {
+
+  .BoekingsInfo ul li {
     display: flex;
     gap: 0.5em;
     align-items: flex-end;
+    margin: 0.5em 0;
   }
-  
+
   section:nth-of-type(2) > div:first-of-type {
     margin-bottom: 1em;
   }
@@ -153,12 +163,20 @@
 
   .hero-content {
     font-weight: 700;
-    color: #fff;
-    z-index: 1;
   }
 
-  .hero-description > p {
-    /* padding: 0.5em; */
+  .BoekingsInfo {
+    z-index: 2;
+    background-color: #774f3d6c;
+    backdrop-filter: blur(10px);
+    border-radius: 1em;
+    max-width: fit-content;
+    max-height: fit-content;
+  }
+
+  .hero-content > * {
+    padding: 0.5em;
+    z-index: 2;
   }
 
   h1 {
@@ -166,11 +184,13 @@
     display: inline-block;
     text-align: center;
     width: 100%;
-    /* margin-bottom: 2em; */
+    color: #fff;
+    margin: 1em 0;
     font-weight: 700;
-    font-size: clamp(2.648rem, 6vw, 4.241rem);
+    /* font-size: clamp(2.648rem, 6vw, 4.241rem); */
     letter-spacing: -1px;
     filter: drop-shadow(0 0 0.4rem #000);
+    z-index: 2;
   }
 
   @keyframes heading {
@@ -210,9 +230,9 @@
   }
 
   @media (min-width: 30em) {
-    section:nth-of-type(1) {
+    /* section:nth-of-type(1) {
       height: 70vh;
-    }
+    } */
 
     .hero-description {
       max-width: 45rem;
@@ -229,13 +249,31 @@
       font-size: 1.5em;
     }
     section:nth-of-type(2) > div:first-of-type {
-    margin-bottom: 0;
+      margin-bottom: 0;
+    }
+    h1 {
+      margin: 1em 0;
+      color: #fff;
+      z-index: 2;
+      font-size: clamp(2.648rem, 6vw, 4.241rem);
     }
   }
 
   @media (min-width: 55em) {
-    section {
+    /* section {
       padding-inline: 8em;
+    } */
+    h1 {
+      margin: 1em 0;
+      color: #fff;
+      z-index: 2;
+      font-size: clamp(2.648rem, 6vw, 4.241rem);
+    }
+    .section-allContent {
+      display: flex;
+    }
+    .hero-content p {
+      margin-bottom: 0.5em;
     }
   }
 </style>
