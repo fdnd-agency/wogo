@@ -77,16 +77,9 @@
   }
 
   section:nth-of-type(1) {
-    display: grid;
     position: relative;
-    /* height: 55vh; */
     overflow: hidden;
-    /* align-items: center; */
   }
-  /* section:nth-of-type(1) > article {
-    max-width: 90em;
-    width: 100%;
-  } */
 
   section:nth-of-type(2) {
     background-color: var(--accent1-secondary);
@@ -107,19 +100,7 @@
     flex-direction: column;
     gap: 1em;
   }
-  /*   
-  section:nth-of-type(2) > div > article::before {
-    content: '';
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 4px;
-    background-color: #FFAA81;
-    border-radius: 4px;
-    margin-bottom: 4px;
-    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
-  }
-   */
+
   article > p {
     color: var(--txt-quaternary-clr);
     font-weight: 600;
@@ -172,10 +153,11 @@
     border-radius: 1em;
     max-width: fit-content;
     max-height: fit-content;
+    margin: 1em 0;
   }
 
   .hero-content > * {
-    padding: 0.5em;
+    padding: 0.5em 0;
     z-index: 2;
   }
 
@@ -185,9 +167,9 @@
     text-align: center;
     width: 100%;
     color: #fff;
-    margin: 1em 0;
+    margin: 0.5em 0;
     font-weight: 700;
-    /* font-size: clamp(2.648rem, 6vw, 4.241rem); */
+    font-size: clamp(2.648rem, 6vw, 2rem);
     letter-spacing: -1px;
     filter: drop-shadow(0 0 0.4rem #000);
     z-index: 2;
@@ -241,6 +223,7 @@
       max-width: 75%;
     }
   }
+
   @media (min-width: 44em) {
     section:nth-of-type(2) > div {
       flex-direction: row;
@@ -257,21 +240,21 @@
       z-index: 2;
       font-size: clamp(2.648rem, 6vw, 4.241rem);
     }
+    .section-allContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   @media (min-width: 55em) {
-    /* section {
-      padding-inline: 8em;
-    } */
     h1 {
       margin: 1em 0;
       color: #fff;
       z-index: 2;
       font-size: clamp(2.648rem, 6vw, 4.241rem);
     }
-    .section-allContent {
-      display: flex;
-    }
+
     .hero-content p {
       margin-bottom: 0.5em;
     }
