@@ -9,10 +9,8 @@
 </svelte:head>
 
 <Hero hero={items[0]} />
-<Reviews reviews={items[4].componentsCollection.items} />
 <TicketCarousel {itemCollection} />
 <HeadLine title="How It Works" />
 <HowItWorks cards={items[1].componentsCollection.items} />
-<HeadLine title="What We Do" />
-<WhatWeDo WhatWeDo={items[2].componentsCollection.items} />
+<Reviews reviews={items[4].componentsCollection.items} />
 <GiftCard items={items[3]} />
