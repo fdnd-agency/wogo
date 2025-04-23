@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { parse } from 'querystring';
-import { CONTENTFUL_SPACE_ID, CONTENTFUL_MANAGEMENT_ACCESS_TOKEN } from '$env/static/private';
+import { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } from '$env/static/private';
 
 export async function POST({ request }) {
   try {
