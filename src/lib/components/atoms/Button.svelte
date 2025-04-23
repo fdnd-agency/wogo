@@ -77,6 +77,8 @@
     box-shadow: var(--btn-shadow);
     border: 2px solid var(--btn-primary-bg);
     font-weight: 700;
+    position: relative;
+    z-index: 2;
   }
 
   .btn-secondary {
