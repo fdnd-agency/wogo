@@ -212,15 +212,8 @@
   }
 
   @media (min-width: 30em) {
-    /* section:nth-of-type(1) {
-      height: 70vh;
-    } */
-
     .hero-description {
       max-width: 45rem;
-    }
-    .hero-description > p {
-      max-width: 75%;
     }
   }
 
