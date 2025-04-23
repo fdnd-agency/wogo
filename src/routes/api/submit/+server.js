@@ -30,7 +30,7 @@ export async function POST({ request }) {
       {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${CONTENTFUL_MANAGEMENT_ACCESS_TOKEN}`,
+          Authorization: `Bearer ${CONTENTFUL_ACCESS_TOKEN}`,
           'Content-Type': 'application/vnd.contentful.management.v1+json',
           'X-Contentful-Content-Type': contentTypeId,
         },
