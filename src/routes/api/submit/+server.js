@@ -1,4 +1,3 @@
-/*
 import { json } from '@sveltejs/kit';
 import { parse } from 'querystring';
 import { CONTENTFUL_SPACE_ID, CONTENTFUL_MANAGEMENT_TOKEN } from '$env/static/private';
@@ -83,4 +82,3 @@ export async function POST({ request }) {
     return json({ error: 'Unexpected error occurred' }, { status: 500 });
   }
 }
-*/
