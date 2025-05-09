@@ -1,5 +1,5 @@
 <script>
-  import { WorkWithUs, HomePage, GroupOutings, FrequentlyAsked, TicketsOverview, AboutUs } from '$lib/index'
+  import { WorkWithUs, HomePage, GroupOutings, FrequentlyAsked, TicketsOverview, AboutUs, Giftcard } from '$lib/index'
   export let data
   const { success } = data;
 
@@ -10,6 +10,7 @@
     'group-bookings': GroupOutings,
     'about-us': AboutUs,
     'faq': FrequentlyAsked,
+    'gift-cards': Giftcard,
   };
 
   const items = data.pageData.find(
