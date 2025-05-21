@@ -81,7 +81,7 @@
 
 <div class="carousel-title">
   <h2>Explore Highlighted Cocktail Walks</h2>
-  <Link
+  <!-- <Link
     href="/walks-overview"
     title="see all walks"
     size="m"
@@ -89,7 +89,7 @@
     color="var(--accent2-tertiary)"
     icon={ArrowRight}
     iconColor="var(--txt-tertiary-clr)"
-  />
+  /> -->
 </div>
 
 {#if itemCollection}
@@ -147,7 +147,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     padding: 3rem 2rem;
   }
   .carousel-title h2 {
