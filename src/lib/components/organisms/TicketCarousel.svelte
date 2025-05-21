@@ -1,103 +1,110 @@
 <script>
-  import { TicketCard, Link, ArrowRightShort, ArrowLeftShort, ArrowRight, Button } from '$lib'
-  import { onMount } from 'svelte'
-  export let itemCollection
+  import {
+    TicketCard,
+    Link,
+    ArrowRightShort,
+    ArrowLeftShort,
+    ArrowRight,
+    Button,
+  } from "$lib";
+  import { onMount } from "svelte";
+  export let itemCollection;
 
-  let activeInd = 0
+  let activeInd = 0;
 
   function scrollLeftOrRight(direction) {
-    const carouselElement = document.querySelector('.card-container')
-    const cardElement = document.querySelector('.ticket-card')
-    const offsetWidth = activeInd >= 3 ? carouselElement.offsetWidth : cardElement.offsetWidth
-    const scrollXBy = direction === 'left' ? -350 : 350
-    const scrollWidth = carouselElement.scrollWidth
-    const scrollLeft = carouselElement.scrollLeft
+    const carouselElement = document.querySelector(".card-container");
+    const cardElement = document.querySelector(".ticket-card");
+    const offsetWidth =
+      activeInd >= 3 ? carouselElement.offsetWidth : cardElement.offsetWidth;
+    const scrollXBy = direction === "left" ? -350 : 350;
+    const scrollWidth = carouselElement.scrollWidth;
+    const scrollLeft = carouselElement.scrollLeft;
 
-    if (direction === 'left' && scrollLeft === 0) {
+    if (direction === "left" && scrollLeft === 0) {
       carouselElement.scrollTo({
-        left: activeInd === 0 ? scrollWidth - carouselElement.offsetWidth : scrollXBy,
-        behavior: 'smooth',
-      })
-    } else if (direction === 'right' && Math.abs(scrollWidth - (scrollLeft + offsetWidth)) <= 1) {
+        left:
+          activeInd === 0
+            ? scrollWidth - carouselElement.offsetWidth
+            : scrollXBy,
+        behavior: "smooth",
+      });
+    } else if (
+      direction === "right" &&
+      Math.abs(scrollWidth - (scrollLeft + offsetWidth)) <= 1
+    ) {
       carouselElement.scrollTo({
         left: 0,
-        behavior: 'smooth',
-      })
+        behavior: "smooth",
+      });
     } else {
       carouselElement.scrollBy({
         left: scrollXBy,
-        behavior: 'smooth',
-      })
+        behavior: "smooth",
+      });
     }
-    updateActiveIndicator(direction)
-    updateIndicators()
+    updateActiveIndicator(direction);
+    updateIndicators();
   }
- 
+
   function updateActiveIndicator(direction) {
-    if (direction === 'right') {
-      activeInd = activeInd >= 3 ? 0 : activeInd + 1
+    if (direction === "right") {
+      activeInd = activeInd >= 3 ? 0 : activeInd + 1;
     } else {
-      activeInd = activeInd === 0 ? 3 : activeInd - 1
+      activeInd = activeInd === 0 ? 3 : activeInd - 1;
     }
   }
 
   function scrollToSlide(index) {
-    activeInd = index
-    const carouselElement = document.querySelector('.card-container')
-    const offsetWidth = carouselElement.offsetWidth
+    activeInd = index;
+    const carouselElement = document.querySelector(".card-container");
+    const offsetWidth = carouselElement.offsetWidth;
     carouselElement.scrollTo({
       left: offsetWidth * index,
-      behavior: 'smooth',
-    })
+      behavior: "smooth",
+    });
 
-    updateIndicators()
+    updateIndicators();
   }
 
   function updateIndicators() {
-    const indicators = document.querySelectorAll('.carousel-indicator')
+    const indicators = document.querySelectorAll(".carousel-indicator");
     indicators.forEach((indicator, index) => {
       if (index === activeInd) {
-        indicator.classList.add('active')
+        indicator.classList.add("active");
       } else {
-        indicator.classList.remove('active')
+        indicator.classList.remove("active");
       }
-    })
+    });
   }
 
   onMount(() => {
     // Zorg ervoor dat de knoppen en indicatoren zichtbaar zijn als de browser JS heeft ingeschakeld
-    const carouselElements = document.querySelectorAll('.carousel-arrow, .carousel-indicator')
+    const carouselElements = document.querySelectorAll(
+      ".carousel-arrow, .carousel-indicator"
+    );
     carouselElements.forEach(function (element) {
-      element.hidden = false
-    })
+      element.hidden = false;
+    });
 
     // Verberg de info-button als JS ingeschakeld is
-    const infoButtons = document.querySelectorAll('.button-container')
+    const infoButtons = document.querySelectorAll(".button-container");
     infoButtons.forEach(function (element) {
-      element.style.display = 'none'
-    })
-  })
+      element.style.display = "none";
+    });
+  });
 </script>
 
 <div class="carousel-title">
   <h2>Explore Highlighted Cocktail Walks</h2>
-  <!-- <Link
-    href="/walks-overview"
-    title="see all walks"
-    size="m"
-    fontSize="var(--fs-lg)"
-    color="var(--accent2-tertiary)"
-    icon={ArrowRight}
-    iconColor="var(--txt-tertiary-clr)"
-  /> -->
 </div>
 
 {#if itemCollection}
   <section>
     <button
       type="button"
-      class="carousel-arrow carousel-arrow--prev"
-      on:click={() => scrollLeftOrRight('left')}
+      class="carousel-arrow carousel-arrow--prev caroussel-navigationContainer"
+      on:click={() => scrollLeftOrRight("left")}
       title="prev slide"
       hidden
     >
@@ -108,36 +115,62 @@
       <TicketCard {itemCollection} />
     </div>
 
+    <div class="see-all-walks">
+      <Link
+        href="/tour-overview"
+        title="see all walks"
+        size="m"
+        fontSize="16px"
+        color="var(--btn-primary-bg)"
+        icon={ArrowRight}
+        iconColor="var(--btn-primary-bg)"
+      />
+    </div>
+
     <button
-      class="carousel-arrow carousel-arrow--next"
-      on:click={() => scrollLeftOrRight('right')}
+      type="button"
+      class="carousel-arrow carousel-arrow--next caroussel-navigationContainer"
+      on:click={() => scrollLeftOrRight("right")}
       title="next slide"
       hidden
     >
       <ArrowRightShort />
     </button>
 
-    <div class="carousel-indicator">
-      <span class="carousel-indicator-span">
-        {#each itemCollection.componentsCollection.items as item, index}
-          <button
-            aria-label="button under slider"
-                        class="carousel-indicator-span-span {index === activeInd ? 'is-active' : ''}"
-            on:click={() => scrollToSlide(index)}
-          ></button>
-        {/each}
-      </span>
-    </div>
+    <div class="caroussel-navigationContainer">
+      <button
+        class="carousel-arrow carousel-arrow--next"
+        on:click={() => scrollLeftOrRight("right")}
+        title="next slide"
+        hidden
+      >
+        <ArrowRightShort />
+      </button>
 
-    <div class="button-container">
-      <Button
-        aria-label="slide to next"
-        variant="secondary"
-        title="swipe right to see more slides"
-        size="m"
-        icon={ArrowRight}
-        iconColor="var(--accent2-primary)"
-      />
+      <div class="carousel-indicator">
+        <span class="carousel-indicator-span">
+          {#each itemCollection.componentsCollection.items as item, index}
+            <button
+              aria-label="button under slider"
+              class="carousel-indicator-span-span {index === activeInd
+                ? 'is-active'
+                : ''}"
+              on:click={() => scrollToSlide(index)}
+            ></button>
+          {/each}
+        </span>
+      </div>
+
+      <div class="button-container">
+        <Button
+          aria-label="slide to next"
+          variant="secondary"
+          title="swipe right to see more slides"
+          size="m"
+          icon={ArrowRight}
+          iconColor="var(--accent2-primary)"
+        />
+      </div>
     </div>
   </section>
 {/if}
@@ -171,6 +204,7 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .card-container::-webkit-scrollbar {
@@ -254,5 +288,22 @@
     display: flex;
     justify-content: center;
     padding: 1rem 0;
+  }
+
+  .see-all-walks {
+    color: var(--btn-primary-bg);
+    width: fit-content;
+    border-radius: var(--radius-md);
+    padding: 0.5rem ;
+    border: var(--btn-primary-bg) solid 1px;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+
+  @media (min-width: 55em) {
+    .caroussel-navigationContainer {
+      display: none;
+    }
   }
 </style>

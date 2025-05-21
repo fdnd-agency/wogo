@@ -89,8 +89,6 @@
     }
   }
 
-  
-
   .cocktail-price {
     font-weight: 600;
     padding: 0.6em;
