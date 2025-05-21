@@ -14,7 +14,7 @@
 {#each items as item}
   <article class="ticket-card">
     <div class="card-header">
-      <p>
+      <!-- <p>
         <span class="location-icon">
           <IconLocationThin
             width="13"
@@ -23,8 +23,8 @@
           /></span
         >
         {item.location}
-      </p>
-      <p class="cocktail-price">{item.price}</p>
+      </p> -->
+    
     </div>
     <img style="{`view-transition-name:${item.image.title.replace(/\s+/g, "-")}`}"
       src={item.image.url}
@@ -56,6 +56,9 @@
         >
         {item.cocktailDescription}
       </li>
+      <li>
+          <p class="cocktail-price">{item.price}</p>
+      </li>
     </ul>
     <div class="card-buttons">
       <Button
@@ -80,7 +83,7 @@
   .card-header {
     display: flex;
     justify-content: space-between;
-    padding: 0.5em;
+    /* padding: 0.5em; */
     & p {
       padding-top: 0.3em;
     }
@@ -120,7 +123,7 @@
     object-fit: cover;
     width: 350px;
     height: 250px;
-    filter: brightness(0.5);
+    /* filter: brightness(0.5); */
   
     @media (max-width: 768px) {
       max-width: 316px;
