@@ -13,7 +13,7 @@
 
 {#each items as item}
   <article class="ticket-card">
-    <div class="card-header">
+  
       <!-- <p>
         <span class="location-icon">
           <IconLocationThin
@@ -25,12 +25,12 @@
         {item.location}
       </p> -->
     
-    </div>
+  
     <img style="{`view-transition-name:${item.image.title.replace(/\s+/g, "-")}`}"
       src={item.image.url}
       alt={item.image.title}
       loading="lazy"
-      width="450"
+      width="300"
       height="321"
       title={item.image.title.replace(/\s+/g, "-")}
     />
@@ -80,15 +80,9 @@
 {/each}
 
 <style>
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    /* padding: 0.5em; */
-    & p {
-      padding-top: 0.3em;
-    }
+.ticket-card {
+    width: 21rem;
   }
-
   .cocktail-price {
     font-weight: 600;
     padding: 0.6em;
@@ -133,7 +127,7 @@
     position: relative;
     display: block;
     object-fit: cover;
-    width: 350px;
+    width: 333px;
     height: 250px;
     filter: brightness(0.8);
   

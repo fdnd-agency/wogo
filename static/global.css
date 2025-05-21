@@ -19,10 +19,10 @@ h2 {
   line-height: 1.2; 
   letter-spacing: 1px;
 }
-
+/* 
 @view-transition {
   navigation: auto;
-}
+} */
 
 @font-face {
   font-family: "Epilogue";
