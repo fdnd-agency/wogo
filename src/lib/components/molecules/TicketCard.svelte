@@ -34,7 +34,7 @@
       height="321"
       title={item.image.title.replace(/\s+/g, "-")}
     />
-    <h2>{item.title}</h2>
+    <h2 class="cardTitle">{item.title}</h2>
     <ul class="card-description">
       <li>
         <span
@@ -89,10 +89,11 @@
     }
   }
 
+  
+
   .cocktail-price {
-    border: 1px solid var(--accent1-primary);
-    border-radius: 8px;
-    padding: 0.2em;
+    font-weight: 600;
+    padding: 0.6em;
   }
 
   article {
@@ -103,6 +104,7 @@
     background-color: var(--txt-quaternary-clr);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
+    position: relative;
     flex-direction: column;
     & h2 {
       padding-left: 0.5em;
@@ -116,6 +118,18 @@
       max-width: 350px;
     }
   }
+  .cardTitle {
+    color: var(--txt-quaternary-clr);
+    /* bottom: 74px; */
+    position: absolute;
+    top: 18px;
+    /* z-index: 2; */
+    @media (min-width: 768px) {
+      font-size: 27px;
+   
+
+    }
+  }
 
   article img {
     position: relative;
@@ -123,7 +137,7 @@
     object-fit: cover;
     width: 350px;
     height: 250px;
-    /* filter: brightness(0.5); */
+    filter: brightness(0.8);
   
     @media (max-width: 768px) {
       max-width: 316px;
