@@ -11,12 +11,12 @@
 </article>
 
 <article class="gift-button">
-    <h1>€20</h1>
+    <h1>€50</h1>
     <img src={logo} height="70" width="70" alt="onder navigatie" />
 </article>
 
 <article class="gift-button">
-    <h1>€20</h1>
+    <h1>€100</h1>
     <img src={logo} height="70" width="70" alt="onder navigatie" />
 </article>
 </section>

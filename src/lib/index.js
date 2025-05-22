@@ -60,6 +60,7 @@ export { default as BookingsForm } from '$lib/components/organisms/BookingsForm.
 export { default as Details } from '$lib/components/organisms/Details.svelte'
 export { default as Reviews } from '$lib/components/organisms/Reviews.svelte'
 export { default as Giftbutton } from '$lib/components/organisms/Giftbutton.svelte'
+export { default as Giftcardinput } from '$lib/components/organisms/Giftcardinput.svelte'
 
 // Templates
 

@@ -1,4 +1,5 @@
 <script>
-    import { Giftbutton } from '$lib/index';
+    import { Giftbutton, Giftcardinput } from '$lib/index';
 </script>
 <Giftbutton/>
+<Giftcardinput/>
