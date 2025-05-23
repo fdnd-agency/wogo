@@ -13,20 +13,8 @@
 
 {#each items as item}
   <article class="ticket-card">
-  
-      <!-- <p>
-        <span class="location-icon">
-          <IconLocationThin
-            width="13"
-            height="13"
-            fill="var(--txt-dark-clr)"
-          /></span
-        >
-        {item.location}
-      </p> -->
-    
-  
-    <img style="{`view-transition-name:${item.image.title.replace(/\s+/g, "-")}`}"
+    <img
+      style={`view-transition-name:${item.image.title.replace(/\s+/g, "-")}`}
       src={item.image.url}
       alt={item.image.title}
       loading="lazy"
@@ -57,7 +45,7 @@
         {item.cocktailDescription}
       </li>
       <li>
-          <p class="cocktail-price">{item.price}</p>
+        <p class="cocktail-price">{item.price}</p>
       </li>
     </ul>
     <div class="card-buttons">
@@ -80,12 +68,12 @@
 {/each}
 
 <style>
-.ticket-card {
+  .ticket-card {
     width: 21rem;
   }
   .cocktail-price {
     font-weight: 600;
-    padding: 0.6em;
+    padding: 0.6rem;
   }
 
   article {
@@ -118,8 +106,6 @@
     /* z-index: 2; */
     @media (min-width: 768px) {
       font-size: 27px;
-   
-
     }
   }
 
@@ -130,7 +116,7 @@
     width: 333px;
     height: 250px;
     filter: brightness(0.8);
-  
+
     @media (max-width: 768px) {
       max-width: 316px;
     }
