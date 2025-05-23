@@ -9,10 +9,10 @@
       <div class="card-body" tabIndex="0">
           {#each cards as card, index}
           <div class="text-content">
-            <div class="span-cirkel">
-              <span aria-label="Step {index + 1}">{index + 1}</span>
+            <!-- <div class="span-cirkel"> -->
+              <p class="number-text" aria-label="Step {index + 1}">{index + 1}</p>
               <h3>{card.title}</h3>
-            </div>
+            <!-- </div> -->
             <p>{card.textParagraph}</p>
           </div>
           {/each}
@@ -77,11 +77,11 @@
     gap: 1rem;
   }
 
-  .span-cirkel {
+  /* .span-cirkel {
     display: flex;
     flex-direction: row;
     gap: 1em;
-  }
+  } */
 
   h3 {
     display: inline-flex;
@@ -122,6 +122,7 @@
 
     h3 {
       font-size: 2rem;
+      color: #4D3327;
     }
 
     p {
@@ -129,12 +130,12 @@
       width: 75%;
     }
 
-    span {
+    /* span {
       width: 45px;
       height: 45px;
       line-height: 45px;
       font-size: 20px;
-    }
+    } */
     .span-cirkel {
       flex-direction: column;
     }
@@ -147,8 +148,14 @@
     }
     .text-content {
       max-width: calc(100% / 4);
-      gap: 2em;
+      gap: 1em;
     }
+    .number-text{
+      font-size: 3rem;
+      color:#4D3327;
+      font-weight: 800;
+      text-align: center;
+    } 
     .span-cirkel {
       gap: 2em;
     }
