@@ -6,7 +6,7 @@
 </script>
 
 <section>
-  <Image src={asset.url} alt={asset.title} width="350" height="350" />
+  <Image src={asset.url} alt={asset.title} width="150" height="150" />
   <h2>{textParagraph}</h2>
   <Button
     type="button"
@@ -20,22 +20,22 @@
 
 <style>
   section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    gap: 4rem;
-    width: 100%;
-    min-height: 90vh;
-    padding: 5rem 0;
+    /* display: flex;
+    flex-direction: column; */
+    /* align-items: center;
+    justify-content: center; */
+    /* margin: 0 auto;
+    gap: 4rem; */
+    /* width: 100%; */
+    /* min-height: 90vh; */
+    /* padding: 5rem 0; */
   }
 
   h2 {
-    min-width: 300px;
-    max-width: 350px;
+    /* min-width: 300px;
+    max-width: 350px; */
     color: var(--accent2-tertiary);
-    font-size: var(--fs-xl);
+    font-size: var(--fs-sm);
     text-align: left;
   }
 

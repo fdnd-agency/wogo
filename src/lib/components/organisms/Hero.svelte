@@ -65,12 +65,14 @@
     position: relative;
     display: inline-block;
     font-weight: 700;
-    font-size: clamp(2.648rem, 6vw, 4.241rem);
-    letter-spacing: -1px;
+    /* font-size: clamp(2.648rem, 6vw, 4.241rem); */
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+
+    /* letter-spacing: -1px; */
     filter: drop-shadow(0 0 0.4rem #000);
-    animation: heading;
+    /* animation: heading;
     animation-duration: 3s;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
   }
 
   @keyframes heading {
@@ -90,8 +92,8 @@
     text-transform: lowercase;
     filter: drop-shadow(0 0 0.4rem #000);
     position: relative;
-    animation-name: content;
-    animation-duration: 3s;
+    /* animation-name: content;
+    animation-duration: 3s; */
     animation-fill-mode: forwards;
   }
 
@@ -114,7 +116,7 @@
     }
 
     h1 {
-      font-size: 70px;
+      font-size: 50px;
     }
   }
 </style>

@@ -42,7 +42,7 @@
     align-items: center;
     vertical-align: middle;
     text-align: center;
-    border-radius: 0.4em;
+    border-radius: 10px;
     line-height: var(--lh-1);
     text-decoration: none;
     gap: 0.5rem;
@@ -71,7 +71,7 @@
     scale: 1.25;
     padding: 0.75em 1.5em;
     margin-left: 1em;
-    border-radius: var(--btn-radius);
+    /* border-radius: var(--btn-radius); */
     background-color: var(--btn-primary-bg);
     color: var(--btn-primary-text-clr);
     box-shadow: var(--btn-shadow);
