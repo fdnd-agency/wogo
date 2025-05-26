@@ -16,31 +16,32 @@
     };
   
     // Reset the auto-slide interval when user interacts
-    const resetAutoSlide = () => {
-      clearInterval(interval);
-      startAutoSlide();
-    };
+    // const resetAutoSlide = () => {
+    //   clearInterval(interval);
+    //   startAutoSlide();
+    // };
   
     // Start auto-sliding through the reviews every 5 seconds
-    const startAutoSlide = () => {
-      if (hasReviews) {
-        interval = setInterval(() => {
-          currentIndex = (currentIndex + 1) % reviews.length;
-        }, 5000); // Change slide every 5 seconds
-      }
-    };
+    // const startAutoSlide = () => {
+    //   if (hasReviews) {
+    //     interval = setInterval(() => {
+    //       currentIndex = (currentIndex + 1) % reviews.length;
+    //     }, 5000); // Change slide every 5 seconds
+    //   }
+    // };
   
     // Start the auto-slide on component mount, clean up on destroy
-    onMount(() => {
-      if (hasReviews) startAutoSlide();
-      return () => clearInterval(interval); // Clean up interval on component destroy
-    });
+    // onMount(() => {
+    //   if (hasReviews) startAutoSlide();
+    //   return () => clearInterval(interval); // Clean up interval on component destroy
+    // });
   </script>
   
   <!-- Render reviews section only if reviews exist -->
   {#if hasReviews}
   <section class="reviews-section">
     <!-- Carousel: Display reviews horizontally -->
+     <div><button>left</button> <button>right</button></div>
     <div class="carousel-wrapper">
       {#each reviews as item, index}
         <article
@@ -79,7 +80,7 @@
   
   <style>
     :root {
-      --star-color: #FFC107;
+      --star-color: hsla(9, 72%, 45%, 1);
       --text-align: center;
       --text-max-width: 600px; 
     }
@@ -88,8 +89,13 @@
     .reviews-section {
       position: relative;
       overflow: hidden;
+
+      width: 20rem;
+  
+    
       background-color: var(--accent2-tertiary);
-      padding: 2rem 0;
+      /* padding: 2rem 0; */
+      border-radius: 10px;
       text-align: var(--text-align); /* Center align all text */
     }
   
@@ -102,13 +108,16 @@
     /* Individual review card styles */
     .review-card {
       flex: 0 0 100%; /* Full width per card */
-      max-width: 100%;
-      border-radius: 0.5rem;
+      max-width:fit-content;
+      border-radius: 10px;
       padding: 1.5rem;
       transition: opacity 0.5s ease; /* Fade effect when changing slides */
       display: flex; /* Flexbox to align content inside */
       flex-direction: column;
       align-items: center;
+      /* text-align: center; */
+      
+
     }
   
     /* Review text (textParagraph) styles */
@@ -118,12 +127,13 @@
       font-style: italic;
       color: var(--primary-color);
       max-width: var(--text-max-width); /* Limit the width of text */
-      line-height: 1.6; /* Improve readability */
+      line-height: 1.4; /* Improve readability */
       text-align: left; /* Align the text left within the limited width */
     }
   
     blockquote p {
       margin: 0; /* Remove default paragraph margin */
+      padding: 0 1rem;
     }
   
     /* Star rating system styles */
@@ -145,6 +155,7 @@
       justify-content: center;
       gap: 0.5rem; /* Space between dots */
       margin-top: 1rem;
+      display: none;
     }
   
     /* Dots representing each slide */
@@ -152,7 +163,7 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: var(--accent2-quaternary);
+      background: var( --accent1-secondary);
       border: none;
       cursor: pointer;
       transition: background 0.3s; /* Smooth background color change */
@@ -160,17 +171,17 @@
   
     /* Active state for dots */
     .dot.active {
-      background: var(--primary-color);
+      background: var(--accent1-tertiary);
     }
   
     .dot:focus {
-      outline: 2px solid var(--primary-color); /* Accessibility focus outline */
+      outline: 2px solid var(--accent1-tertiary); /* Accessibility focus outline */
     }
   
     /* Responsive styles for smaller screens */
     @media (max-width: 768px) {
       .review-card {
-        padding: 1rem; /* Reduce padding on smaller screens */
+        padding: 0 1rem; /* Reduce padding on smaller screens */
       }
   
       blockquote {
@@ -183,6 +194,17 @@
       blockquote {
         max-width: 90%; /* Reduce max-width to 90% of container width */
         text-align: center; /* Center-align for very narrow containers */
+      }
+      .controls {
+        display: block;
+
+      }
+    }
+
+    @media (min-width:600px) {
+      .controls {
+        display: block;
+
       }
     }
   
