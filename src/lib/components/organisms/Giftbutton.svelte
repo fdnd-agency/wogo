@@ -1,27 +1,32 @@
 <script>
       import logo from '$lib/assets/logo.webp';
+
+    	let selectedAmount = null;
 </script>
 <h2>CADEAUKAARTEN</h2>
+<p>Met een cadeaubon kan het nooit misgaan. Kies een bedrag en schrijf een persoonlijke boodschap.
+</p>
+
+<p>De cadeaubon kan worden ingewisseld voor al onze producten en diensten op onze site! </p>
 <section class="gift-button-container">
-
-
-<article class="gift-button">
-    <h1>€20</h1>
-    <img src={logo} height="70" width="70" alt="onder navigatie" />
-</article>
-
-<article class="gift-button">
-    <h1>€50</h1>
-    <img src={logo} height="70" width="70" alt="onder navigatie" />
-</article>
-
-<article class="gift-button">
-    <h1>€100</h1>
-    <img src={logo} height="70" width="70" alt="onder navigatie" />
-</article>
+	{#each [20, 50, 100] as amount}
+		<button
+			class="gift-button {selectedAmount === amount ? 'selected' : ''}"
+			on:click={() => selectedAmount = amount}
+		>
+			<h1>€{amount}</h1>
+			<img src={logo} height="70" width="70" alt="onder navigatie" />
+		</button>
+	{/each}
 </section>
 
 <style>
+p {
+    color: #FFE5D9;
+    margin: 2em;
+    text-align: center;
+    font-size: 14px;
+}
 .gift-button-container {
    display: flex;
     overflow-x: auto;
@@ -40,12 +45,19 @@
     align-items: center;
     justify-content: center;
     background-color: #3F2B21;
+    border: none;
     padding: 4em;
     height: 6.5em;
-    width: 14em;
+    width: 16em;
     border-radius: 0.5rem;
     margin-right: 1em;
     box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 8px;
+}
+
+.gift-button.selected {
+		border: 4px solid #F0A07A;
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
 h1 {
