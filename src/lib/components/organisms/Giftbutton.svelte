@@ -22,16 +22,18 @@
 </section>
 
 <style>
-
 .gift-button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    margin: 2em;
+   display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 2em;
+    gap: 1em;
+    background-color: #FFE5D9;
 }
 .gift-button {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -39,12 +41,11 @@
     justify-content: center;
     background-color: #3F2B21;
     padding: 4em;
-    margin-top: 1em;
-    margin-right: 3em;
-    margin-bottom: 1em;
     height: 6.5em;
     width: 14em;
     border-radius: 0.5rem;
+    margin-right: 1em;
+    box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 8px;
 }
 
 h1 {
@@ -61,4 +62,28 @@ h2 {
     font-size: 2.5rem;
     color: var(--btn-primary-bg);
 }
+
+/* Voor Chrome, Safari, Edge */
+.gift-button-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.gift-button-container::-webkit-scrollbar-track {
+    background-color: #FFE6D9; /* Achtergrondkleur van de hele scrollbar */
+    border-radius: 10px;
+}
+
+.gift-button-container::-webkit-scrollbar-thumb {
+    background-color: #FFD4BD; /* Kleur van de 'duim' (het scrollblokje) */
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+/* Voor Firefox */
+.gift-button-container {
+    scrollbar-width: thin;
+    scrollbar-color: #FFD4BD #FFE6D9; /* duimkleur trackkleur */
+}
+
 </style>
