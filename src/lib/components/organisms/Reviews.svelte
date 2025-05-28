@@ -42,7 +42,8 @@
   {#if hasReviews}
   <section class="reviews-section">
     <!-- Carousel: Display reviews horizontally -->
-     <div class="button-section"><button><img src="Vector-navigation-icon-left.svg" alt="left icon"></button> <button><img src="Vector-navigation-icon-right.svg" alt="right icon"></button></div>
+     <div class="button-section"><button><img src="Vector-navigation-icon-left.svg" alt="left icon"></button> 
+      <button><img src="Vector-navigation-icon-right.svg" alt="right icon"></button></div>
     <div class="carousel-wrapper">
       {#each reviews as item, index}
         <article

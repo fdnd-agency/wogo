@@ -5,12 +5,19 @@
   const { textParagraph, asset } = items
 </script>
 
+<div class="img-wrapper">
+  <Image
+  src={asset.url} 
+  alt={asset.title} 
+  width="65" height="65"
+  />
+  </div>
 <section>
-  <Image src={asset.url} alt={asset.title} width="150" height="150" />
+  
   <h2>{textParagraph}</h2>
   <Button
     type="button"
-    variant="primary"
+    variant="mobile"
     title="buy a gift"
     icon={ArrowRight}
     iconColor="var(--btn-primary-text-clr)"
@@ -20,6 +27,14 @@
 
 <style>
   section {
+    display: flex;   
+    border: 3px solid var(--accent2-primary);
+    border-radius: 2rem;
+    padding: 2rem 1rem 2rem;
+    justify-content: center;
+    flex-direction: column;
+    width: 20rem;
+    margin-bottom: 2rem;
     /* display: flex;
     flex-direction: column; */
     /* align-items: center;
@@ -31,12 +46,18 @@
     /* padding: 5rem 0; */
   }
 
-  h2 {
-    /* min-width: 300px;
-    max-width: 350px; */
+  .img-wrapper :global(img) {
+    position: relative;
+    top: 2.28rem;
+    background-color: var(--page-bg-color);
+}
+
+
+h2 {
     color: var(--accent2-tertiary);
-    font-size: var(--fs-sm);
-    text-align: left;
+
+    text-align: center;
+    padding: 1.5rem 0;
   }
 
   @media (min-width: 48em) {

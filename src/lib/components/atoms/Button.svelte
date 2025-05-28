@@ -112,4 +112,17 @@
     height: 14px;
     transition: transform 0.3s ease;
   }
+
+  
+  .btn-mobile {
+    display: flex;
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text-clr);
+    box-shadow: var(--btn-shadow);
+    /* border: 2px solid var(--btn-primary-bg); */
+    font-weight: 700;
+    width: 7rem;
+    align-self: center;
+
+  }
 </style>
