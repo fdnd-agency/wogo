@@ -42,7 +42,7 @@
   {#if hasReviews}
   <section class="reviews-section">
     <!-- Carousel: Display reviews horizontally -->
-     <div><button><img src="Vector-navigation-icon-left.svg" alt="left icon"></button> <button><img src="Vector-navigation-icon-right.svg" alt="right icon"></button></div>
+     <div class="button-section"><button><img src="Vector-navigation-icon-left.svg" alt="left icon"></button> <button><img src="Vector-navigation-icon-right.svg" alt="right icon"></button></div>
     <div class="carousel-wrapper">
       {#each reviews as item, index}
         <article
@@ -153,10 +153,18 @@
     }
 
     /* Buttons that navigate through the reviews */
+    .button-section {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      top: 8rem;
+    }
+
     button {
       background: none; /* No background */
       border: none; /* No border */
       cursor: pointer; /* Pointer cursor on hover */
+      padding: 0.5rem;
     }
   
     /* Controls for navigating between slides */
