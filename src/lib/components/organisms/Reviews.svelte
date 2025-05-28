@@ -38,10 +38,11 @@
   </script>
   
   <!-- Render reviews section only if reviews exist -->
+   <h1>Reviews</h1>
   {#if hasReviews}
   <section class="reviews-section">
     <!-- Carousel: Display reviews horizontally -->
-     <div><button>left</button> <button>right</button></div>
+     <div><button><img src="Vector-navigation-icon-left.svg" alt="left icon"></button> <button><img src="Vector-navigation-icon-right.svg" alt="right icon"></button></div>
     <div class="carousel-wrapper">
       {#each reviews as item, index}
         <article
@@ -84,7 +85,9 @@
       --text-align: center;
       --text-max-width: 600px; 
     }
-  
+  h1 {
+    color: var(--accent2-primary);
+  }
     /* Main section styles */
     .reviews-section {
       position: relative;
@@ -147,6 +150,13 @@
     .star {
       font-size: 1.2rem; /* Adjust size of stars */
       color: var(--star-color); /* Star color */
+    }
+
+    /* Buttons that navigate through the reviews */
+    button {
+      background: none; /* No background */
+      border: none; /* No border */
+      cursor: pointer; /* Pointer cursor on hover */
     }
   
     /* Controls for navigating between slides */
