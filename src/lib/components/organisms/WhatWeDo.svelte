@@ -4,7 +4,7 @@
   export let items
 </script>
 
-
+<h1>Reviews</h1>
 <div class="wrapper-giftcard-review">
   <Reviews reviews={items[4].componentsCollection.items} />
   <GiftCard items={items?.[3]}/>
@@ -17,6 +17,11 @@
     align-items: center;
   }
  
+  h1 {
+    color: var(--accent2-primary);
+    text-align: center;
+  
+  }
 
   /* SCROLL DRIVEN ANIMATION  */
   @keyframes reveal {
@@ -43,5 +48,14 @@
       animation: reveal linear forwards;
       animation-timeline: view();
     } */
+  }
+
+  @media (min-width: 50em) {
+    .wrapper-giftcard-review {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
   }
 </style>

@@ -38,7 +38,7 @@
   </script>
   
   <!-- Render reviews section only if reviews exist -->
-   <h1>Reviews</h1>
+   
   {#if hasReviews}
   <section class="reviews-section">
     <!-- Carousel: Display reviews horizontally -->

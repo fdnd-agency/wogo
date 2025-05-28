@@ -63,7 +63,7 @@ h2 {
   @media (min-width: 48em) {
     h2 {
       max-width: 630px;
-      font-size: var(--fs-2xl);
+      font-size: var(--fs-lg);
     }
   }
 </style>
