@@ -20,6 +20,7 @@
   h1 {
     color: var(--accent2-primary);
     text-align: center;
+    margin: 2rem 0;
   
   }
 
