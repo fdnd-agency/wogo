@@ -2,7 +2,7 @@
   import { Button, ArrowRight } from '$lib/index'
   export let hero
 </script>
-
+<div class="hero-gradient-overlay">yo</div>
 <section>
   <video
     autoplay
@@ -21,14 +21,25 @@
   <div class="hero-content">
     <h1>
       {hero.title}
-      <Button
-        variant="primary"
-        title="book now"
-        icon={ArrowRight}
-        iconColor="var(--btn-primary-text-clr)"
-      />
+     
     </h1>
     <p>{hero.subtitle}</p>
+    <div class="buttons-container">
+     <Button
+        variant="mobile-header-filled"
+        title="How it works"
+        background-color="var(--hero-h1-text-color)"
+        iconColor="var(--btn-primary-text-clr)"
+        opacity="0.8"
+        margin="1rem"
+      />
+        <Button
+        variant="mobile-header"
+        title="Book now"
+        icon={ArrowRight}
+        iconColor="var(--hero-h1-text-color)"
+      />
+      </div>
   </div>
 </section>
 
@@ -39,6 +50,15 @@
     position: relative;
     height: 55vh;
     overflow: hidden;
+  }
+
+  .hero-gradient-overlay {
+    background: linear-gradient(180deg, rgba(3, 3, 3, 0.637) 0%, rgba(0, 0, 0, 0.272) 70%);
+    height: 56vh;
+    width: 100%;
+    position: absolute;
+    top:5rem;
+    z-index: 2;
   }
 
   video {
@@ -56,9 +76,10 @@
 
   .hero-content {
     padding: 1rem;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
     font-weight: 700;
-    color: #fff;
+    color: var(--hero-h1-text-color);
+    z-index: 3;
   }
 
   h1 {
@@ -66,13 +87,18 @@
     display: inline-block;
     font-weight: 700;
     /* font-size: clamp(2.648rem, 6vw, 4.241rem); */
-    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-size: clamp(30px, 5vw, 70px);
 
     /* letter-spacing: -1px; */
     filter: drop-shadow(0 0 0.4rem #000);
     /* animation: heading;
     animation-duration: 3s;
     animation-fill-mode: forwards; */
+
+  }
+
+  .buttons-container {
+    display: flex;
   }
 
   @keyframes heading {
@@ -85,7 +111,7 @@
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.2rem;
     padding: 0.5rem;
@@ -95,6 +121,7 @@
     /* animation-name: content;
     animation-duration: 3s; */
     animation-fill-mode: forwards;
+        z-index: 3;
   }
 
   @keyframes content {
@@ -118,5 +145,9 @@
     h1 {
       font-size: 50px;
     }
+     .hero-gradient-overlay {
+      
+      height: 71vh;
+     }
   }
 </style>

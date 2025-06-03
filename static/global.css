@@ -50,6 +50,8 @@ h2 {
   --txt-tertiary-clr: hsl(21.23, 100%, 87.25%);
   --txt-quaternary-clr: hsl(18.95, 100%, 92.55%);
 
+  --hero-h1-text-color: hsla(19, 100%, 93%, 1);
+
   /*  */
   --how-it-works-card-bg-color:var(--page-bg-color);
   --how-it-works-card-line-color:var(--accent2-primary);

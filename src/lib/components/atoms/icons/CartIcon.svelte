@@ -4,7 +4,7 @@
   export let height = "";
   export let fill = "";
 </script>
-
+<!-- 
 <div class="button-cart">
   <svg
     {width}
@@ -19,7 +19,7 @@
     />
   </svg>
   <span class="button-cart-counter" id="cart-counter">0</span>
-</div>
+</div> -->
 
 <style>
   .button-cart {

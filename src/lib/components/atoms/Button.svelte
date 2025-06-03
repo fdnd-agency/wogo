@@ -82,7 +82,7 @@
   }
 
   .btn-secondary {
-    border-radius: 0.4em;
+    border-radius: 10px;
     font-weight: 500;
     color: var(--page-bg-color);
     border: 1.5px solid var(--page-bg-color);
@@ -123,6 +123,29 @@
     font-weight: 700;
     width: 7rem;
     align-self: center;
-
   }
+
+   .btn-mobile-header-filled {
+    display: flex;
+    background-color: var(--hero-h1-text-color);
+    color: var(--btn-primary-text-clr);
+    box-shadow: var(--btn-shadow);
+    /* border: 2px solid var(--btn-primary-bg); */
+    font-weight: 700;
+    width: 7rem;
+    align-self: center;
+    opacity: 0.8;
+  }
+  .btn-mobile-header {
+    display: flex;
+    background: none;
+    color: var(--hero-h1-text-color);
+    box-shadow: var(--btn-shadow);
+    border: 2px solid var(--hero-h1-text-color);
+    font-weight: 700;
+    width: 7rem;
+    align-self: center;
+  }
+
+
 </style>
