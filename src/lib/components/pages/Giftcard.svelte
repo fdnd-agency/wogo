@@ -1,5 +1,7 @@
 <script>
     import { Giftbutton, Giftcardinput } from '$lib/index';
+      export let items
+
 </script>
-<Giftbutton/>
+<Giftbutton {items}/>
 <Giftcardinput/>
