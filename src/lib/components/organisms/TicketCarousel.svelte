@@ -9,6 +9,9 @@
   } from "$lib";
   import { onMount } from "svelte";
   export let itemCollection;
+  // Zorg dat we geen error krijgen als itemCollection zelf nog undefined is
+   // Haal het eerste item veilig uit de collection
+   $: firstItem = itemCollection?.componentsCollection?.items?.[0];
 
   let activeInd = 0;
 
@@ -96,12 +99,12 @@
 </script>
 
 <div class="carousel-title">
-  <h2>Explore Highlighted Cocktail Walks</h2>
+  <h2> Highlighted Cocktail Walks</h2>
 </div>
 
 {#if itemCollection}
   <section>
-    <button
+    <!-- <button
       type="button"
       class="carousel-arrow carousel-arrow--prev caroussel-navigationContainer"
       on:click={() => scrollLeftOrRight("left")}
@@ -109,24 +112,13 @@
       hidden
     >
       <ArrowLeftShort />
-    </button>
+    </button> -->
 
     <div class="card-container">
       <TicketCard {itemCollection} />
     </div>
 
-    <div class="see-all-walks">
-      <Link
-        href="/tour-overview"
-        title="see all walks"
-        size="m"
-        fontSize="16px"
-        color="var(--btn-primary-bg)"
-        icon={ArrowRight}
-        iconColor="var(--btn-primary-bg)"
-      />
-    </div>
-
+<!-- 
     <button
       type="button"
       class="carousel-arrow carousel-arrow--next caroussel-navigationContainer"
@@ -135,17 +127,17 @@
       hidden
     >
       <ArrowRightShort />
-    </button>
+    </button> -->
 
     <div class="caroussel-navigationContainer">
-      <button
+      <!-- <button
         class="carousel-arrow carousel-arrow--next"
         on:click={() => scrollLeftOrRight("right")}
         title="next slide"
         hidden
       >
         <ArrowRightShort />
-      </button>
+      </button> -->
 
       <div class="carousel-indicator">
         <span class="carousel-indicator-span">
@@ -161,7 +153,7 @@
         </span>
       </div>
 
-      <div class="button-container">
+      <!-- <div class="button-container">
         <Button
           aria-label="slide to next"
           variant="secondary"
@@ -170,7 +162,18 @@
           icon={ArrowRight}
           iconColor="var(--accent2-primary)"
         />
-      </div>
+      </div> -->
+    </div>
+    <div class="see-all-walks">
+      <Link
+        href="/tour-overview"
+        title="see all walks"
+        size="m"
+        fontSize="16px"
+        color="var(--btn-primary-bg)"
+        icon={ArrowRight}
+        iconColor="var(--btn-primary-bg)"
+      />
     </div>
   </section>
 {/if}

@@ -14,7 +14,6 @@
 {#each items as item}
   <article class="ticket-card">
     <img
-      style={`view-transition-name:${item.image.title.replace(/\s+/g, "-")}`}
       src={item.image.url}
       alt={item.image.title}
       loading="lazy"
@@ -89,7 +88,7 @@
     & h2 {
       padding-left: 0.5em;
       padding-top: 0.5em;
-      font-size: 20px;
+      font-size: 25px;
       letter-spacing: 1px;
     }
 

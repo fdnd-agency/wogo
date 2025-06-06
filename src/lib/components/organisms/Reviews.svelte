@@ -15,19 +15,6 @@
     resetAutoSlide();
   };
 
-  // // Navigate to next slide
-  // const nextSlide = () => {
-  // if (currentIndex < reviews.length - 1) 
-  // currentIndex += 1;
-  // };
-
-  // // Navigate to previous slide
-  // const prevSlide = () => {
-  // if (currentIndex > 0) {
-  //     currentIndex -= 1;
-  //   }
-  // };
-
   let carouselRef;
 
 const scrollToSlide = (index) => {
@@ -50,26 +37,7 @@ const prevSlide = () => {
     scrollToSlide(currentIndex - 1);
   }
 };
-  // Reset the auto-slide interval when user interacts
-  // const resetAutoSlide = () => {
-  //   clearInterval(interval);
-  //   startAutoSlide();
-  // };
 
-  // Start auto-sliding through the reviews every 5 seconds
-  // const startAutoSlide = () => {
-  //   if (hasReviews) {
-  //     interval = setInterval(() => {
-  //       currentIndex = (currentIndex + 1) % reviews.length;
-  //     }, 5000); // Change slide every 5 seconds
-  //   }
-  // };
-
-  // Start the auto-slide on component mount, clean up on destroy
-  // onMount(() => {
-  //   if (hasReviews) startAutoSlide();
-  //   return () => clearInterval(interval); // Clean up interval on component destroy
-  // });
 </script>
 
 <!-- Render reviews section only if reviews exist -->
@@ -129,9 +97,7 @@ const prevSlide = () => {
     --text-align: center;
     --text-max-width: 600px;
   }
-  h1 {
-    color: var(--accent2-primary);
-  }
+
   /* Main section styles */
   .reviews-section {
     position: relative;
@@ -139,7 +105,6 @@ const prevSlide = () => {
     width: 20rem;
 
     background-color: var(--accent2-tertiary);
-    /* padding: 2rem 0; */
     border-radius: 10px;
     text-align: var(--text-align); /* Center align all text */
   }
@@ -154,36 +119,33 @@ const prevSlide = () => {
 
   /* no scrollbar */
   .carousel-wrapper::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for WebKit browsers */
+    display: none;
   }
 
   /* Individual review card styles */
   .review-card {
     flex: 0 0 100%; /* Full width per card */
-    /* max-width: fit-content; */
     border-radius: 10px;
     padding: 1.5rem;
-    /* transition: opacity 0.5s ease;  */
-    display: flex; /* Flexbox to align content inside */
+    display: flex; 
     flex-direction: column;
     align-items: center;
-    /* text-align: center; */
-    scroll-snap-align: start; /* Aligns each card to the start of the scroll container */
+    scroll-snap-align: start; 
   }
 
   /* Review text (textParagraph) styles */
   blockquote {
-    margin: 0 auto; /* Center the text content */
+    margin: 0 auto; 
     font-size: 1.1rem;
     font-style: italic;
     color: var(--primary-color);
-    max-width: var(--text-max-width); /* Limit the width of text */
-    line-height: 1.4; /* Improve readability */
-    text-align: left; /* Align the text left within the limited width */
+    max-width: var(--text-max-width); 
+    line-height: 1.4;
+    text-align: left;
   }
 
   blockquote p {
-    margin: 0; /* Remove default paragraph margin */
+    margin: 0;
     padding: 0 1rem;
   }
 
@@ -191,12 +153,12 @@ const prevSlide = () => {
   .star-rating {
     display: flex;
     justify-content: center;
-    gap: 0.25rem; /* Space between stars */
+    gap: 0.25rem; 
     margin-bottom: 1rem;
   }
 
   .star {
-    font-size: 1.2rem; /* Adjust size of stars */
+    font-size: 1.2rem; 
     color: var(--star-color); /* Star color */
   }
 
@@ -209,9 +171,9 @@ const prevSlide = () => {
   }
 
   button {
-    background: none; /* No background */
-    border: none; /* No border */
-    cursor: pointer; /* Pointer cursor on hover */
+    background: none;
+    border: none;
+    cursor: pointer; 
     padding: 0.5rem;
   }
 
@@ -219,21 +181,19 @@ const prevSlide = () => {
   .controls {
     display: flex;
     justify-content: center;
-    gap: 0.5rem; /* Space between dots */
+    gap: 0.5rem; 
 
     display: none;
   }
 
   /* Dots representing each slide */
   .dot {
-    /* width: 10px;
-    height: 10px; */
     border-radius: 50%;
     background: var(--accent1-secondary);
     border: none;
     cursor: pointer;
     margin-right: 3px;
-    transition: background 0.3s; /* Smooth background color change */
+    transition: background 0.3s; 
   }
 
   /* Active state for dots */
@@ -242,25 +202,25 @@ const prevSlide = () => {
   }
 
   .dot:focus {
-    outline: 2px solid var(--accent1-tertiary); /* Accessibility focus outline */
+    outline: 2px solid var(--accent1-tertiary);
   }
 
   /* Responsive styles for smaller screens */
   @media (max-width: 768px) {
     .review-card {
-      padding: 0 1rem; /* Reduce padding on smaller screens */
+      padding: 0 1rem; 
     }
 
     blockquote {
-      font-size: 1rem; /* Slightly smaller text for smaller screens */
-    }
+      font-size: 1rem; 
   }
+}
 
   /* Container queries for fine-tuned responsiveness */
   @container (max-width: 600px) {
     blockquote {
-      max-width: 90%; /* Reduce max-width to 90% of container width */
-      text-align: center; /* Center-align for very narrow containers */
+      max-width: 90%; 
+      text-align: center;
     }
     .controls {
       display: block;
@@ -285,11 +245,11 @@ const prevSlide = () => {
   /* Reduced motion preferences for better accessibility */
   @media (prefers-reduced-motion: reduce) {
     .carousel-wrapper {
-      transition: none; /* Disable smooth slide transition */
+      transition: none;
     }
 
     .review-card {
-      transition: none; /* Disable fade effect */
+      transition: none;
     }
   }
 </style>

@@ -13,7 +13,7 @@
   <Button
     type="button"
     variant="mobile"
-    title="buy a gift"
+    title="buya gift"
     icon={ArrowRight}
     iconColor="var(--btn-primary-text-clr)"
     size="lg"
