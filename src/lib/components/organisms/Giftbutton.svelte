@@ -1,19 +1,40 @@
 <script>
+  import { onMount } from 'svelte';
+
   export let items;
 
-  // Foutafhandeling bij data-initialisatie
+  // Skeleton state
+  let isLoading = true;
+
+  // Cadeaubon opties
   let giftCardOptions = [];
 
-  if (
-    items &&
-    Array.isArray(items) &&
-    items.length > 0 &&
-    items[0]?.componentsCollection?.items
-  ) {
-    giftCardOptions = items[0].componentsCollection.items;
-  }
-
+  // Selectie uit localStorage ophalen
   let selectedAmount = null;
+
+  onMount(() => {
+    const storedAmount = localStorage.getItem('selectedAmount');
+    if (storedAmount) {
+      selectedAmount = parseInt(storedAmount);
+    }
+
+    // Simuleer loading (optioneel: kun je aanpassen of verwijderen als je directe data hebt)
+    if (
+      items &&
+      Array.isArray(items) &&
+      items.length > 0 &&
+      items[0]?.componentsCollection?.items
+    ) {
+      giftCardOptions = items[0].componentsCollection.items;
+    }
+
+    isLoading = false;
+  });
+
+  // Bewaar selectie
+  $: if (selectedAmount !== null) {
+    localStorage.setItem('selectedAmount', selectedAmount);
+  }
 </script>
 
 <h2>CADEAUKAARTEN</h2>
@@ -25,16 +46,30 @@
   De cadeaubon kan worden ingewisseld voor al onze producten en diensten op onze site!
 </p>
 
-{#if giftCardOptions.length > 0}
+{#if isLoading}
+  <div class="skeleton-container">
+    {#each Array(3) as _}
+      <div class="skeleton-card"></div>
+    {/each}
+  </div>
+{:else if giftCardOptions.length > 0}
   <section class="gift-button-container">
     {#each giftCardOptions as option}
       <button
         class="gift-button {selectedAmount === option.price ? 'selected' : ''}"
         on:click={() => selectedAmount = option.price}
         aria-pressed={selectedAmount === option.price}
+        aria-label={`Cadeaubon van €${option.price}`}
       >
         <h1>€{option.price}</h1>
-        <img src={option.image.url} height="70" width="70" alt="onder navigatie" />
+        <img
+          srcset="{option.image.url}?w=140 2x, {option.image.url}?w=70 1x"
+          src="{option.image.url}"
+          height="70"
+          width="70"
+          alt="Cadeaubon"
+          loading="lazy"
+        />
       </button>
     {/each}
   </section>
@@ -71,7 +106,6 @@
     padding: 2em;
     gap: 1em;
     background-color: #FFE5D9;
-
     scrollbar-width: thin;
     scrollbar-color: #FFD4BD #FFE6D9;
   }
@@ -130,5 +164,27 @@
     margin-top: 1em;
     font-size: 2rem;
     color: var(--btn-primary-bg);
+  }
+
+  /* 🦴 Skeleton loader styles */
+  .skeleton-container {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 2em;
+  }
+
+  .skeleton-card {
+    width: 16em;
+    height: 6.5em;
+    background: linear-gradient(90deg, #ddd 25%, #f0f0f0 50%, #ddd 75%);
+    background-size: 200% 100%;
+    animation: loading 1.2s infinite;
+    border-radius: 0.5rem;
+  }
+
+  @keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
   }
 </style>
