@@ -19,6 +19,7 @@
     <button
       class="gift-button {selectedAmount === option.price ? 'selected' : ''}"
       on:click={() => selectedAmount = option.price}
+      aria-pressed={selectedAmount === option.price}
     >
       <h1>€{option.price}</h1>
       <img src={option.image.url} height="70" width="70" alt="onder navigatie" />
