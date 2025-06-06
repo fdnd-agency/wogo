@@ -1,23 +1,22 @@
 <script>
-  export let cards
-  
+  export let cards;
 </script>
 
-<section>
+<section id="how-it-works" >
   <ul>
     <li class="card-list card-number">
       <div class="card-body" tabIndex="0">
-          {#each cards as card, index}
-          <div class="text-content">
+        {#each cards as card, index}
+          <div class="text-content" >
             <!-- <div class="span-cirkel"> -->
-              <p class="number-text" aria-label="Step {index + 1}">{index + 1}</p>
-              <h3>{card.title}</h3>
+            <p class="number-text" aria-label="Step {index + 1}">{index + 1}</p>
+            <h3>{card.title}</h3>
             <!-- </div> -->
             <p>{card.textParagraph}</p>
           </div>
-          {/each}
-        </div>
-      </li>
+        {/each}
+      </div>
+    </li>
   </ul>
 </section>
 
@@ -47,15 +46,6 @@
   .card-number:nth-child(1) .card-body {
     background-color: var(--how-it-works-card-bg-color);
   }
-  /* .card-number:nth-child(2) .card-body {
-    background-color: #ffd6c5;
-  }
-  .card-number:nth-child(3) .card-body {
-    background-color: #ffd6c5;
-  }
-  .card-number:nth-child(4) .card-body {
-    background-color: #ffd6c5;
-  } */
 
   .card-body {
     display: flex;
@@ -63,20 +53,19 @@
     align-items: flex-start;
     justify-content: center;
     gap: 3.5rem;
-    /* height: var(--cardHeight); */
+
     height: auto;
     padding: 2rem;
     border-radius: 20px;
-    /* box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3); */
     transition: all 0.5s;
-    border: 4px solid var( --how-it-works-card-line-color);
+    border: 4px solid var(--how-it-works-card-line-color);
   }
-  .number-text{
-      font-size: 2.5rem;
-      color:var( --how-it-works-card-line-color);
-      font-weight: 800;
-      text-align: center;
-    } 
+  .number-text {
+    font-size: 2.5rem;
+    color: var(--how-it-works-card-line-color);
+    font-weight: 800;
+    text-align: center;
+  }
 
   .text-content {
     display: flex;
@@ -104,17 +93,6 @@
     font-size: 1rem;
   }
 
-  span {
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 16px;
-    background-color: var(--page-bg-color);
-    color: var(--accent2-quaternary);
-  }
-
   @media (min-width: 750px) {
     .card-body {
       display: grid;
@@ -139,15 +117,6 @@
       width: 75%;
     }
 
-    /* span {
-      width: 45px;
-      height: 45px;
-      line-height: 45px;
-      font-size: 20px;
-    } */
-    .span-cirkel {
-      flex-direction: column;
-    }
   }
 
   @media (min-width: 950px) {
@@ -159,12 +128,12 @@
       max-width: calc(100% / 4);
       gap: 1em;
     }
-    .number-text{
+    .number-text {
       font-size: 3rem;
-      color:var( --how-it-works-card-line-color);
+      color: var(--how-it-works-card-line-color);
       font-weight: 800;
       text-align: center;
-    } 
+    }
     .span-cirkel {
       gap: 2em;
     }

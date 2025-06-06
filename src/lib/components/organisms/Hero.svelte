@@ -1,7 +1,15 @@
 <script>
-  import { Button, ArrowRight } from '$lib/index'
-  export let hero
+  import { Button, ArrowRight } from "$lib/index";
+  export let hero;
+  function scrollToHowItWorks(event) {
+    event.preventDefault();
+    const target = document.getElementById("how-it-works");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 </script>
+
 <div class="hero-gradient-overlay">yo</div>
 <section>
   <video
@@ -15,31 +23,40 @@
   >
     <source src={hero.asset.url} type="video/webm" />
     <source src={hero.asset.url} type="video/webm" />
-    <source src="path/to/video-480p.mp4" type="video/mp4" media="(min-width: 480px)" />
-    <source src="path/to/video-360p.mp4" type="video/mp4" media="(max-width: 1280px)" />
+    <source
+      src="path/to/video-480p.mp4"
+      type="video/mp4"
+      media="(min-width: 480px)"
+    />
+    <source
+      src="path/to/video-360p.mp4"
+      type="video/mp4"
+      media="(max-width: 1280px)"
+    />
   </video>
   <div class="hero-content">
     <h1>
       {hero.title}
-     
     </h1>
     <p>{hero.subtitle}</p>
     <div class="buttons-container">
-     <Button
-        variant="mobile-header-filled"
-        title="How it works"
-        background-color="var(--hero-h1-text-color)"
-        iconColor="var(--btn-primary-text-clr)"
-        opacity="0.8"
-        margin="1rem"
-      />
+      <a href="#how-it-works" on:click={scrollToHowItWorks}>
         <Button
+          variant="mobile-header-filled"
+          title="How it works"
+          background-color="var(--hero-h1-text-color)"
+          iconColor="var(--btn-primary-text-clr)"
+          opacity="0.8"
+          margin="1rem"
+        /></a
+      >
+      <Button
         variant="mobile-header"
         title="Book now"
         icon={ArrowRight}
         iconColor="var(--hero-h1-text-color)"
       />
-      </div>
+    </div>
   </div>
 </section>
 
@@ -53,11 +70,15 @@
   }
 
   .hero-gradient-overlay {
-    background: linear-gradient(180deg, rgba(3, 3, 3, 0.637) 0%, rgba(0, 0, 0, 0.272) 70%);
+    background: linear-gradient(
+      180deg,
+      rgba(3, 3, 3, 0.637) 0%,
+      rgba(0, 0, 0, 0.272) 70%
+    );
     height: 56vh;
     width: 100%;
     position: absolute;
-    top:5rem;
+    top: 5rem;
     z-index: 2;
   }
 
@@ -94,7 +115,6 @@
     /* animation: heading;
     animation-duration: 3s;
     animation-fill-mode: forwards; */
-
   }
 
   .buttons-container {
@@ -121,7 +141,10 @@
     /* animation-name: content;
     animation-duration: 3s; */
     animation-fill-mode: forwards;
-        z-index: 3;
+    z-index: 3;
+  }
+  a {
+    text-decoration: none;
   }
 
   @keyframes content {
@@ -145,9 +168,8 @@
     h1 {
       font-size: 50px;
     }
-     .hero-gradient-overlay {
-      
+    .hero-gradient-overlay {
       height: 71vh;
-     }
+    }
   }
 </style>

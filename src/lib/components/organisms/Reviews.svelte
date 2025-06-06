@@ -146,7 +146,7 @@ const prevSlide = () => {
 
   blockquote p {
     margin: 0;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
   }
 
   /* Star rating system styles */
