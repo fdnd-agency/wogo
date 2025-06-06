@@ -1,6 +1,17 @@
 <script>
   export let items;
-  let giftCardOptions = items[0].componentsCollection.items;
+
+  // Foutafhandeling bij data-initialisatie
+  let giftCardOptions = [];
+
+  if (
+    items &&
+    Array.isArray(items) &&
+    items.length > 0 &&
+    items[0]?.componentsCollection?.items
+  ) {
+    giftCardOptions = items[0].componentsCollection.items;
+  }
 
   let selectedAmount = null;
 </script>
@@ -14,18 +25,24 @@
   De cadeaubon kan worden ingewisseld voor al onze producten en diensten op onze site!
 </p>
 
-<section class="gift-button-container">
-  {#each giftCardOptions as option}
-    <button
-      class="gift-button {selectedAmount === option.price ? 'selected' : ''}"
-      on:click={() => selectedAmount = option.price}
-      aria-pressed={selectedAmount === option.price}
-    >
-      <h1>€{option.price}</h1>
-      <img src={option.image.url} height="70" width="70" alt="onder navigatie" />
-    </button>
-  {/each}
-</section>
+{#if giftCardOptions.length > 0}
+  <section class="gift-button-container">
+    {#each giftCardOptions as option}
+      <button
+        class="gift-button {selectedAmount === option.price ? 'selected' : ''}"
+        on:click={() => selectedAmount = option.price}
+        aria-pressed={selectedAmount === option.price}
+      >
+        <h1>€{option.price}</h1>
+        <img src={option.image.url} height="70" width="70" alt="onder navigatie" />
+      </button>
+    {/each}
+  </section>
+{:else}
+  <p class="error-message">
+    Er is een fout opgetreden bij het laden van de cadeaubonopties. Probeer het later opnieuw.
+  </p>
+{/if}
 
 <style>
   p {
@@ -33,6 +50,17 @@
     margin: 2em;
     text-align: center;
     font-size: 14px;
+  }
+
+  .error-message {
+    color: #b00020;
+    background-color: #ffeaea;
+    border: 1px solid #f5c2c7;
+    padding: 1em;
+    margin: 2em auto;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 0.5rem;
   }
 
   .gift-button-container {
@@ -43,6 +71,25 @@
     padding: 2em;
     gap: 1em;
     background-color: #FFE5D9;
+
+    scrollbar-width: thin;
+    scrollbar-color: #FFD4BD #FFE6D9;
+  }
+
+  .gift-button-container::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .gift-button-container::-webkit-scrollbar-track {
+    background-color: #FFE6D9;
+    border-radius: 10px;
+  }
+
+  .gift-button-container::-webkit-scrollbar-thumb {
+    background-color: #FFD4BD;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
   }
 
   .gift-button {
@@ -61,12 +108,12 @@
     border-radius: 0.5rem;
     margin-right: 1em;
     box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 8px;
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
   }
 
   .gift-button.selected {
     border: 4px solid #F0A07A;
     transform: scale(1.05);
-    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
   }
 
   h1 {
@@ -83,28 +130,5 @@
     margin-top: 1em;
     font-size: 2rem;
     color: var(--btn-primary-bg);
-  }
-
-  /* Voor Chrome, Safari, Edge */
-  .gift-button-container::-webkit-scrollbar {
-    height: 10px;
-  }
-
-  .gift-button-container::-webkit-scrollbar-track {
-    background-color: #FFE6D9;
-    border-radius: 10px;
-  }
-
-  .gift-button-container::-webkit-scrollbar-thumb {
-    background-color: #FFD4BD;
-    border-radius: 10px;
-    border: 2px solid transparent;
-    background-clip: content-box;
-  }
-
-  /* Voor Firefox */
-  .gift-button-container {
-    scrollbar-width: thin;
-    scrollbar-color: #FFD4BD #FFE6D9;
   }
 </style>
