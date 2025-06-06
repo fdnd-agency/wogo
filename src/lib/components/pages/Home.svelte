@@ -10,7 +10,7 @@
 
 <Hero hero={items[0]} />
 <TicketCarousel {itemCollection} />
-<HeadLine title="How It Works" />
+<HeadLine title="How It Works" id="how-it-works"/>
 <HowItWorks cards={items[1].componentsCollection.items} />
 <!-- <Reviews reviews={items[4].componentsCollection.items} />
 <GiftCard items={items[3]} /> -->

@@ -2,7 +2,7 @@
   export let cards;
 </script>
 
-<section id="how-it-works" >
+<section >
   <ul>
     <li class="card-list card-number">
       <div class="card-body" tabIndex="0">
