@@ -1,4 +1,4 @@
-import { json } from '@sveltejs/kit';
+  import { json } from '@sveltejs/kit';
 import { parse } from 'querystring';
 import { CONTENTFUL_SPACE_ID, CONTENTFUL_MANAGEMENT_TOKEN } from '$env/static/private';
 
