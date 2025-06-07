@@ -41,6 +41,7 @@ export { default as Translation } from '$lib/components/molecules/Translation.sv
 export { default as LargeText } from '$lib/components/molecules/LargeText.svelte'
 export { default as TicketDetails } from '$lib/components/molecules/TicketDetails.svelte'
 export { default as HeaderContent } from '$lib/components/molecules/HeaderContent.svelte'
+export { default as Giftinfo } from '$lib/components/molecules/Giftinfo.svelte'
 
 // Organisms
 export { default as RotterdamTicketHero } from '$lib/components/organisms/RotterdamTicketHero.svelte'
@@ -59,6 +60,8 @@ export { default as GiftCard } from '$lib/components/organisms/GiftCard.svelte'
 export { default as BookingsForm } from '$lib/components/organisms/BookingsForm.svelte'
 export { default as Details } from '$lib/components/organisms/Details.svelte'
 export { default as Reviews } from '$lib/components/organisms/Reviews.svelte'
+export { default as Giftbutton } from '$lib/components/organisms/Giftbutton.svelte'
+export { default as Giftcardinput } from '$lib/components/organisms/Giftcardinput.svelte'
 
 // Templates
 
@@ -71,3 +74,5 @@ export { default as GroupOutings } from '$lib/components/pages/GroupOutings.svel
 export { default as TicketInfoPage } from '$lib/components/pages/TicketInfoPage.svelte'
 export { default as TicketsOverview } from '$lib/components/pages/TicketsOverview.svelte'
 export { default as AboutUs } from '$lib/components/pages/AboutUs.svelte'
+export { default as Giftcard } from '$lib/components/pages/Giftcard.svelte'
+
