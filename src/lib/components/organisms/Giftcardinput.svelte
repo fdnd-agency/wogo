@@ -55,7 +55,7 @@
       </div>
 
       <div class="form-buttons">
-        <p class="total-price">Totaal: 50,00</p>
+
         <button type="submit" class="submit-btn">Afrekenen</button>
       </div>
     </form>

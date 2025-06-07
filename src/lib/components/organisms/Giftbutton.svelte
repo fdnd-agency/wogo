@@ -37,15 +37,6 @@
   }
 </script>
 
-<h2>CADEAUKAARTEN</h2>
-<p>
-  Met een cadeaubon kan het nooit misgaan. Kies een bedrag en schrijf een persoonlijke boodschap.
-</p>
-
-<p>
-  De cadeaubon kan worden ingewisseld voor al onze producten en diensten op onze site!
-</p>
-
 {#if isLoading}
   <div class="skeleton-container">
     {#each Array(3) as _}
@@ -157,13 +148,6 @@
     color: var(--txt-tertiary-clr);
     font-weight: 1000;
     font-size: 1.4rem;
-  }
-
-  h2 {
-    text-align: center;
-    margin-top: 1em;
-    font-size: 2rem;
-    color: var(--btn-primary-bg);
   }
 
   /* 🦴 Skeleton loader styles */
