@@ -22,6 +22,12 @@
       title={item.image.title.replace(/\s+/g, "-")}
     />
     <h2 class="cardTitle">{item.title}</h2>
+    <div class="cardCityContainer">
+      {#each item.citysCollection.items as city}
+        <h2 class="cardCity">{city.location}</h2>
+      {/each}
+    </div>
+
     <ul class="card-description">
       <li>
         <span
@@ -106,6 +112,19 @@
     @media (min-width: 768px) {
       font-size: 27px;
     }
+  }
+  .cardCity {
+    color: var(--txt-quaternary-clr);
+    font-size: 20px;
+    position: absolute;
+    align-self: anchor-center;
+    padding-right: 0.5rem;
+    top: 2rem;
+  }
+
+  .cardCityContainer {
+    display: flex;
+    flex-direction: row-reverse;
   }
 
   article img {

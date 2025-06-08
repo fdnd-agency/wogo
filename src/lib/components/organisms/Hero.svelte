@@ -6,6 +6,7 @@
     const target = document.getElementById("how-it-works");
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
+            history.replaceState(null, '', window.location.pathname);
     }
   }
 </script>
