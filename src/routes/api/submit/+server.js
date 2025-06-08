@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 import { parse } from 'querystring';
-import { CONTENTFUL_SPACE_ID, CONTENTFUL_MANAGEMENT_ACCESS_TOKEN } from '$env/static/private';
+import { CONTENTFUL_SPACE_ID, CONTENTFUL_MANAGEMENT_TOKEN } from '$env/static/private';
 
 export async function POST({ request }) {
   try {
@@ -30,7 +30,7 @@ export async function POST({ request }) {
       {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${CONTENTFUL_MANAGEMENT_ACCESS_TOKEN}`,
+          Authorization: `Bearer ${CONTENTFUL_MANAGEMENT_TOKEN}`,
           'Content-Type': 'application/vnd.contentful.management.v1+json',
           'X-Contentful-Content-Type': contentTypeId,
         },
