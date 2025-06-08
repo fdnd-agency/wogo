@@ -1,8 +1,9 @@
 <script>
   export let title = ''
+  export let id = "";
 </script>
 
-<h2>{title}</h2>
+<h2 id={id}>{title} </h2>
 
 <style>
   h2 {

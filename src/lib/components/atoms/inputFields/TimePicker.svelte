@@ -13,13 +13,26 @@
 <style>
   input {
     width: 100%;
-    padding: 0.625em;
+    padding: 0.7em;
     border: none;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--accent2-tertiary);
     color: #000;
+    margin-top: 1em;
   }
+
+  
+  input:user-valid {
+    border:solid 2px rgb(103, 158, 103);
+  }
+  input:user-invalid {
+    border:solid 2px rgb(239, 90, 90);
+  }
+
   label {
-    color: white;
+    color: var(--accent2-tertiary);
+    font-weight: 600;
+    margin-bottom:1em;
+   
   }
 </style>

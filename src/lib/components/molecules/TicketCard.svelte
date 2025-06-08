@@ -13,28 +13,21 @@
 
 {#each items as item}
   <article class="ticket-card">
-    <div class="card-header">
-      <p>
-        <span class="location-icon">
-          <IconLocationThin
-            width="13"
-            height="13"
-            fill="var(--txt-dark-clr)"
-          /></span
-        >
-        {item.location}
-      </p>
-      <p class="cocktail-price">{item.price}</p>
-    </div>
-    <img style="{`view-transition-name:${item.image.title.replace(/\s+/g, "-")}`}"
+    <img
       src={item.image.url}
       alt={item.image.title}
       loading="lazy"
-      width="450"
+      width="300"
       height="321"
       title={item.image.title.replace(/\s+/g, "-")}
     />
-    <h2>{item.title}</h2>
+    <h2 class="cardTitle">{item.title}</h2>
+    <div class="cardCityContainer">
+      {#each item.citysCollection.items as city}
+        <h2 class="cardCity">{city.location}</h2>
+      {/each}
+    </div>
+
     <ul class="card-description">
       <li>
         <span
@@ -55,6 +48,9 @@
           /></span
         >
         {item.cocktailDescription}
+      </li>
+      <li>
+        <p class="cocktail-price">{item.price}</p>
       </li>
     </ul>
     <div class="card-buttons">
@@ -77,19 +73,12 @@
 {/each}
 
 <style>
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5em;
-    & p {
-      padding-top: 0.3em;
-    }
+  .ticket-card {
+    width: 20rem;
   }
-
   .cocktail-price {
-    border: 1px solid var(--accent1-primary);
-    border-radius: 8px;
-    padding: 0.2em;
+    font-weight: 600;
+    padding: 0.6rem;
   }
 
   article {
@@ -100,11 +89,12 @@
     background-color: var(--txt-quaternary-clr);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
+    position: relative;
     flex-direction: column;
     & h2 {
       padding-left: 0.5em;
       padding-top: 0.5em;
-      font-size: 20px;
+      font-size: 25px;
       letter-spacing: 1px;
     }
 
@@ -113,15 +103,42 @@
       max-width: 350px;
     }
   }
+  .cardTitle {
+    color: var(--txt-quaternary-clr);
+    /* bottom: 74px; */
+    position: absolute;
+    top: 18px;
+    /* z-index: 2; */
+    @media (min-width: 768px) {
+      font-size: 27px;
+    }
+  }
+  .cardCity {
+    color: var(--txt-quaternary-clr);
+    font-size: 20px;
+    position: absolute;
+    align-self: anchor-center;
+    padding-right: 0.5rem;
+    text-transform: uppercase;
+    @media (min-width: 768px) {
+     top: 2rem;
+    }
+   
+  }
+
+  .cardCityContainer {
+    display: flex;
+    flex-direction: row-reverse;
+  }
 
   article img {
     position: relative;
     display: block;
     object-fit: cover;
-    width: 350px;
+    width: 300px;
     height: 250px;
-    filter: brightness(0.5);
-  
+    filter: brightness(0.8);
+
     @media (max-width: 768px) {
       max-width: 316px;
     }
@@ -151,9 +168,9 @@
     @media (min-width: 768px) {
       flex-direction: unset;
       transform: none;
-      margin: 1em 1.6em 1em 1.6em;
+      margin: 1em 1.6em 1em 1em;
       padding-right: 15px;
-      gap: 2em;
+      gap: 1em;
     }
   }
 </style>
