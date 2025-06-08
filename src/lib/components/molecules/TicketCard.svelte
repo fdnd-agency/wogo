@@ -74,7 +74,7 @@
 
 <style>
   .ticket-card {
-    width: 21rem;
+    width: 20rem;
   }
   .cocktail-price {
     font-weight: 600;
@@ -119,7 +119,11 @@
     position: absolute;
     align-self: anchor-center;
     padding-right: 0.5rem;
-    top: 2rem;
+    text-transform: uppercase;
+    @media (min-width: 768px) {
+     top: 2rem;
+    }
+   
   }
 
   .cardCityContainer {
@@ -131,7 +135,7 @@
     position: relative;
     display: block;
     object-fit: cover;
-    width: 333px;
+    width: 300px;
     height: 250px;
     filter: brightness(0.8);
 
@@ -164,9 +168,9 @@
     @media (min-width: 768px) {
       flex-direction: unset;
       transform: none;
-      margin: 1em 1.6em 1em 1.6em;
+      margin: 1em 1.6em 1em 1em;
       padding-right: 15px;
-      gap: 2em;
+      gap: 1em;
     }
   }
 </style>

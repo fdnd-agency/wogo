@@ -145,6 +145,7 @@
     font-weight: 700;
     width: 7rem;
     align-self: center;
+    margin-left: 0.5rem;
   }
 
 

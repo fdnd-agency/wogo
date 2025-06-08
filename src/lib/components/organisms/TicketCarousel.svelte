@@ -184,13 +184,12 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 3rem 2rem;
+    padding: 3rem 0.5rem;
   }
   .carousel-title h2 {
     display: flex;
     padding-bottom: 0.5rem;
     color: var(--txt-tertiary-clr);
-    text-transform: uppercase;
   }
   section {
     --arrow-size: 40px;
@@ -200,13 +199,13 @@
   }
 
   .card-container {
-    gap: var(--margin-default-gap);
+    gap: 1rem;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    margin-left: 1.5rem;
+    margin-left: 0.5rem;
     margin-bottom: 1.5rem;
   }
 
