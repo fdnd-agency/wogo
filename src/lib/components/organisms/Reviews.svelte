@@ -46,14 +46,21 @@ const prevSlide = () => {
   <section class="reviews-section">
     <!-- Carousel: Display reviews horizontally -->
     <div class="button-section">
-     <button on:click={prevSlide}>
-  <img src="Vector-navigation-icon-left.svg" alt="left icon" />
-</button>
+    {#if currentIndex > 0}
+    <button on:click={prevSlide}>
+      <img src="Vector-navigation-icon-left.svg" alt="left icon" />
+    </button>
+  {:else}
+    <div class="button-placeholder"></div>
+  {/if}
 
-     <button on:click={nextSlide}>
-  <img src="Vector-navigation-icon-right.svg" alt="right icon" />
-</button>
-
+  {#if currentIndex < reviews.length - 1}
+    <button on:click={nextSlide}>
+      <img src="Vector-navigation-icon-right.svg" alt="right icon" />
+    </button>
+  {:else}
+    <div class="button-placeholder"></div>
+  {/if}
     </div>
     <div  bind:this={carouselRef}  class="carousel-wrapper">
       {#each reviews as item, index}
