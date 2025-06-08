@@ -11,7 +11,7 @@
   }
 </script>
 
-<div class="hero-gradient-overlay">yo</div>
+<div class="hero-gradient-overlay"></div>
 <section>
   <video
     autoplay
