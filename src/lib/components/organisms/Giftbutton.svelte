@@ -18,7 +18,6 @@
       selectedAmount = parseInt(storedAmount);
     }
 
-    // Simuleer loading (optioneel: kun je aanpassen of verwijderen als je directe data hebt)
     if (
       items &&
       Array.isArray(items) &&
