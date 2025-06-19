@@ -12,6 +12,8 @@ WOGO Cocktailwalks organizes culinary walking tours where participants visit var
 * [Latoya Nijmeijer](https://github.com/latoyaln)
 * [Rukiya Tossou](https://github.com/RukiyaTossou)
 * [Yassir Bghiel](https://github.com/yassirog)
+* [Esha Ramroep]()
+  
 
 ## Description
 We were assigned to improve and optimize the current website. Earlier, former second-year students worked on this project, and the goal was for us to take over their website and make adjustments. The goal was also to build upon the existing website so that it would become a complete project, as it was not fully finished. We were free to come up with new concepts/designs for both existing and new components.
